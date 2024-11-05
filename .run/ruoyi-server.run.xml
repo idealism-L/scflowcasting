@@ -4,7 +4,7 @@
       <settings>
         <option name="imageTag" value="ruoyi/ruoyi-server:4.8.2" />
         <option name="buildOnly" value="true" />
-        <option name="sourceFilePath" value="ruoyi-admin/Dockerfile" />
+        <option name="sourceFilePath" value="plan-admin/Dockerfile" />
       </settings>
     </deployment>
     <method v="2" />

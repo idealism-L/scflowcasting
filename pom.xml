@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.ruoyi</groupId>
-    <artifactId>ruoyi-vue-plus</artifactId>
+    <artifactId>plan-vue-plus</artifactId>
     <version>4.8.2</version>
 
     <properties>
-        <ruoyi-vue-plus.version>4.8.2</ruoyi-vue-plus.version>
+        <plan-vue-plus.version>4.8.2</plan-vue-plus.version>
         <spring-boot.version>2.7.18</spring-boot.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -271,36 +271,36 @@
             <!-- 代码生成-->
             <dependency>
                 <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-generator</artifactId>
-                <version>${ruoyi-vue-plus.version}</version>
+                <artifactId>plan-generator</artifactId>
+                <version>${plan-vue-plus.version}</version>
             </dependency>
 
             <!-- 核心模块-->
             <dependency>
                 <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-framework</artifactId>
-                <version>${ruoyi-vue-plus.version}</version>
+                <artifactId>plan-framework</artifactId>
+                <version>${plan-vue-plus.version}</version>
             </dependency>
 
             <!-- 系统模块-->
             <dependency>
                 <groupId>com.ruoyi</groupId>
                 <artifactId>plan-system</artifactId>
-                <version>${ruoyi-vue-plus.version}</version>
+                <version>${plan-vue-plus.version}</version>
             </dependency>
 
             <!-- 通用工具-->
             <dependency>
                 <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-common</artifactId>
-                <version>${ruoyi-vue-plus.version}</version>
+                <artifactId>plan-common</artifactId>
+                <version>${plan-vue-plus.version}</version>
             </dependency>
 
             <!-- OSS对象存储模块 -->
             <dependency>
                 <groupId>com.ruoyi</groupId>
                 <artifactId>plan-oss</artifactId>
-                <version>${ruoyi-vue-plus.version}</version>
+                <version>${plan-vue-plus.version}</version>
             </dependency>
 
             <!-- SMS短信模块 -->
@@ -314,7 +314,7 @@
             <dependency>
                 <groupId>com.ruoyi</groupId>
                 <artifactId>plan-demo</artifactId>
-                <version>${ruoyi-vue-plus.version}</version>
+                <version>${plan-vue-plus.version}</version>
             </dependency>
 
         </dependencies>

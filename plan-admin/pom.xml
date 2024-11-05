@@ -3,13 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>ruoyi-vue-plus</artifactId>
+        <artifactId>plan-vue-plus</artifactId>
         <groupId>com.ruoyi</groupId>
         <version>4.8.2</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <packaging>jar</packaging>
-    <artifactId>ruoyi-admin</artifactId>
+    <artifactId>plan-admin</artifactId>
 
     <description>
         web服务入口
@@ -33,7 +33,7 @@
         <!-- 核心模块-->
         <dependency>
             <groupId>com.ruoyi</groupId>
-            <artifactId>ruoyi-framework</artifactId>
+            <artifactId>plan-framework</artifactId>
         </dependency>
 
         <dependency>
@@ -49,7 +49,7 @@
         <!-- 代码生成-->
         <dependency>
             <groupId>com.ruoyi</groupId>
-            <artifactId>ruoyi-generator</artifactId>
+            <artifactId>plan-generator</artifactId>
         </dependency>
 
         <!--  demo模块  -->
