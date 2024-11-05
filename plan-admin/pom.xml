@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>plan-vue-plus</artifactId>
-        <groupId>com.ruoyi</groupId>
+        <groupId>com.plan</groupId>
         <version>4.8.2</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -32,30 +32,30 @@
 
         <!-- 核心模块-->
         <dependency>
-            <groupId>com.ruoyi</groupId>
+            <groupId>com.plan</groupId>
             <artifactId>plan-framework</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.ruoyi</groupId>
+            <groupId>com.plan</groupId>
             <artifactId>plan-system</artifactId>
         </dependency>
 
         <dependency>
-            <groupId>com.ruoyi</groupId>
+            <groupId>com.plan</groupId>
             <artifactId>plan-oss</artifactId>
         </dependency>
 
         <!-- 代码生成-->
         <dependency>
-            <groupId>com.ruoyi</groupId>
+            <groupId>com.plan</groupId>
             <artifactId>plan-generator</artifactId>
         </dependency>
 
         <!--  demo模块  -->
         <dependency>
-            <groupId>com.ruoyi</groupId>
-            <artifactId>plan-demo</artifactId>
+            <groupId>com.plan</groupId>
+            <artifactId>plan-report</artifactId>
         </dependency>
 
         <dependency>

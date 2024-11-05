@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.ruoyi</groupId>
+    <groupId>com.plan</groupId>
     <artifactId>plan-vue-plus</artifactId>
     <version>4.8.2</version>
 
@@ -270,35 +270,35 @@
 
             <!-- 代码生成-->
             <dependency>
-                <groupId>com.ruoyi</groupId>
+                <groupId>com.plan</groupId>
                 <artifactId>plan-generator</artifactId>
                 <version>${plan-vue-plus.version}</version>
             </dependency>
 
             <!-- 核心模块-->
             <dependency>
-                <groupId>com.ruoyi</groupId>
+                <groupId>com.plan</groupId>
                 <artifactId>plan-framework</artifactId>
                 <version>${plan-vue-plus.version}</version>
             </dependency>
 
             <!-- 系统模块-->
             <dependency>
-                <groupId>com.ruoyi</groupId>
+                <groupId>com.plan</groupId>
                 <artifactId>plan-system</artifactId>
                 <version>${plan-vue-plus.version}</version>
             </dependency>
 
             <!-- 通用工具-->
             <dependency>
-                <groupId>com.ruoyi</groupId>
+                <groupId>com.plan</groupId>
                 <artifactId>plan-common</artifactId>
                 <version>${plan-vue-plus.version}</version>
             </dependency>
 
             <!-- OSS对象存储模块 -->
             <dependency>
-                <groupId>com.ruoyi</groupId>
+                <groupId>com.plan</groupId>
                 <artifactId>plan-oss</artifactId>
                 <version>${plan-vue-plus.version}</version>
             </dependency>
@@ -312,8 +312,8 @@
 
             <!-- demo模块 -->
             <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>plan-demo</artifactId>
+                <groupId>com.plan</groupId>
+                <artifactId>plan-report</artifactId>
                 <version>${plan-vue-plus.version}</version>
             </dependency>
 
@@ -326,7 +326,7 @@
         <module>plan-system</module>
         <module>plan-generator</module>
         <module>plan-common</module>
-        <module>plan-demo</module>
+        <module>plan-report</module>
         <module>plan-oss</module>
     </modules>
     <packaging>pom</packaging>

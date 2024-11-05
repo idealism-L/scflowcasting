@@ -2,11 +2,11 @@ FROM anapsix/alpine-java:8_server-jre_unlimited
 
 MAINTAINER Lion Li
 
-RUN mkdir -p /ruoyi/server/logs \
-    /ruoyi/server/temp \
-    /ruoyi/skywalking/agent
+RUN mkdir -p /plan/server/logs \
+    /plan/server/temp \
+    /plan/skywalking/agent
 
-WORKDIR /ruoyi/server
+WORKDIR /plan/server
 
 ENV SERVER_PORT=8080
 
