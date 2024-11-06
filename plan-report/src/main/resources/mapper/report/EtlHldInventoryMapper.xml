@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plan.report.mapper.EtlHldInventoryMapper">
+
+    <resultMap type="com.plan.report.domain.EtlHldInventory" id="EtlHldInventoryResult">
+        <result property="imMainInsuranceConfigId" column="IM_MAIN_INSURANCE_CONFIG_ID"/>
+        <result property="item" column="item"/>
+        <result property="loc" column="loc"/>
+        <result property="availdate" column="availdate"/>
+        <result property="qty" column="qty"/>
+        <result property="expdate" column="expdate"/>
+        <result property="project" column="project"/>
+        <result property="store" column="store"/>
+        <result property="uFlag" column="u_flag"/>
+        <result property="uComment" column="u_comment"/>
+        <result property="uFilename" column="u_filename"/>
+        <result property="uEditdate" column="u_editdate"/>
+    </resultMap>
+
+
+</mapper>

@@ -1,0 +1,15 @@
+package com.plan.report.mapper;
+
+import com.plan.report.domain.EtlHldInventory;
+import com.plan.report.domain.vo.EtlHldInventoryVo;
+import com.plan.common.core.mapper.BaseMapperPlus;
+
+/**
+ * 库存Mapper接口
+ *
+ * @author ruoyi
+ * @date 2024-11-06
+ */
+public interface EtlHldInventoryMapper extends BaseMapperPlus<EtlHldInventoryMapper, EtlHldInventory, EtlHldInventoryVo> {
+
+}
