@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plan.report.mapper.TDcFgMapMapper">
+
+    <resultMap type="com.plan.report.domain.TDcFgMap" id="TDcFgMapResult">
+        <result property="imMainInsuranceConfigId" column="IM_MAIN_INSURANCE_CONFIG_ID"/>
+        <result property="corporation" column="corporation"/>
+        <result property="item" column="item"/>
+        <result property="itemDescr" column="item_descr"/>
+        <result property="convfactor" column="convfactor"/>
+        <result property="kitCode" column="kit_code"/>
+        <result property="uComment" column="u_comment"/>
+        <result property="uFlag" column="u_flag"/>
+        <result property="keyProductionFlag" column="key_production_flag"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+
+</mapper>

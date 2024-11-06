@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plan.report.mapper.EtlHldFcstKitMapper">
+
+    <resultMap type="com.plan.report.domain.EtlHldFcstKit" id="EtlHldFcstKitResult">
+        <result property="imMainInsuranceConfigId" column="IM_MAIN_INSURANCE_CONFIG_ID"/>
+        <result property="uCorporation" column="u_corporation"/>
+        <result property="dmdunit" column="dmdunit"/>
+        <result property="dmdgroup" column="dmdgroup"/>
+        <result property="loc" column="loc"/>
+        <result property="startdate" column="startdate"/>
+        <result property="uOh" column="u_oh"/>
+        <result property="uW1" column="u_w1"/>
+        <result property="uW2" column="u_w2"/>
+        <result property="uW3" column="u_w3"/>
+        <result property="uW4" column="u_w4"/>
+        <result property="uW5" column="u_w5"/>
+        <result property="uW6" column="u_w6"/>
+        <result property="uW7" column="u_w7"/>
+        <result property="uW8" column="u_w8"/>
+        <result property="uW9" column="u_w9"/>
+        <result property="uW10" column="u_w10"/>
+        <result property="uW11" column="u_w11"/>
+        <result property="uW12" column="u_w12"/>
+        <result property="uW13" column="u_w13"/>
+        <result property="uM1" column="u_m1"/>
+        <result property="uM2" column="u_m2"/>
+        <result property="uM3" column="u_m3"/>
+        <result property="uM4" column="u_m4"/>
+        <result property="uFlag" column="u_flag"/>
+        <result property="uComment" column="u_comment"/>
+        <result property="uFilename" column="u_filename"/>
+        <result property="uEditdate" column="u_editdate"/>
+    </resultMap>
+
+
+</mapper>
