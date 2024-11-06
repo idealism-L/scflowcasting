@@ -43,6 +43,11 @@
 
         <dependency>
             <groupId>com.plan</groupId>
+            <artifactId>plan-job</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.plan</groupId>
             <artifactId>plan-oss</artifactId>
         </dependency>
 
