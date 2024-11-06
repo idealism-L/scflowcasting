@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.plan</groupId>
-    <artifactId>plan-vue-plus</artifactId>
+    <artifactId>scflowcasting</artifactId>
     <version>4.8.2</version>
 
     <properties>
-        <plan-vue-plus.version>4.8.2</plan-vue-plus.version>
+        <scflowcasting.version>4.8.2</scflowcasting.version>
         <spring-boot.version>2.7.18</spring-boot.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -272,35 +272,35 @@
             <dependency>
                 <groupId>com.plan</groupId>
                 <artifactId>plan-generator</artifactId>
-                <version>${plan-vue-plus.version}</version>
+                <version>${scflowcasting.version}</version>
             </dependency>
 
             <!-- 核心模块-->
             <dependency>
                 <groupId>com.plan</groupId>
                 <artifactId>plan-framework</artifactId>
-                <version>${plan-vue-plus.version}</version>
+                <version>${scflowcasting.version}</version>
             </dependency>
 
             <!-- 系统模块-->
             <dependency>
                 <groupId>com.plan</groupId>
                 <artifactId>plan-system</artifactId>
-                <version>${plan-vue-plus.version}</version>
+                <version>${scflowcasting.version}</version>
             </dependency>
 
             <!-- 通用工具-->
             <dependency>
                 <groupId>com.plan</groupId>
                 <artifactId>plan-common</artifactId>
-                <version>${plan-vue-plus.version}</version>
+                <version>${scflowcasting.version}</version>
             </dependency>
 
             <!-- OSS对象存储模块 -->
             <dependency>
                 <groupId>com.plan</groupId>
                 <artifactId>plan-oss</artifactId>
-                <version>${plan-vue-plus.version}</version>
+                <version>${scflowcasting.version}</version>
             </dependency>
 
             <!-- SMS短信模块 -->
@@ -314,7 +314,7 @@
             <dependency>
                 <groupId>com.plan</groupId>
                 <artifactId>plan-report</artifactId>
-                <version>${plan-vue-plus.version}</version>
+                <version>${scflowcasting.version}</version>
             </dependency>
 
         </dependencies>
