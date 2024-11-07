@@ -14,4 +14,9 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface EtlHldVehicleloadlineMapper extends BaseMapperPlus<EtlHldVehicleloadlineMapper, EtlHldVehicleloadline, EtlHldVehicleloadlineVo> {
 
+    /**
+     * 获取数据总行数
+     * @return
+     */
+    Long selectDataCount();
 }

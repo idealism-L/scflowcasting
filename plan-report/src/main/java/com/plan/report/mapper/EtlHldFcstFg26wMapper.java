@@ -14,4 +14,9 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface EtlHldFcstFg26wMapper extends BaseMapperPlus<EtlHldFcstFg26wMapper, EtlHldFcstFg26w, EtlHldFcstFg26wVo> {
 
+    /**
+     * 获取数据总行数
+     * @return
+     */
+    Long selectDataCount();
 }

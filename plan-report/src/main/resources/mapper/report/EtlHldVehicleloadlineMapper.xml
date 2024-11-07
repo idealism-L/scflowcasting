@@ -24,5 +24,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="uEditdate" column="u_editdate"/>
     </resultMap>
 
+    <select id="selectDataCount" resultType="java.lang.Long">
+        select count(0)
+        from etl_hld_vehicleloadline
+        where id > 0
+    </select>
+
 
 </mapper>

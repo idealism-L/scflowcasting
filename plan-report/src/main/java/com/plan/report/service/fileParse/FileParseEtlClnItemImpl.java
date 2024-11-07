@@ -29,6 +29,9 @@ public class FileParseEtlClnItemImpl extends IFileParseAbstract{
     @Override
     public void saveFileData(List list) {
         List<EtlClnItem> itemList = BeanCopyUtils.copyList(list, EtlClnItem.class);
+        if(etlClnItemMapper.selectDataCount() > 0){
+            return;
+        }
         etlClnItemMapper.insertBatch(itemList);
     }
 }

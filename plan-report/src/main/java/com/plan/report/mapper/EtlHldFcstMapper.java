@@ -14,4 +14,9 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface EtlHldFcstMapper extends BaseMapperPlus<EtlHldFcstMapper, EtlHldFcst, EtlHldFcstVo> {
 
+    /**
+     * 获取数据总行数
+     * @return
+     */
+    Long selectDataCount();
 }

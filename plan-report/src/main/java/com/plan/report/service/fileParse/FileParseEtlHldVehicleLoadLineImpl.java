@@ -29,6 +29,9 @@ public class FileParseEtlHldVehicleLoadLineImpl extends IFileParseAbstract{
     @Override
     public void saveFileData(List list) {
         List<EtlHldVehicleloadline> itemList = BeanCopyUtils.copyList(list, EtlHldVehicleloadline.class);
+        if(etlHldVehicleloadlineMapper.selectDataCount() > 0){
+            return;
+        }
         etlHldVehicleloadlineMapper.insertBatch(itemList);
     }
 }

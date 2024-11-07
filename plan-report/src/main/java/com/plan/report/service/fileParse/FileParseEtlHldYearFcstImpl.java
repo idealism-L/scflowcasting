@@ -29,6 +29,9 @@ public class FileParseEtlHldYearFcstImpl extends IFileParseAbstract{
     @Override
     public void saveFileData(List list) {
         List<EtlHldYearfcst> itemList = BeanCopyUtils.copyList(list, EtlHldYearfcst.class);
+        if(etlHldYearfcstMapper.selectDataCount() > 0){
+            return;
+        }
         etlHldYearfcstMapper.insertBatch(itemList);
     }
 }

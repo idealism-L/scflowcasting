@@ -29,6 +29,9 @@ public class FileParseEtlHldInventoryImpl extends IFileParseAbstract{
     @Override
     public void saveFileData(List list) {
         List<EtlHldInventory> itemList = BeanCopyUtils.copyList(list, EtlHldInventory.class);
+        if(etlHldInventoryMapper.selectDataCount() > 0){
+            return;
+        }
         etlHldInventoryMapper.insertBatch(itemList);
     }
 }

@@ -50,5 +50,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="uCreatedate" column="u_createdate"/>
     </resultMap>
 
+    <select id="selectDataCount" resultType="java.lang.Long">
+        select count(0)
+          from etl_cln_item
+         where id > 0
+    </select>
 
 </mapper>

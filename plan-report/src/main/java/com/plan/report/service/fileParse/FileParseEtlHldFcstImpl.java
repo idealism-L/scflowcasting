@@ -29,6 +29,9 @@ public class FileParseEtlHldFcstImpl extends IFileParseAbstract {
     @Override
     public void saveFileData(List list) {
         List<EtlHldFcst> itemList = BeanCopyUtils.copyList(list, EtlHldFcst.class);
+        if(etlHldFcstMapper.selectDataCount() > 0){
+            return;
+        }
         etlHldFcstMapper.insertBatch(itemList);
     }
 }
