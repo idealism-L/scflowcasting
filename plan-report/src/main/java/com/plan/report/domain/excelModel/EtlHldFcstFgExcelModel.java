@@ -1,139 +1,186 @@
-package com.plan.report.domain;
+package com.plan.report.domain.excelModel;
 
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.plan.common.core.domain.BaseEntity;
+import com.alibaba.excel.annotation.ExcelIgnoreUnannotated;
+import com.alibaba.excel.annotation.ExcelProperty;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * 成品销售预测对象 etl_hld_fcst_fg
+ * 成品销售预测视图对象 etl_hld_fcst_fg
  *
- * @author ruoyi
+ * @author xu_yijun
  * @date 2024-11-06
  */
 @Data
-@TableName("etl_hld_fcst_fg")
-public class EtlHldFcstFg implements Serializable {
+@ExcelIgnoreUnannotated
+public class EtlHldFcstFgExcelModel implements Serializable {
 
-    private static final long serialVersionUID=1L;
+    private static final long serialVersionUID = 1L;
 
-    /**
-     * ID
-     */
-    @TableId(value = "id")
-    private Long id;
     /**
      * u_corporation
      */
+    @ExcelProperty(value = "U_CORPORATION")
     private String uCorporation;
+
     /**
      * dmdunit
      */
+    @ExcelProperty(value = "DMDUNIT")
     private String dmdunit;
+
     /**
      * dmdgroup
      */
+    @ExcelProperty(value = "DMDGROUP")
     private String dmdgroup;
+
     /**
      * loc
      */
+    @ExcelProperty(value = "LOC")
     private String loc;
+
     /**
      * startdate
      */
+    @ExcelProperty(value = "STARTDATE")
     private Date startdate;
+
     /**
      * u_oh
      */
+    @ExcelProperty(value = "U_OH")
     private String uOh;
+
     /**
      * u_w1
      */
+    @ExcelProperty(value = "U_W1")
     private BigDecimal uW1;
+
     /**
      * u_w2
      */
+    @ExcelProperty(value = "U_W2")
     private BigDecimal uW2;
+
     /**
      * u_w3
      */
+    @ExcelProperty(value = "U_W3")
     private BigDecimal uW3;
+
     /**
      * u_w4
      */
+    @ExcelProperty(value = "U_W4")
     private BigDecimal uW4;
+
     /**
      * u_w5
      */
+    @ExcelProperty(value = "U_W5")
     private BigDecimal uW5;
+
     /**
      * u_w6
      */
+    @ExcelProperty(value = "U_W6")
     private BigDecimal uW6;
+
     /**
      * u_w7
      */
+    @ExcelProperty(value = "U_W7")
     private BigDecimal uW7;
+
     /**
      * u_w8
      */
+    @ExcelProperty(value = "U_W8")
     private BigDecimal uW8;
+
     /**
      * u_w9
      */
+    @ExcelProperty(value = "U_W9")
     private BigDecimal uW9;
+
     /**
      * u_w10
      */
+    @ExcelProperty(value = "U_W10")
     private BigDecimal uW10;
+
     /**
      * u_w11
      */
+    @ExcelProperty(value = "U_W11")
     private BigDecimal uW11;
+
     /**
      * u_w12
      */
+    @ExcelProperty(value = "U_W12")
     private BigDecimal uW12;
+
     /**
      * u_w13
      */
+    @ExcelProperty(value = "U_W13")
     private BigDecimal uW13;
+
     /**
      * u_m1
      */
+    @ExcelProperty(value = "U_M1")
     private BigDecimal uM1;
+
     /**
      * u_m2
      */
+    @ExcelProperty(value = "U_M2")
     private BigDecimal uM2;
+
     /**
      * u_m3
      */
+    @ExcelProperty(value = "U_M3")
     private BigDecimal uM3;
+
     /**
      * u_m4
      */
+    @ExcelProperty(value = "U_M4")
     private BigDecimal uM4;
+
     /**
      * u_flag
      */
+    @ExcelProperty(value = "U_FLAG")
     private String uFlag;
+
     /**
      * u_comment
      */
+    @ExcelProperty(value = "U_COMMENT")
     private String uComment;
+
     /**
      * u_filename
      */
+    @ExcelProperty(value = "U_FILENAME")
     private String uFilename;
+
     /**
      * u_editdate
      */
+    @ExcelProperty(value = "U_EDITDATE")
     private String uEditdate;
+
 
 }

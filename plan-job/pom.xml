@@ -16,12 +16,6 @@
     </description>
 
     <dependencies>
-
-        <!-- 通用工具-->
-        <dependency>
-            <groupId>com.plan</groupId>
-            <artifactId>plan-common</artifactId>
-        </dependency>
         <dependency>
             <groupId>com.plan</groupId>
             <artifactId>plan-report</artifactId>

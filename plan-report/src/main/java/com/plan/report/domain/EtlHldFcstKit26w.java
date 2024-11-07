@@ -6,6 +6,7 @@ import com.plan.common.core.domain.BaseEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -16,9 +17,8 @@ import java.util.Date;
  * @date 2024-11-06
  */
 @Data
-@EqualsAndHashCode(callSuper = true)
 @TableName("etl_hld_fcst_kit_26w")
-public class EtlHldFcstKit26w extends BaseEntity {
+public class EtlHldFcstKit26w implements Serializable {
 
     private static final long serialVersionUID=1L;
 

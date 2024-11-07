@@ -47,13 +47,6 @@ public class SaTokenConfig implements WebMvcConfigurer {
                 .check(() -> {
                     // 检查是否登录 是否有token
                     StpUtil.checkLogin();
-
-                    // 有效率影响 用于临时测试
-                    // if (log.isDebugEnabled()) {
-                    //     log.info("剩余有效时间: {}", StpUtil.getTokenTimeout());
-                    //     log.info("临时有效时间: {}", StpUtil.getTokenActiveTimeout());
-                    // }
-
                 });
         })).addPathPatterns("/**")
             // 排除不需要拦截的路径
