@@ -35,8 +35,8 @@ public class TDcCalendarServiceImpl implements ITDcCalendarService {
      * 查询日历
      */
     @Override
-    public TDcCalendarVo queryById(Long imMainInsuranceConfigId){
-        return baseMapper.selectVoById(imMainInsuranceConfigId);
+    public TDcCalendarVo queryById(Long id){
+        return baseMapper.selectVoById(id);
     }
 
     /**
@@ -76,7 +76,7 @@ public class TDcCalendarServiceImpl implements ITDcCalendarService {
         validEntityBeforeSave(add);
         boolean flag = baseMapper.insert(add) > 0;
         if (flag) {
-            bo.setImMainInsuranceConfigId(add.getImMainInsuranceConfigId());
+            bo.setId(add.getId());
         }
         return flag;
     }

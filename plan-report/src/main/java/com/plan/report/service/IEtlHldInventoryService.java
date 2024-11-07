@@ -20,7 +20,7 @@ public interface IEtlHldInventoryService {
     /**
      * 查询库存
      */
-    EtlHldInventoryVo queryById(Long imMainInsuranceConfigId);
+    EtlHldInventoryVo queryById(Long id);
 
     /**
      * 查询库存列表

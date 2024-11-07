@@ -1,6 +1,6 @@
 package com.plan.system.runner;
 
-import com.plan.common.config.RuoYiConfig;
+import com.plan.common.config.PlanConfig;
 import com.plan.system.service.ISysConfigService;
 import com.plan.system.service.ISysDictTypeService;
 import com.plan.system.service.ISysOssConfigService;
@@ -20,7 +20,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class SystemApplicationRunner implements ApplicationRunner {
 
-    private final RuoYiConfig ruoyiConfig;
+    private final PlanConfig planConfig;
     private final ISysConfigService configService;
     private final ISysDictTypeService dictTypeService;
     private final ISysOssConfigService ossConfigService;
@@ -29,7 +29,7 @@ public class SystemApplicationRunner implements ApplicationRunner {
     public void run(ApplicationArguments args) throws Exception {
         ossConfigService.init();
         log.info("初始化OSS配置成功");
-        if (ruoyiConfig.isCacheLazy()) {
+        if (planConfig.isCacheLazy()) {
             return;
         }
         configService.loadingConfigCache();

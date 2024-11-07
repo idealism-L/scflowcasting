@@ -20,7 +20,7 @@ public interface IEtlHldFcstKit26wService {
     /**
      * 查询主剂需求预测
      */
-    EtlHldFcstKit26wVo queryById(Long imMainInsuranceConfigId);
+    EtlHldFcstKit26wVo queryById(Long id);
 
     /**
      * 查询主剂需求预测列表

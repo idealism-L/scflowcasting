@@ -35,8 +35,8 @@ public class TDcItemServiceImpl implements ITDcItemService {
      * 查询物料
      */
     @Override
-    public TDcItemVo queryById(Long imMainInsuranceConfigId){
-        return baseMapper.selectVoById(imMainInsuranceConfigId);
+    public TDcItemVo queryById(Long id){
+        return baseMapper.selectVoById(id);
     }
 
     /**
@@ -113,7 +113,7 @@ public class TDcItemServiceImpl implements ITDcItemService {
         validEntityBeforeSave(add);
         boolean flag = baseMapper.insert(add) > 0;
         if (flag) {
-            bo.setImMainInsuranceConfigId(add.getImMainInsuranceConfigId());
+            bo.setId(add.getId());
         }
         return flag;
     }

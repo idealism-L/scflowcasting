@@ -35,8 +35,8 @@ public class TLogInterfaceCheckServiceImpl implements ITLogInterfaceCheckService
      * 查询预测接口检查
      */
     @Override
-    public TLogInterfaceCheckVo queryById(Long imMainInsuranceConfigId){
-        return baseMapper.selectVoById(imMainInsuranceConfigId);
+    public TLogInterfaceCheckVo queryById(Long id){
+        return baseMapper.selectVoById(id);
     }
 
     /**
@@ -75,7 +75,7 @@ public class TLogInterfaceCheckServiceImpl implements ITLogInterfaceCheckService
         validEntityBeforeSave(add);
         boolean flag = baseMapper.insert(add) > 0;
         if (flag) {
-            bo.setImMainInsuranceConfigId(add.getImMainInsuranceConfigId());
+            bo.setId(add.getId());
         }
         return flag;
     }

@@ -26,7 +26,7 @@ public class TLogInterfaceCheckVo implements Serializable {
      * ID
      */
     @ExcelProperty(value = "ID")
-    private Long imMainInsuranceConfigId;
+    private Long id;
 
     /**
      * 上传文件时间

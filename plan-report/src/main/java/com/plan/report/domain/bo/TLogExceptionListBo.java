@@ -25,7 +25,7 @@ public class TLogExceptionListBo extends BaseEntity {
      * ID
      */
     @NotNull(message = "ID不能为空", groups = { EditGroup.class })
-    private Long imMainInsuranceConfigId;
+    private Long id;
 
     /**
      * 装瓶集团

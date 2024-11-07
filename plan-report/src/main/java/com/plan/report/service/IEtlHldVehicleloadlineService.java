@@ -20,7 +20,7 @@ public interface IEtlHldVehicleloadlineService {
     /**
      * 查询在途
      */
-    EtlHldVehicleloadlineVo queryById(Long imMainInsuranceConfigId);
+    EtlHldVehicleloadlineVo queryById(Long id);
 
     /**
      * 查询在途列表

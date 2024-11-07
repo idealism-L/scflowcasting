@@ -35,8 +35,8 @@ public class TDcKitMapServiceImpl implements ITDcKitMapService {
      * 查询溶剂映射
      */
     @Override
-    public TDcKitMapVo queryById(Long imMainInsuranceConfigId){
-        return baseMapper.selectVoById(imMainInsuranceConfigId);
+    public TDcKitMapVo queryById(Long id){
+        return baseMapper.selectVoById(id);
     }
 
     /**
@@ -83,7 +83,7 @@ public class TDcKitMapServiceImpl implements ITDcKitMapService {
         validEntityBeforeSave(add);
         boolean flag = baseMapper.insert(add) > 0;
         if (flag) {
-            bo.setImMainInsuranceConfigId(add.getImMainInsuranceConfigId());
+            bo.setId(add.getId());
         }
         return flag;
     }

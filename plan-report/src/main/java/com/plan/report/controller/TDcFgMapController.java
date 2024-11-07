@@ -60,13 +60,13 @@ public class TDcFgMapController extends BaseController {
     /**
      * 获取成品映射详细信息
      *
-     * @param imMainInsuranceConfigId 主键
+     * @param id 主键
      */
     @SaCheckPermission("report:dcFgMap:query")
-    @GetMapping("/{imMainInsuranceConfigId}")
+    @GetMapping("/{id}")
     public R<TDcFgMapVo> getInfo(@NotNull(message = "主键不能为空")
-                                     @PathVariable Long imMainInsuranceConfigId) {
-        return R.ok(iTDcFgMapService.queryById(imMainInsuranceConfigId));
+                                     @PathVariable Long id) {
+        return R.ok(iTDcFgMapService.queryById(id));
     }
 
     /**
@@ -94,13 +94,13 @@ public class TDcFgMapController extends BaseController {
     /**
      * 删除成品映射
      *
-     * @param imMainInsuranceConfigIds 主键串
+     * @param ids 主键串
      */
     @SaCheckPermission("report:dcFgMap:remove")
     @Log(title = "成品映射", businessType = BusinessType.DELETE)
-    @DeleteMapping("/{imMainInsuranceConfigIds}")
+    @DeleteMapping("/{ids}")
     public R<Void> remove(@NotEmpty(message = "主键不能为空")
-                          @PathVariable Long[] imMainInsuranceConfigIds) {
-        return toAjax(iTDcFgMapService.deleteWithValidByIds(Arrays.asList(imMainInsuranceConfigIds), true));
+                          @PathVariable Long[] ids) {
+        return toAjax(iTDcFgMapService.deleteWithValidByIds(Arrays.asList(ids), true));
     }
 }

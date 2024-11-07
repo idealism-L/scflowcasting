@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.plan.report.mapper.TDcKitMapMapper">
 
     <resultMap type="com.plan.report.domain.TDcKitMap" id="TDcKitMapResult">
-        <result property="imMainInsuranceConfigId" column="IM_MAIN_INSURANCE_CONFIG_ID"/>
+        <result property="id" column="id"/>
         <result property="corporation" column="corporation"/>
         <result property="item" column="item"/>
         <result property="itemDescr" column="item_descr"/>

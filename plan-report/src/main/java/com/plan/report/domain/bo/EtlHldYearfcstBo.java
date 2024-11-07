@@ -26,7 +26,7 @@ public class EtlHldYearfcstBo extends BaseEntity {
      * ID
      */
     @NotNull(message = "ID不能为空", groups = { EditGroup.class })
-    private Long imMainInsuranceConfigId;
+    private Long id;
 
     /**
      * 物料编码

@@ -60,13 +60,13 @@ public class EtlHldFcstController extends BaseController {
     /**
      * 获取销售预测详细信息
      *
-     * @param imMainInsuranceConfigId 主键
+     * @param id 主键
      */
     @SaCheckPermission("report:hldFcst:query")
-    @GetMapping("/{imMainInsuranceConfigId}")
+    @GetMapping("/{id}")
     public R<EtlHldFcstVo> getInfo(@NotNull(message = "主键不能为空")
-                                     @PathVariable Long imMainInsuranceConfigId) {
-        return R.ok(iEtlHldFcstService.queryById(imMainInsuranceConfigId));
+                                     @PathVariable Long id) {
+        return R.ok(iEtlHldFcstService.queryById(id));
     }
 
     /**
@@ -94,13 +94,13 @@ public class EtlHldFcstController extends BaseController {
     /**
      * 删除销售预测
      *
-     * @param imMainInsuranceConfigIds 主键串
+     * @param ids 主键串
      */
     @SaCheckPermission("report:hldFcst:remove")
     @Log(title = "销售预测", businessType = BusinessType.DELETE)
-    @DeleteMapping("/{imMainInsuranceConfigIds}")
+    @DeleteMapping("/{ids}")
     public R<Void> remove(@NotEmpty(message = "主键不能为空")
-                          @PathVariable Long[] imMainInsuranceConfigIds) {
-        return toAjax(iEtlHldFcstService.deleteWithValidByIds(Arrays.asList(imMainInsuranceConfigIds), true));
+                          @PathVariable Long[] ids) {
+        return toAjax(iEtlHldFcstService.deleteWithValidByIds(Arrays.asList(ids), true));
     }
 }

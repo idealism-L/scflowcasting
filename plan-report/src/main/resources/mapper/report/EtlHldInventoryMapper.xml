@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.plan.report.mapper.EtlHldInventoryMapper">
 
     <resultMap type="com.plan.report.domain.EtlHldInventory" id="EtlHldInventoryResult">
-        <result property="imMainInsuranceConfigId" column="IM_MAIN_INSURANCE_CONFIG_ID"/>
+        <result property="id" column="id"/>
         <result property="item" column="item"/>
         <result property="loc" column="loc"/>
         <result property="availdate" column="availdate"/>

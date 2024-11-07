@@ -25,7 +25,7 @@ public class TDcBppMasterVo implements Serializable {
      * ID
      */
     @ExcelProperty(value = "ID")
-    private Long imMainInsuranceConfigId;
+    private Long id;
 
     /**
      * BPP编码

@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.plan.report.mapper.TLogInterfaceCheckMapper">
 
     <resultMap type="com.plan.report.domain.TLogInterfaceCheck" id="TLogInterfaceCheckResult">
-        <result property="imMainInsuranceConfigId" column="IM_MAIN_INSURANCE_CONFIG_ID"/>
+        <result property="id" column="id"/>
         <result property="fileTime" column="file_time"/>
         <result property="fileName" column="file_name"/>
         <result property="createBy" column="create_by"/>

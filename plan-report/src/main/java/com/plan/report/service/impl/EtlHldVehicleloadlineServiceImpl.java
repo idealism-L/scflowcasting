@@ -35,8 +35,8 @@ public class EtlHldVehicleloadlineServiceImpl implements IEtlHldVehicleloadlineS
      * 查询在途
      */
     @Override
-    public EtlHldVehicleloadlineVo queryById(Long imMainInsuranceConfigId){
-        return baseMapper.selectVoById(imMainInsuranceConfigId);
+    public EtlHldVehicleloadlineVo queryById(Long id){
+        return baseMapper.selectVoById(id);
     }
 
     /**
@@ -89,7 +89,7 @@ public class EtlHldVehicleloadlineServiceImpl implements IEtlHldVehicleloadlineS
         validEntityBeforeSave(add);
         boolean flag = baseMapper.insert(add) > 0;
         if (flag) {
-            bo.setImMainInsuranceConfigId(add.getImMainInsuranceConfigId());
+            bo.setId(add.getId());
         }
         return flag;
     }

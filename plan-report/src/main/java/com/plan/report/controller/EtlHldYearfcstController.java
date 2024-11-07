@@ -60,13 +60,13 @@ public class EtlHldYearfcstController extends BaseController {
     /**
      * 获取年预测详细信息
      *
-     * @param imMainInsuranceConfigId 主键
+     * @param id 主键
      */
     @SaCheckPermission("report:hldYearfcst:query")
-    @GetMapping("/{imMainInsuranceConfigId}")
+    @GetMapping("/{id}")
     public R<EtlHldYearfcstVo> getInfo(@NotNull(message = "主键不能为空")
-                                     @PathVariable Long imMainInsuranceConfigId) {
-        return R.ok(iEtlHldYearfcstService.queryById(imMainInsuranceConfigId));
+                                     @PathVariable Long id) {
+        return R.ok(iEtlHldYearfcstService.queryById(id));
     }
 
     /**
@@ -94,13 +94,13 @@ public class EtlHldYearfcstController extends BaseController {
     /**
      * 删除年预测
      *
-     * @param imMainInsuranceConfigIds 主键串
+     * @param ids 主键串
      */
     @SaCheckPermission("report:hldYearfcst:remove")
     @Log(title = "年预测", businessType = BusinessType.DELETE)
-    @DeleteMapping("/{imMainInsuranceConfigIds}")
+    @DeleteMapping("/{ids}")
     public R<Void> remove(@NotEmpty(message = "主键不能为空")
-                          @PathVariable Long[] imMainInsuranceConfigIds) {
-        return toAjax(iEtlHldYearfcstService.deleteWithValidByIds(Arrays.asList(imMainInsuranceConfigIds), true));
+                          @PathVariable Long[] ids) {
+        return toAjax(iEtlHldYearfcstService.deleteWithValidByIds(Arrays.asList(ids), true));
     }
 }

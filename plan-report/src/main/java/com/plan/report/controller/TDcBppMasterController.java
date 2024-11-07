@@ -60,13 +60,13 @@ public class TDcBppMasterController extends BaseController {
     /**
      * 获取BPP映射详细信息
      *
-     * @param imMainInsuranceConfigId 主键
+     * @param id 主键
      */
     @SaCheckPermission("report:dcBppMaster:query")
-    @GetMapping("/{imMainInsuranceConfigId}")
+    @GetMapping("/{id}")
     public R<TDcBppMasterVo> getInfo(@NotNull(message = "主键不能为空")
-                                     @PathVariable Long imMainInsuranceConfigId) {
-        return R.ok(iTDcBppMasterService.queryById(imMainInsuranceConfigId));
+                                     @PathVariable Long id) {
+        return R.ok(iTDcBppMasterService.queryById(id));
     }
 
     /**
@@ -94,13 +94,13 @@ public class TDcBppMasterController extends BaseController {
     /**
      * 删除BPP映射
      *
-     * @param imMainInsuranceConfigIds 主键串
+     * @param ids 主键串
      */
     @SaCheckPermission("report:dcBppMaster:remove")
     @Log(title = "BPP映射", businessType = BusinessType.DELETE)
-    @DeleteMapping("/{imMainInsuranceConfigIds}")
+    @DeleteMapping("/{ids}")
     public R<Void> remove(@NotEmpty(message = "主键不能为空")
-                          @PathVariable Long[] imMainInsuranceConfigIds) {
-        return toAjax(iTDcBppMasterService.deleteWithValidByIds(Arrays.asList(imMainInsuranceConfigIds), true));
+                          @PathVariable Long[] ids) {
+        return toAjax(iTDcBppMasterService.deleteWithValidByIds(Arrays.asList(ids), true));
     }
 }

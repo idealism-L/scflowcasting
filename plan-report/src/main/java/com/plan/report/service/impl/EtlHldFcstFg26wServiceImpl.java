@@ -35,8 +35,8 @@ public class EtlHldFcstFg26wServiceImpl implements IEtlHldFcstFg26wService {
      * 查询成品销售预测
      */
     @Override
-    public EtlHldFcstFg26wVo queryById(Long imMainInsuranceConfigId){
-        return baseMapper.selectVoById(imMainInsuranceConfigId);
+    public EtlHldFcstFg26wVo queryById(Long id){
+        return baseMapper.selectVoById(id);
     }
 
     /**
@@ -109,7 +109,7 @@ public class EtlHldFcstFg26wServiceImpl implements IEtlHldFcstFg26wService {
         validEntityBeforeSave(add);
         boolean flag = baseMapper.insert(add) > 0;
         if (flag) {
-            bo.setImMainInsuranceConfigId(add.getImMainInsuranceConfigId());
+            bo.setId(add.getId());
         }
         return flag;
     }

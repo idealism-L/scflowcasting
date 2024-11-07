@@ -20,7 +20,7 @@ public interface IEtlHldFcstFg26wService {
     /**
      * 查询成品销售预测
      */
-    EtlHldFcstFg26wVo queryById(Long imMainInsuranceConfigId);
+    EtlHldFcstFg26wVo queryById(Long id);
 
     /**
      * 查询成品销售预测列表

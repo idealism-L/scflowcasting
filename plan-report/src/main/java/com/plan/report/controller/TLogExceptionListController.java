@@ -60,13 +60,13 @@ public class TLogExceptionListController extends BaseController {
     /**
      * 获取接口异常信息详细信息
      *
-     * @param imMainInsuranceConfigId 主键
+     * @param id 主键
      */
     @SaCheckPermission("report:logExceptionList:query")
-    @GetMapping("/{imMainInsuranceConfigId}")
+    @GetMapping("/{id}")
     public R<TLogExceptionListVo> getInfo(@NotNull(message = "主键不能为空")
-                                     @PathVariable Long imMainInsuranceConfigId) {
-        return R.ok(iTLogExceptionListService.queryById(imMainInsuranceConfigId));
+                                     @PathVariable Long id) {
+        return R.ok(iTLogExceptionListService.queryById(id));
     }
 
     /**
@@ -94,13 +94,13 @@ public class TLogExceptionListController extends BaseController {
     /**
      * 删除接口异常信息
      *
-     * @param imMainInsuranceConfigIds 主键串
+     * @param ids 主键串
      */
     @SaCheckPermission("report:logExceptionList:remove")
     @Log(title = "接口异常信息", businessType = BusinessType.DELETE)
-    @DeleteMapping("/{imMainInsuranceConfigIds}")
+    @DeleteMapping("/{ids}")
     public R<Void> remove(@NotEmpty(message = "主键不能为空")
-                          @PathVariable Long[] imMainInsuranceConfigIds) {
-        return toAjax(iTLogExceptionListService.deleteWithValidByIds(Arrays.asList(imMainInsuranceConfigIds), true));
+                          @PathVariable Long[] ids) {
+        return toAjax(iTLogExceptionListService.deleteWithValidByIds(Arrays.asList(ids), true));
     }
 }

@@ -35,8 +35,8 @@ public class EtlHldFcstKitServiceImpl implements IEtlHldFcstKitService {
      * 查询主剂需求预测
      */
     @Override
-    public EtlHldFcstKitVo queryById(Long imMainInsuranceConfigId){
-        return baseMapper.selectVoById(imMainInsuranceConfigId);
+    public EtlHldFcstKitVo queryById(Long id){
+        return baseMapper.selectVoById(id);
     }
 
     /**
@@ -100,7 +100,7 @@ public class EtlHldFcstKitServiceImpl implements IEtlHldFcstKitService {
         validEntityBeforeSave(add);
         boolean flag = baseMapper.insert(add) > 0;
         if (flag) {
-            bo.setImMainInsuranceConfigId(add.getImMainInsuranceConfigId());
+            bo.setId(add.getId());
         }
         return flag;
     }

@@ -35,8 +35,8 @@ public class TDcFgMapServiceImpl implements ITDcFgMapService {
      * 查询成品映射
      */
     @Override
-    public TDcFgMapVo queryById(Long imMainInsuranceConfigId){
-        return baseMapper.selectVoById(imMainInsuranceConfigId);
+    public TDcFgMapVo queryById(Long id){
+        return baseMapper.selectVoById(id);
     }
 
     /**
@@ -81,7 +81,7 @@ public class TDcFgMapServiceImpl implements ITDcFgMapService {
         validEntityBeforeSave(add);
         boolean flag = baseMapper.insert(add) > 0;
         if (flag) {
-            bo.setImMainInsuranceConfigId(add.getImMainInsuranceConfigId());
+            bo.setId(add.getId());
         }
         return flag;
     }

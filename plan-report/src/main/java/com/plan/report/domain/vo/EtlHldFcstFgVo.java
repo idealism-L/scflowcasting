@@ -27,7 +27,7 @@ public class EtlHldFcstFgVo implements Serializable {
      * ID
      */
     @ExcelProperty(value = "ID")
-    private Long imMainInsuranceConfigId;
+    private Long id;
 
     /**
      * u_corporation

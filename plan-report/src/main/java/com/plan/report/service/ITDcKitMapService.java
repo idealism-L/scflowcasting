@@ -20,7 +20,7 @@ public interface ITDcKitMapService {
     /**
      * 查询溶剂映射
      */
-    TDcKitMapVo queryById(Long imMainInsuranceConfigId);
+    TDcKitMapVo queryById(Long id);
 
     /**
      * 查询溶剂映射列表

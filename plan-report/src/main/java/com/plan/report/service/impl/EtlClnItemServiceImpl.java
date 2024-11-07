@@ -35,8 +35,8 @@ public class EtlClnItemServiceImpl implements IEtlClnItemService {
      * 查询物料编码
      */
     @Override
-    public EtlClnItemVo queryById(Long imMainInsuranceConfigId){
-        return baseMapper.selectVoById(imMainInsuranceConfigId);
+    public EtlClnItemVo queryById(Long id){
+        return baseMapper.selectVoById(id);
     }
 
     /**
@@ -115,7 +115,7 @@ public class EtlClnItemServiceImpl implements IEtlClnItemService {
         validEntityBeforeSave(add);
         boolean flag = baseMapper.insert(add) > 0;
         if (flag) {
-            bo.setImMainInsuranceConfigId(add.getImMainInsuranceConfigId());
+            bo.setId(add.getId());
         }
         return flag;
     }

@@ -20,7 +20,7 @@ public interface ITFcstKit26wService {
     /**
      * 查询t_fcst_kit_26w
      */
-    TFcstKit26wVo queryById(Long imMainInsuranceConfigId);
+    TFcstKit26wVo queryById(Long id);
 
     /**
      * 查询t_fcst_kit_26w列表

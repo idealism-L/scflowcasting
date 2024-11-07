@@ -27,7 +27,7 @@ public class EtlHldInventoryVo implements Serializable {
      * ID
      */
     @ExcelProperty(value = "ID")
-    private Long imMainInsuranceConfigId;
+    private Long id;
 
     /**
      * 物料编码

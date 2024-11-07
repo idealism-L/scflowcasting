@@ -35,8 +35,8 @@ public class EtlHldYearfcstServiceImpl implements IEtlHldYearfcstService {
      * 查询年预测
      */
     @Override
-    public EtlHldYearfcstVo queryById(Long imMainInsuranceConfigId){
-        return baseMapper.selectVoById(imMainInsuranceConfigId);
+    public EtlHldYearfcstVo queryById(Long id){
+        return baseMapper.selectVoById(id);
     }
 
     /**
@@ -98,7 +98,7 @@ public class EtlHldYearfcstServiceImpl implements IEtlHldYearfcstService {
         validEntityBeforeSave(add);
         boolean flag = baseMapper.insert(add) > 0;
         if (flag) {
-            bo.setImMainInsuranceConfigId(add.getImMainInsuranceConfigId());
+            bo.setId(add.getId());
         }
         return flag;
     }

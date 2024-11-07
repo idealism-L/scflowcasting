@@ -35,8 +35,8 @@ public class TLogExceptionListServiceImpl implements ITLogExceptionListService {
      * 查询接口异常信息
      */
     @Override
-    public TLogExceptionListVo queryById(Long imMainInsuranceConfigId){
-        return baseMapper.selectVoById(imMainInsuranceConfigId);
+    public TLogExceptionListVo queryById(Long id){
+        return baseMapper.selectVoById(id);
     }
 
     /**
@@ -79,7 +79,7 @@ public class TLogExceptionListServiceImpl implements ITLogExceptionListService {
         validEntityBeforeSave(add);
         boolean flag = baseMapper.insert(add) > 0;
         if (flag) {
-            bo.setImMainInsuranceConfigId(add.getImMainInsuranceConfigId());
+            bo.setId(add.getId());
         }
         return flag;
     }

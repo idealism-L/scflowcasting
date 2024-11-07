@@ -60,13 +60,13 @@ public class TDcKitMapController extends BaseController {
     /**
      * 获取溶剂映射详细信息
      *
-     * @param imMainInsuranceConfigId 主键
+     * @param id 主键
      */
     @SaCheckPermission("report:dcKitMap:query")
-    @GetMapping("/{imMainInsuranceConfigId}")
+    @GetMapping("/{id}")
     public R<TDcKitMapVo> getInfo(@NotNull(message = "主键不能为空")
-                                     @PathVariable Long imMainInsuranceConfigId) {
-        return R.ok(iTDcKitMapService.queryById(imMainInsuranceConfigId));
+                                     @PathVariable Long id) {
+        return R.ok(iTDcKitMapService.queryById(id));
     }
 
     /**
@@ -94,13 +94,13 @@ public class TDcKitMapController extends BaseController {
     /**
      * 删除溶剂映射
      *
-     * @param imMainInsuranceConfigIds 主键串
+     * @param ids 主键串
      */
     @SaCheckPermission("report:dcKitMap:remove")
     @Log(title = "溶剂映射", businessType = BusinessType.DELETE)
-    @DeleteMapping("/{imMainInsuranceConfigIds}")
+    @DeleteMapping("/{ids}")
     public R<Void> remove(@NotEmpty(message = "主键不能为空")
-                          @PathVariable Long[] imMainInsuranceConfigIds) {
-        return toAjax(iTDcKitMapService.deleteWithValidByIds(Arrays.asList(imMainInsuranceConfigIds), true));
+                          @PathVariable Long[] ids) {
+        return toAjax(iTDcKitMapService.deleteWithValidByIds(Arrays.asList(ids), true));
     }
 }

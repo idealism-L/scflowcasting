@@ -20,7 +20,7 @@ public interface ITDcLocService {
     /**
      * 查询地点
      */
-    TDcLocVo queryById(Long imMainInsuranceConfigId);
+    TDcLocVo queryById(Long id);
 
     /**
      * 查询地点列表

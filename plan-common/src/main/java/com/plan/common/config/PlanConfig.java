@@ -12,8 +12,8 @@ import org.springframework.stereotype.Component;
 
 @Data
 @Component
-@ConfigurationProperties(prefix = "ruoyi")
-public class RuoYiConfig {
+@ConfigurationProperties(prefix = "plan")
+public class PlanConfig {
 
     /**
      * 项目名称

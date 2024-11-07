@@ -24,8 +24,8 @@ public class TDcCalendar extends BaseEntity {
     /**
      * ID
      */
-    @TableId(value = "IM_MAIN_INSURANCE_CONFIG_ID")
-    private Long imMainInsuranceConfigId;
+    @TableId(value = "id")
+    private Long id;
     /**
      * 年份
      */

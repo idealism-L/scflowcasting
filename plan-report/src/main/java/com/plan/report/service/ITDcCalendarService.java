@@ -20,7 +20,7 @@ public interface ITDcCalendarService {
     /**
      * 查询日历
      */
-    TDcCalendarVo queryById(Long imMainInsuranceConfigId);
+    TDcCalendarVo queryById(Long id);
 
     /**
      * 查询日历列表

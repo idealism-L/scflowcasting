@@ -60,13 +60,13 @@ public class TFcstFg26wController extends BaseController {
     /**
      * 获取t_fcst_fg_26w详细信息
      *
-     * @param imMainInsuranceConfigId 主键
+     * @param id 主键
      */
     @SaCheckPermission("report:fcstFg26w:query")
-    @GetMapping("/{imMainInsuranceConfigId}")
+    @GetMapping("/{id}")
     public R<TFcstFg26wVo> getInfo(@NotNull(message = "主键不能为空")
-                                     @PathVariable Long imMainInsuranceConfigId) {
-        return R.ok(iTFcstFg26wService.queryById(imMainInsuranceConfigId));
+                                     @PathVariable Long id) {
+        return R.ok(iTFcstFg26wService.queryById(id));
     }
 
     /**
@@ -94,13 +94,13 @@ public class TFcstFg26wController extends BaseController {
     /**
      * 删除t_fcst_fg_26w
      *
-     * @param imMainInsuranceConfigIds 主键串
+     * @param ids 主键串
      */
     @SaCheckPermission("report:fcstFg26w:remove")
     @Log(title = "t_fcst_fg_26w", businessType = BusinessType.DELETE)
-    @DeleteMapping("/{imMainInsuranceConfigIds}")
+    @DeleteMapping("/{ids}")
     public R<Void> remove(@NotEmpty(message = "主键不能为空")
-                          @PathVariable Long[] imMainInsuranceConfigIds) {
-        return toAjax(iTFcstFg26wService.deleteWithValidByIds(Arrays.asList(imMainInsuranceConfigIds), true));
+                          @PathVariable Long[] ids) {
+        return toAjax(iTFcstFg26wService.deleteWithValidByIds(Arrays.asList(ids), true));
     }
 }

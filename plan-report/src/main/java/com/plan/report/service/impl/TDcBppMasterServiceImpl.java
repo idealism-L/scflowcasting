@@ -35,8 +35,8 @@ public class TDcBppMasterServiceImpl implements ITDcBppMasterService {
      * 查询BPP映射
      */
     @Override
-    public TDcBppMasterVo queryById(Long imMainInsuranceConfigId){
-        return baseMapper.selectVoById(imMainInsuranceConfigId);
+    public TDcBppMasterVo queryById(Long id){
+        return baseMapper.selectVoById(id);
     }
 
     /**
@@ -90,7 +90,7 @@ public class TDcBppMasterServiceImpl implements ITDcBppMasterService {
         validEntityBeforeSave(add);
         boolean flag = baseMapper.insert(add) > 0;
         if (flag) {
-            bo.setImMainInsuranceConfigId(add.getImMainInsuranceConfigId());
+            bo.setId(add.getId());
         }
         return flag;
     }

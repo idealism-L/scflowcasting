@@ -20,7 +20,7 @@ public interface ITLogInterfaceCheckService {
     /**
      * 查询预测接口检查
      */
-    TLogInterfaceCheckVo queryById(Long imMainInsuranceConfigId);
+    TLogInterfaceCheckVo queryById(Long id);
 
     /**
      * 查询预测接口检查列表

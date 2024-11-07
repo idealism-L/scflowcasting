@@ -60,13 +60,13 @@ public class EtlHldInventoryController extends BaseController {
     /**
      * 获取库存详细信息
      *
-     * @param imMainInsuranceConfigId 主键
+     * @param id 主键
      */
     @SaCheckPermission("report:hldInventory:query")
-    @GetMapping("/{imMainInsuranceConfigId}")
+    @GetMapping("/{id}")
     public R<EtlHldInventoryVo> getInfo(@NotNull(message = "主键不能为空")
-                                     @PathVariable Long imMainInsuranceConfigId) {
-        return R.ok(iEtlHldInventoryService.queryById(imMainInsuranceConfigId));
+                                     @PathVariable Long id) {
+        return R.ok(iEtlHldInventoryService.queryById(id));
     }
 
     /**
@@ -94,13 +94,13 @@ public class EtlHldInventoryController extends BaseController {
     /**
      * 删除库存
      *
-     * @param imMainInsuranceConfigIds 主键串
+     * @param ids 主键串
      */
     @SaCheckPermission("report:hldInventory:remove")
     @Log(title = "库存", businessType = BusinessType.DELETE)
-    @DeleteMapping("/{imMainInsuranceConfigIds}")
+    @DeleteMapping("/{ids}")
     public R<Void> remove(@NotEmpty(message = "主键不能为空")
-                          @PathVariable Long[] imMainInsuranceConfigIds) {
-        return toAjax(iEtlHldInventoryService.deleteWithValidByIds(Arrays.asList(imMainInsuranceConfigIds), true));
+                          @PathVariable Long[] ids) {
+        return toAjax(iEtlHldInventoryService.deleteWithValidByIds(Arrays.asList(ids), true));
     }
 }

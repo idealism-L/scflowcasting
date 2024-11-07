@@ -20,7 +20,7 @@ public interface ITDcFgMapService {
     /**
      * 查询成品映射
      */
-    TDcFgMapVo queryById(Long imMainInsuranceConfigId);
+    TDcFgMapVo queryById(Long id);
 
     /**
      * 查询成品映射列表

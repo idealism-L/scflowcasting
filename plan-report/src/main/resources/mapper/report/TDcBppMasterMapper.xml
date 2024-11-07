@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.plan.report.mapper.TDcBppMasterMapper">
 
     <resultMap type="com.plan.report.domain.TDcBppMaster" id="TDcBppMasterResult">
-        <result property="imMainInsuranceConfigId" column="IM_MAIN_INSURANCE_CONFIG_ID"/>
+        <result property="id" column="id"/>
         <result property="bppCode" column="bpp_code"/>
         <result property="bppDescr" column="bpp_descr"/>
         <result property="uCategory" column="u_category"/>

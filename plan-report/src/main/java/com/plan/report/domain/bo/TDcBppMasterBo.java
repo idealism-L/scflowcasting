@@ -25,7 +25,7 @@ public class TDcBppMasterBo extends BaseEntity {
      * ID
      */
     @NotNull(message = "ID不能为空", groups = { EditGroup.class })
-    private Long imMainInsuranceConfigId;
+    private Long id;
 
     /**
      * BPP编码

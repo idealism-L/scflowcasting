@@ -24,7 +24,7 @@ public class TDcLocVo implements Serializable {
      * ID
      */
     @ExcelProperty(value = "ID")
-    private Long imMainInsuranceConfigId;
+    private Long id;
 
     /**
      * 地点名称

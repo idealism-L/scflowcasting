@@ -35,8 +35,8 @@ public class TFcstFg26wServiceImpl implements ITFcstFg26wService {
      * 查询t_fcst_fg_26w
      */
     @Override
-    public TFcstFg26wVo queryById(Long imMainInsuranceConfigId){
-        return baseMapper.selectVoById(imMainInsuranceConfigId);
+    public TFcstFg26wVo queryById(Long id){
+        return baseMapper.selectVoById(id);
     }
 
     /**
@@ -109,7 +109,7 @@ public class TFcstFg26wServiceImpl implements ITFcstFg26wService {
         validEntityBeforeSave(add);
         boolean flag = baseMapper.insert(add) > 0;
         if (flag) {
-            bo.setImMainInsuranceConfigId(add.getImMainInsuranceConfigId());
+            bo.setId(add.getId());
         }
         return flag;
     }

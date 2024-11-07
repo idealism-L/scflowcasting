@@ -35,8 +35,8 @@ public class TDcLocServiceImpl implements ITDcLocService {
      * 查询地点
      */
     @Override
-    public TDcLocVo queryById(Long imMainInsuranceConfigId){
-        return baseMapper.selectVoById(imMainInsuranceConfigId);
+    public TDcLocVo queryById(Long id){
+        return baseMapper.selectVoById(id);
     }
 
     /**
@@ -84,7 +84,7 @@ public class TDcLocServiceImpl implements ITDcLocService {
         validEntityBeforeSave(add);
         boolean flag = baseMapper.insert(add) > 0;
         if (flag) {
-            bo.setImMainInsuranceConfigId(add.getImMainInsuranceConfigId());
+            bo.setId(add.getId());
         }
         return flag;
     }

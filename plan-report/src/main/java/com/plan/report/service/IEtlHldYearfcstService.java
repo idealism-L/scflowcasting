@@ -20,7 +20,7 @@ public interface IEtlHldYearfcstService {
     /**
      * 查询年预测
      */
-    EtlHldYearfcstVo queryById(Long imMainInsuranceConfigId);
+    EtlHldYearfcstVo queryById(Long id);
 
     /**
      * 查询年预测列表

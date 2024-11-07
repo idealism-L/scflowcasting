@@ -60,13 +60,13 @@ public class EtlHldVehicleloadlineController extends BaseController {
     /**
      * 获取在途详细信息
      *
-     * @param imMainInsuranceConfigId 主键
+     * @param id 主键
      */
     @SaCheckPermission("report:hldVehicleloadline:query")
-    @GetMapping("/{imMainInsuranceConfigId}")
+    @GetMapping("/{id}")
     public R<EtlHldVehicleloadlineVo> getInfo(@NotNull(message = "主键不能为空")
-                                     @PathVariable Long imMainInsuranceConfigId) {
-        return R.ok(iEtlHldVehicleloadlineService.queryById(imMainInsuranceConfigId));
+                                     @PathVariable Long id) {
+        return R.ok(iEtlHldVehicleloadlineService.queryById(id));
     }
 
     /**
@@ -94,13 +94,13 @@ public class EtlHldVehicleloadlineController extends BaseController {
     /**
      * 删除在途
      *
-     * @param imMainInsuranceConfigIds 主键串
+     * @param ids 主键串
      */
     @SaCheckPermission("report:hldVehicleloadline:remove")
     @Log(title = "在途", businessType = BusinessType.DELETE)
-    @DeleteMapping("/{imMainInsuranceConfigIds}")
+    @DeleteMapping("/{ids}")
     public R<Void> remove(@NotEmpty(message = "主键不能为空")
-                          @PathVariable Long[] imMainInsuranceConfigIds) {
-        return toAjax(iEtlHldVehicleloadlineService.deleteWithValidByIds(Arrays.asList(imMainInsuranceConfigIds), true));
+                          @PathVariable Long[] ids) {
+        return toAjax(iEtlHldVehicleloadlineService.deleteWithValidByIds(Arrays.asList(ids), true));
     }
 }

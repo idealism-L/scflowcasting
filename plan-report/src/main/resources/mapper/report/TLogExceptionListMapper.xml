@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.plan.report.mapper.TLogExceptionListMapper">
 
     <resultMap type="com.plan.report.domain.TLogExceptionList" id="TLogExceptionListResult">
-        <result property="imMainInsuranceConfigId" column="IM_MAIN_INSURANCE_CONFIG_ID"/>
+        <result property="id" column="id"/>
         <result property="corporation" column="corporation"/>
         <result property="fileName" column="file_name"/>
         <result property="uItemPattern" column="u_item_pattern"/>

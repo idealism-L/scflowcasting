@@ -25,7 +25,7 @@ public class TDcFgMapVo implements Serializable {
      * ID
      */
     @ExcelProperty(value = "ID")
-    private Long imMainInsuranceConfigId;
+    private Long id;
 
     /**
      * 装瓶集团

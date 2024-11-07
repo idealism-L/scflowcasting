@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.plan.report.mapper.TDcLocMapper">
 
     <resultMap type="com.plan.report.domain.TDcLoc" id="TDcLocResult">
-        <result property="imMainInsuranceConfigId" column="IM_MAIN_INSURANCE_CONFIG_ID"/>
+        <result property="id" column="id"/>
         <result property="locName" column="loc_name"/>
         <result property="loc" column="loc"/>
         <result property="descr" column="descr"/>

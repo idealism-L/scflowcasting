@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.plan.report.mapper.EtlHldFcstMapper">
 
     <resultMap type="com.plan.report.domain.EtlHldFcst" id="EtlHldFcstResult">
-        <result property="imMainInsuranceConfigId" column="IM_MAIN_INSURANCE_CONFIG_ID"/>
+        <result property="id" column="id"/>
         <result property="dmdunit" column="dmdunit"/>
         <result property="dmdgroup" column="dmdgroup"/>
         <result property="loc" column="loc"/>

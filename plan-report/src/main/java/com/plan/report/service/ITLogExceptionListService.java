@@ -20,7 +20,7 @@ public interface ITLogExceptionListService {
     /**
      * 查询接口异常信息
      */
-    TLogExceptionListVo queryById(Long imMainInsuranceConfigId);
+    TLogExceptionListVo queryById(Long id);
 
     /**
      * 查询接口异常信息列表

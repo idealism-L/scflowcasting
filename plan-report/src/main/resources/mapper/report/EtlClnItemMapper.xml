@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="com.plan.report.mapper.EtlClnItemMapper">
 
     <resultMap type="com.plan.report.domain.EtlClnItem" id="EtlClnItemResult">
-        <result property="imMainInsuranceConfigId" column="IM_MAIN_INSURANCE_CONFIG_ID"/>
+        <result property="id" column="id"/>
         <result property="item" column="item"/>
         <result property="descr" column="descr"/>
         <result property="uDescrEn" column="u_descr_en"/>

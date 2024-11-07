@@ -20,7 +20,7 @@ public interface ITDcBppMasterService {
     /**
      * 查询BPP映射
      */
-    TDcBppMasterVo queryById(Long imMainInsuranceConfigId);
+    TDcBppMasterVo queryById(Long id);
 
     /**
      * 查询BPP映射列表

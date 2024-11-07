@@ -20,7 +20,7 @@ public interface IEtlClnItemService {
     /**
      * 查询物料编码
      */
-    EtlClnItemVo queryById(Long imMainInsuranceConfigId);
+    EtlClnItemVo queryById(Long id);
 
     /**
      * 查询物料编码列表

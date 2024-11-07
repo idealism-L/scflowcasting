@@ -20,7 +20,7 @@ public interface ITDcItemService {
     /**
      * 查询物料
      */
-    TDcItemVo queryById(Long imMainInsuranceConfigId);
+    TDcItemVo queryById(Long id);
 
     /**
      * 查询物料列表
