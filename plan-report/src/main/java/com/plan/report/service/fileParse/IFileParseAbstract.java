@@ -1,11 +1,14 @@
 package com.plan.report.service.fileParse;
 
 import com.plan.common.excel.ExcelResult;
+import com.plan.common.exception.ServiceException;
 import com.plan.common.model.BaseResultModel;
 import com.plan.common.model.ResultModel;
 import com.plan.common.utils.StringUtils;
 import com.plan.common.utils.poi.ExcelUtil;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import java.io.InputStream;
@@ -26,6 +29,7 @@ public abstract class IFileParseAbstract implements IFileParseService{
     public abstract void saveFileData(List list);
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public ResultModel fileParse(InputStream inputStream, String fileName) {
         Class clazz = this.getExcelObjectClass();
         if(Objects.isNull(clazz)){
