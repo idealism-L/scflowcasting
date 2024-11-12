@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plan.report.mapper.ScsKitMapMapper">
+
+    <resultMap type="com.plan.report.domain.ScsKitMap" id="ScsKitMapResult">
+        <result property="id" column="id"/>
+        <result property="itemId" column="item_id"/>
+        <result property="item" column="item"/>
+        <result property="locId" column="loc_id"/>
+        <result property="loc" column="loc"/>
+        <result property="kitItemId" column="kit_item_id"/>
+        <result property="kitItem" column="kit_item"/>
+        <result property="convfactor" column="convfactor"/>
+        <result property="productHierarchy" column="product_hierarchy"/>
+        <result property="uFlag" column="u_flag"/>
+        <result property="uComment" column="u_comment"/>
+        <result property="versionNo" column="version_no"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+
+</mapper>

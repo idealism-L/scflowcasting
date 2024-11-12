@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plan.report.mapper.ScsFgMapMapper">
+
+    <resultMap type="com.plan.report.domain.ScsFgMap" id="ScsFgMapResult">
+        <result property="id" column="id"/>
+        <result property="itemId" column="item_id"/>
+        <result property="item" column="item"/>
+        <result property="fgItemId" column="fg_item_id"/>
+        <result property="fgItem" column="fg_item"/>
+        <result property="convfactor" column="convfactor"/>
+        <result property="uComment" column="u_comment"/>
+        <result property="uFlag" column="u_flag"/>
+        <result property="keyProductionFlag" column="key_production_flag"/>
+        <result property="versionNo" column="version_no"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+
+</mapper>

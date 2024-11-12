@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plan.report.mapper.ScsIfClnItemMapper">
+
+    <resultMap type="com.plan.report.domain.ScsIfClnItem" id="ScsIfClnItemResult">
+        <result property="id" column="id"/>
+        <result property="item" column="item"/>
+        <result property="descr" column="descr"/>
+        <result property="uDescrEn" column="u_descr_en"/>
+        <result property="uDescrShort" column="u_descr_short"/>
+        <result property="uCategory" column="u_category"/>
+        <result property="uCategoryDescr" column="u_category_descr"/>
+        <result property="uSubcategory" column="u_subcategory"/>
+        <result property="uSubcategoryDescr" column="u_subcategory_descr"/>
+        <result property="uBrand" column="u_brand"/>
+        <result property="uBrandDescr" column="u_brand_descr"/>
+        <result property="uFlavor" column="u_flavor"/>
+        <result property="uFlavorDescr" column="u_flavor_descr"/>
+        <result property="uPackage" column="u_package"/>
+        <result property="uPackageDescr" column="u_package_descr"/>
+        <result property="uSubflavor" column="u_subflavor"/>
+        <result property="uSubflavorDescr" column="u_subflavor_descr"/>
+        <result property="uPackageCap" column="u_package_cap"/>
+        <result property="uPackageCapDescr" column="u_package_cap_descr"/>
+        <result property="uScclCode" column="u_sccl_code"/>
+        <result property="uCblCode" column="u_cbl_code"/>
+        <result property="uZhCode" column="u_zh_code"/>
+        <result property="uFamily" column="u_family"/>
+        <result property="uSpec" column="u_spec"/>
+        <result property="uSpecDescr" column="u_spec_descr"/>
+        <result property="uItemPattern" column="u_item_pattern"/>
+        <result property="uCorporation" column="u_corporation"/>
+        <result property="uFruitCategory" column="u_fruit_category"/>
+        <result property="uUom" column="u_uom"/>
+        <result property="uUomRate1" column="u_uom_rate1"/>
+        <result property="uUomRate2" column="u_uom_rate2"/>
+        <result property="uUc" column="u_uc"/>
+        <result property="uPc" column="u_pc"/>
+        <result property="uBppCode" column="u_bpp_code"/>
+        <result property="uHierarchy2" column="u_hierarchy2"/>
+        <result property="uCarbonic" column="u_carbonic"/>
+        <result property="uAbc" column="u_abc"/>
+        <result property="uNew" column="u_new"/>
+        <result property="uRegion" column="u_region"/>
+        <result property="uStatus" column="u_status"/>
+        <result property="uFileName" column="u_file_name"/>
+        <result property="uEditdate" column="u_editdate"/>
+        <result property="createTime" column="create_time"/>
+    </resultMap>
+
+
+</mapper>

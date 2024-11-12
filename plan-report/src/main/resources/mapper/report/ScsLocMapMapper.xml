@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plan.report.mapper.ScsLocMapMapper">
+
+    <resultMap type="com.plan.report.domain.ScsLocMap" id="ScsLocMapResult">
+        <result property="id" column="id"/>
+        <result property="corporation" column="corporation"/>
+        <result property="uCodeType" column="u_code_type"/>
+        <result property="uOriginalCode" column="u_original_code"/>
+        <result property="loc" column="loc"/>
+        <result property="uOwnCode" column="u_own_code"/>
+        <result property="versionNo" column="version_no"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="createBy" column="create_by"/>
+    </resultMap>
+
+
+</mapper>

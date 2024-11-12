@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plan.report.mapper.ScsYearfcstMapper">
+
+    <resultMap type="com.plan.report.domain.ScsYearfcst" id="ScsYearfcstResult">
+        <result property="id" column="id"/>
+        <result property="itemCode" column="item_code"/>
+        <result property="descr" column="descr"/>
+        <result property="descrEn" column="descr_en"/>
+        <result property="loc" column="loc"/>
+        <result property="uom" column="uom"/>
+        <result property="startdate" column="startdate"/>
+        <result property="uM1" column="u_m1"/>
+        <result property="uM2" column="u_m2"/>
+        <result property="uM3" column="u_m3"/>
+        <result property="uM4" column="u_m4"/>
+        <result property="uM5" column="u_m5"/>
+        <result property="uM6" column="u_m6"/>
+        <result property="uM7" column="u_m7"/>
+        <result property="uM8" column="u_m8"/>
+        <result property="uM9" column="u_m9"/>
+        <result property="uM10" column="u_m10"/>
+        <result property="uM11" column="u_m11"/>
+        <result property="uM12" column="u_m12"/>
+        <result property="uM13" column="u_m13"/>
+        <result property="uM14" column="u_m14"/>
+        <result property="uM15" column="u_m15"/>
+        <result property="uM16" column="u_m16"/>
+        <result property="itemPattern" column="item_pattern"/>
+        <result property="corporation" column="corporation"/>
+        <result property="uFlag" column="u_flag"/>
+        <result property="uComment" column="u_comment"/>
+        <result property="fileName" column="file_name"/>
+        <result property="editdate" column="editdate"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="versionNo" column="version_no"/>
+    </resultMap>
+
+
+</mapper>

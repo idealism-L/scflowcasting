@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plan.report.mapper.ScsBppMasterMapper">
+
+    <resultMap type="com.plan.report.domain.ScsBppMaster" id="ScsBppMasterResult">
+        <result property="id" column="id"/>
+        <result property="bppCode" column="bpp_code"/>
+        <result property="bppDescr" column="bpp_descr"/>
+        <result property="category" column="category"/>
+        <result property="categoryDescr" column="category_descr"/>
+        <result property="subcategory" column="subcategory"/>
+        <result property="subcategoryDescr" column="subcategory_descr"/>
+        <result property="brand" column="brand"/>
+        <result property="brandDescr" column="brand_descr"/>
+        <result property="flavor" column="flavor"/>
+        <result property="flavorDescr" column="flavor_descr"/>
+        <result property="package" column="package"/>
+        <result property="packageDescr" column="package_descr"/>
+        <result property="beverage" column="beverage"/>
+        <result property="status" column="status"/>
+        <result property="fgKitRate" column="fg_kit_rate"/>
+        <result property="ucRate" column="uc_rate"/>
+        <result property="versionNo" column="version_no"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+
+</mapper>

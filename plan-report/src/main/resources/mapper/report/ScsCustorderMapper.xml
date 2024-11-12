@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.plan.report.mapper.ScsCustorderMapper">
+
+    <resultMap type="com.plan.report.domain.ScsCustorder" id="ScsCustorderResult">
+        <result property="id" column="id"/>
+        <result property="itemCode" column="item_code"/>
+        <result property="loc" column="loc"/>
+        <result property="shipdate" column="shipdate"/>
+        <result property="orderid" column="orderid"/>
+        <result property="qty" column="qty"/>
+        <result property="itemPattern" column="item_pattern"/>
+        <result property="corporation" column="corporation"/>
+        <result property="uComment" column="u_comment"/>
+        <result property="fileName" column="file_name"/>
+        <result property="editdate" column="editdate"/>
+        <result property="createBy" column="create_by"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateBy" column="update_by"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="versionNo" column="version_no"/>
+    </resultMap>
+
+
+</mapper>
