@@ -1,21 +1,18 @@
 package com.plan.report.domain.vo;
 
-import java.math.BigDecimal;
-import java.util.Date;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.alibaba.excel.annotation.ExcelIgnoreUnannotated;
 import com.alibaba.excel.annotation.ExcelProperty;
-import com.plan.common.annotation.ExcelDictFormat;
-import com.plan.common.convert.ExcelDictConvert;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * scs_fg_fcst_history视图对象 scs_fg_fcst_history
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-13
  */
 @Data
 @ExcelIgnoreUnannotated
@@ -28,6 +25,12 @@ public class ScsFgFcstHistoryVo implements Serializable {
      */
     @ExcelProperty(value = "ID")
     private Long id;
+
+    /**
+     * 来源ID
+     */
+    @ExcelProperty(value = "来源ID")
+    private Long parentId;
 
     /**
      * 装瓶集团

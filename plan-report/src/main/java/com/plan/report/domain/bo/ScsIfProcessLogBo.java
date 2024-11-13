@@ -14,7 +14,7 @@ import java.util.Date;
  * scs_if_process_log业务对象 scs_if_process_log
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-13
  */
 
 @Data
@@ -44,6 +44,12 @@ public class ScsIfProcessLogBo extends BaseEntity {
      */
     @NotBlank(message = "ETL表名不能为空", groups = { AddGroup.class, EditGroup.class })
     private String etlTableName;
+
+    /**
+     * 区分(KG/KIT)
+     */
+    @NotBlank(message = "区分(KG/KIT)不能为空", groups = { AddGroup.class, EditGroup.class })
+    private String itemPattern;
 
 
 }

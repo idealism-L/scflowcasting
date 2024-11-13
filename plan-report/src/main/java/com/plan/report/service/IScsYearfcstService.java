@@ -13,7 +13,7 @@ import java.util.List;
  * scs_yearfcstService接口
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-13
  */
 public interface IScsYearfcstService {
 

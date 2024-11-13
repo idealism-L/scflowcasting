@@ -15,7 +15,7 @@ import java.util.Date;
  * scs_kit_fcst_history业务对象 scs_kit_fcst_history
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-13
  */
 
 @Data
@@ -27,6 +27,12 @@ public class ScsKitFcstHistoryBo extends BaseEntity {
      */
     @NotNull(message = "ID不能为空", groups = { EditGroup.class })
     private Long id;
+
+    /**
+     * 来源ID
+     */
+    @NotNull(message = "来源ID不能为空", groups = { AddGroup.class, EditGroup.class })
+    private Long parentId;
 
     /**
      * 装瓶集团

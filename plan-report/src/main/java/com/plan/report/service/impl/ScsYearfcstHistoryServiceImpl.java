@@ -23,7 +23,7 @@ import java.util.Map;
  * scs_yearfcst_historyService业务层处理
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-13
  */
 @RequiredArgsConstructor
 @Service
@@ -61,6 +61,7 @@ public class ScsYearfcstHistoryServiceImpl implements IScsYearfcstHistoryService
     private LambdaQueryWrapper<ScsYearfcstHistory> buildQueryWrapper(ScsYearfcstHistoryBo bo) {
         Map<String, Object> params = bo.getParams();
         LambdaQueryWrapper<ScsYearfcstHistory> lqw = Wrappers.lambdaQuery();
+        lqw.eq(bo.getParentId() != null, ScsYearfcstHistory::getParentId, bo.getParentId());
         lqw.eq(StringUtils.isNotBlank(bo.getItemCode()), ScsYearfcstHistory::getItemCode, bo.getItemCode());
         lqw.eq(StringUtils.isNotBlank(bo.getDescr()), ScsYearfcstHistory::getDescr, bo.getDescr());
         lqw.eq(StringUtils.isNotBlank(bo.getDescrEn()), ScsYearfcstHistory::getDescrEn, bo.getDescrEn());

@@ -15,7 +15,7 @@ import java.io.Serializable;
  * scs_kit_fcst视图对象 scs_kit_fcst
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-13
  */
 @Data
 @ExcelIgnoreUnannotated
@@ -28,6 +28,12 @@ public class ScsKitFcstVo implements Serializable {
      */
     @ExcelProperty(value = "ID")
     private Long id;
+
+    /**
+     * 来源ID
+     */
+    @ExcelProperty(value = "来源ID")
+    private Long parentId;
 
     /**
      * 装瓶集团

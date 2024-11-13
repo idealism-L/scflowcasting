@@ -23,7 +23,7 @@ import java.util.Map;
  * scs_if_process_logService业务层处理
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-13
  */
 @RequiredArgsConstructor
 @Service
@@ -64,6 +64,7 @@ public class ScsIfProcessLogServiceImpl implements IScsIfProcessLogService {
         lqw.eq(bo.getFileTime() != null, ScsIfProcessLog::getFileTime, bo.getFileTime());
         lqw.like(StringUtils.isNotBlank(bo.getFileName()), ScsIfProcessLog::getFileName, bo.getFileName());
         lqw.like(StringUtils.isNotBlank(bo.getEtlTableName()), ScsIfProcessLog::getEtlTableName, bo.getEtlTableName());
+        lqw.eq(StringUtils.isNotBlank(bo.getItemPattern()), ScsIfProcessLog::getItemPattern, bo.getItemPattern());
         return lqw;
     }
 

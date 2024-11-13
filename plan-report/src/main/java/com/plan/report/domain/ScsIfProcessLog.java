@@ -12,7 +12,7 @@ import java.util.Date;
  * scs_if_process_log对象 scs_if_process_log
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-13
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -38,5 +38,9 @@ public class ScsIfProcessLog extends BaseEntity {
      * ETL表名
      */
     private String etlTableName;
+    /**
+     * 区分(KG/KIT)
+     */
+    private String itemPattern;
 
 }

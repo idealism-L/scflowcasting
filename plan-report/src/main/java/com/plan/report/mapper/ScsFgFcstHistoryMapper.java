@@ -8,7 +8,7 @@ import com.plan.common.core.mapper.BaseMapperPlus;
  * scs_fg_fcst_historyMapper接口
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-13
  */
 public interface ScsFgFcstHistoryMapper extends BaseMapperPlus<ScsFgFcstHistoryMapper, ScsFgFcstHistory, ScsFgFcstHistoryVo> {
 

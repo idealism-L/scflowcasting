@@ -14,7 +14,7 @@ import java.io.Serializable;
  * scs_if_process_log视图对象 scs_if_process_log
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-13
  */
 @Data
 @ExcelIgnoreUnannotated
@@ -45,6 +45,12 @@ public class ScsIfProcessLogVo implements Serializable {
      */
     @ExcelProperty(value = "ETL表名")
     private String etlTableName;
+
+    /**
+     * 区分(KG/KIT)
+     */
+    @ExcelProperty(value = "区分(KG/KIT)")
+    private String itemPattern;
 
 
 }

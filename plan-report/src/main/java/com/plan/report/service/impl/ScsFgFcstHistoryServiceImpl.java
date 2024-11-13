@@ -23,7 +23,7 @@ import java.util.Map;
  * scs_fg_fcst_historyService业务层处理
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-13
  */
 @RequiredArgsConstructor
 @Service
@@ -61,6 +61,7 @@ public class ScsFgFcstHistoryServiceImpl implements IScsFgFcstHistoryService {
     private LambdaQueryWrapper<ScsFgFcstHistory> buildQueryWrapper(ScsFgFcstHistoryBo bo) {
         Map<String, Object> params = bo.getParams();
         LambdaQueryWrapper<ScsFgFcstHistory> lqw = Wrappers.lambdaQuery();
+        lqw.eq(bo.getParentId() != null, ScsFgFcstHistory::getParentId, bo.getParentId());
         lqw.eq(StringUtils.isNotBlank(bo.getCorporation()), ScsFgFcstHistory::getCorporation, bo.getCorporation());
         lqw.eq(StringUtils.isNotBlank(bo.getItemCode()), ScsFgFcstHistory::getItemCode, bo.getItemCode());
         lqw.eq(StringUtils.isNotBlank(bo.getDmdgroup()), ScsFgFcstHistory::getDmdgroup, bo.getDmdgroup());

@@ -1,10 +1,9 @@
 package com.plan.report.service;
 
-import com.plan.report.domain.ScsFgFcstHistory;
-import com.plan.report.domain.vo.ScsFgFcstHistoryVo;
-import com.plan.report.domain.bo.ScsFgFcstHistoryBo;
-import com.plan.common.core.page.TableDataInfo;
 import com.plan.common.core.domain.PageQuery;
+import com.plan.common.core.page.TableDataInfo;
+import com.plan.report.domain.bo.ScsFgFcstHistoryBo;
+import com.plan.report.domain.vo.ScsFgFcstHistoryVo;
 
 import java.util.Collection;
 import java.util.List;
@@ -13,7 +12,7 @@ import java.util.List;
  * scs_fg_fcst_historyService接口
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-13
  */
 public interface IScsFgFcstHistoryService {
 

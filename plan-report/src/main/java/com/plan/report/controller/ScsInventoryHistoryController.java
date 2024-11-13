@@ -1,33 +1,34 @@
 package com.plan.report.controller;
 
-import java.util.List;
-import java.util.Arrays;
-
-import lombok.RequiredArgsConstructor;
-import javax.servlet.http.HttpServletResponse;
-import javax.validation.constraints.*;
 import cn.dev33.satoken.annotation.SaCheckPermission;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.validation.annotation.Validated;
-import com.plan.common.annotation.RepeatSubmit;
 import com.plan.common.annotation.Log;
+import com.plan.common.annotation.RepeatSubmit;
 import com.plan.common.core.controller.BaseController;
 import com.plan.common.core.domain.PageQuery;
 import com.plan.common.core.domain.R;
+import com.plan.common.core.page.TableDataInfo;
 import com.plan.common.core.validate.AddGroup;
 import com.plan.common.core.validate.EditGroup;
 import com.plan.common.enums.BusinessType;
 import com.plan.common.utils.poi.ExcelUtil;
-import com.plan.report.domain.vo.ScsInventoryHistoryVo;
 import com.plan.report.domain.bo.ScsInventoryHistoryBo;
+import com.plan.report.domain.vo.ScsInventoryHistoryVo;
 import com.plan.report.service.IScsInventoryHistoryService;
-import com.plan.common.core.page.TableDataInfo;
+import lombok.RequiredArgsConstructor;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletResponse;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * scs_inventory_history
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-13
  */
 @Validated
 @RequiredArgsConstructor

@@ -13,7 +13,7 @@ import java.util.Date;
  * scs_kit_fcst对象 scs_kit_fcst
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-13
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -27,6 +27,10 @@ public class ScsKitFcst extends BaseEntity {
      */
     @TableId(value = "id")
     private Long id;
+    /**
+     * 来源ID
+     */
+    private Long parentId;
     /**
      * 装瓶集团
      */
