@@ -15,7 +15,7 @@ import java.util.Date;
  * scs_vehicleloadline业务对象 scs_vehicleloadline
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-14
  */
 
 @Data
@@ -77,16 +77,10 @@ public class ScsVehicleloadlineBo extends BaseEntity {
     private Date schedarrivdate;
 
     /**
-     * 实际在途+计划交付(SU)
+     * 实际在途
      */
-    @NotNull(message = "实际在途+计划交付(SU)不能为空", groups = { AddGroup.class, EditGroup.class })
-    private BigDecimal actualSuQty;
-
-    /**
-     * 实际在途+计划交付(UC)
-     */
-    @NotNull(message = "实际在途+计划交付(UC)不能为空", groups = { AddGroup.class, EditGroup.class })
-    private BigDecimal actualUcQty;
+    @NotNull(message = "实际在途不能为空", groups = { AddGroup.class, EditGroup.class })
+    private BigDecimal actualQty;
 
     /**
      * 实际在途(SU)

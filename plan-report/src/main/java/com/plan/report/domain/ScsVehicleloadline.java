@@ -13,7 +13,7 @@ import java.util.Date;
  * scs_vehicleloadline对象 scs_vehicleloadline
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-14
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -60,13 +60,9 @@ public class ScsVehicleloadline extends BaseEntity {
      */
     private Date schedarrivdate;
     /**
-     * 实际在途+计划交付(SU)
+     * 实际在途
      */
-    private BigDecimal actualSuQty;
-    /**
-     * 实际在途+计划交付(UC)
-     */
-    private BigDecimal actualUcQty;
+    private BigDecimal actualQty;
     /**
      * 实际在途(SU)
      */

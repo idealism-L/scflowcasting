@@ -1,27 +1,28 @@
 package com.plan.report.controller;
 
-import java.util.List;
-import java.util.Arrays;
-
-import lombok.RequiredArgsConstructor;
-import javax.servlet.http.HttpServletResponse;
-import javax.validation.constraints.*;
 import cn.dev33.satoken.annotation.SaCheckPermission;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.validation.annotation.Validated;
-import com.plan.common.annotation.RepeatSubmit;
 import com.plan.common.annotation.Log;
+import com.plan.common.annotation.RepeatSubmit;
 import com.plan.common.core.controller.BaseController;
 import com.plan.common.core.domain.PageQuery;
 import com.plan.common.core.domain.R;
+import com.plan.common.core.page.TableDataInfo;
 import com.plan.common.core.validate.AddGroup;
 import com.plan.common.core.validate.EditGroup;
 import com.plan.common.enums.BusinessType;
 import com.plan.common.utils.poi.ExcelUtil;
-import com.plan.report.domain.vo.ScsLocVo;
 import com.plan.report.domain.bo.ScsLocBo;
+import com.plan.report.domain.vo.ScsLocVo;
 import com.plan.report.service.IScsLocService;
-import com.plan.common.core.page.TableDataInfo;
+import lombok.RequiredArgsConstructor;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletResponse;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * scs_loc
@@ -44,6 +45,15 @@ public class ScsLocController extends BaseController {
     @GetMapping("/list")
     public TableDataInfo<ScsLocVo> list(ScsLocBo bo, PageQuery pageQuery) {
         return iScsLocService.queryPageList(bo, pageQuery);
+    }
+
+    /**
+     * 根据集团查地点
+     */
+    @SaCheckPermission("report:loc:listByCorporation")
+    @GetMapping("/listByCorporation")
+    public List<String> listByCorporation(ScsLocBo bo) {
+        return iScsLocService.listByCorporation(bo);
     }
 
     /**

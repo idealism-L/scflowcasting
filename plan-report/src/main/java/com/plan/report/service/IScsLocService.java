@@ -1,10 +1,9 @@
 package com.plan.report.service;
 
-import com.plan.report.domain.ScsLoc;
-import com.plan.report.domain.vo.ScsLocVo;
-import com.plan.report.domain.bo.ScsLocBo;
-import com.plan.common.core.page.TableDataInfo;
 import com.plan.common.core.domain.PageQuery;
+import com.plan.common.core.page.TableDataInfo;
+import com.plan.report.domain.bo.ScsLocBo;
+import com.plan.report.domain.vo.ScsLocVo;
 
 import java.util.Collection;
 import java.util.List;
@@ -26,6 +25,12 @@ public interface IScsLocService {
      * 查询scs_loc列表
      */
     TableDataInfo<ScsLocVo> queryPageList(ScsLocBo bo, PageQuery pageQuery);
+
+
+    /**
+     * 根据集团查地点
+     */
+    List<String> listByCorporation(ScsLocBo bo);
 
     /**
      * 查询scs_loc列表

@@ -15,6 +15,7 @@ import com.plan.report.service.IScsLocService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -54,6 +55,20 @@ public class ScsLocServiceImpl implements IScsLocService {
     public List<ScsLocVo> queryList(ScsLocBo bo) {
         LambdaQueryWrapper<ScsLoc> lqw = buildQueryWrapper(bo);
         return baseMapper.selectVoList(lqw);
+    }
+
+    /**
+     * 根据集团查地点
+     */
+    public List<String> listByCorporation(ScsLocBo bo) {
+        LambdaQueryWrapper<ScsLoc> lqw = new LambdaQueryWrapper<>();
+        lqw.eq(StringUtils.isNotBlank(bo.getCorporation()), ScsLoc::getCorporation, bo.getCorporation());
+        List<ScsLocVo> selectVoList = baseMapper.selectVoList(lqw);
+        List<String> locs = new ArrayList<>();
+        for (ScsLocVo scsLocVo : selectVoList) {
+            locs.add(scsLocVo.getLoc());
+        }
+        return locs;
     }
 
     private LambdaQueryWrapper<ScsLoc> buildQueryWrapper(ScsLocBo bo) {

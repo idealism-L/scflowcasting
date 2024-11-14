@@ -1,21 +1,18 @@
 package com.plan.report.domain.vo;
 
-import java.math.BigDecimal;
-import java.util.Date;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.alibaba.excel.annotation.ExcelIgnoreUnannotated;
 import com.alibaba.excel.annotation.ExcelProperty;
-import com.plan.common.annotation.ExcelDictFormat;
-import com.plan.common.convert.ExcelDictConvert;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * scs_vehicleloadline视图对象 scs_vehicleloadline
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-14
  */
 @Data
 @ExcelIgnoreUnannotated
@@ -78,16 +75,10 @@ public class ScsVehicleloadlineVo implements Serializable {
     private Date schedarrivdate;
 
     /**
-     * 实际在途+计划交付(SU)
+     * 实际在途
      */
-    @ExcelProperty(value = "实际在途+计划交付(SU)")
-    private BigDecimal actualSuQty;
-
-    /**
-     * 实际在途+计划交付(UC)
-     */
-    @ExcelProperty(value = "实际在途+计划交付(UC)")
-    private BigDecimal actualUcQty;
+    @ExcelProperty(value = "实际在途")
+    private BigDecimal actualQty;
 
     /**
      * 实际在途(SU)
