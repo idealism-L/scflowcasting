@@ -1,22 +1,19 @@
 package com.plan.report.domain.excelModel;
 
-import com.alibaba.excel.annotation.ExcelIgnoreUnannotated;
 import com.alibaba.excel.annotation.ExcelProperty;
 import lombok.Data;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * 成品销售预测视图对象 etl_hld_fcst_fg
- *
- * @author xu_yijun
- * @date 2024-11-06
+ * @ClassName ScsIfHldFcstKit26wExcelModel
+ * @Description: 类描述
+ * @Author: xu_yijun
+ * @CreateDate: 2024/11/14 11:33
  */
 @Data
-@ExcelIgnoreUnannotated
-public class EtlHldFcstFgExcelModel implements Serializable {
+public class ScsIfHldFcstKit26wExcelModel {
 
     private static final long serialVersionUID = 1L;
 
@@ -54,7 +51,7 @@ public class EtlHldFcstFgExcelModel implements Serializable {
      * u_oh
      */
     @ExcelProperty(value = "U_OH")
-    private String uOh;
+    private BigDecimal uOh;
 
     /**
      * u_w1
@@ -135,34 +132,88 @@ public class EtlHldFcstFgExcelModel implements Serializable {
     private BigDecimal uW13;
 
     /**
-     * u_m1
+     * u_w14
      */
-    @ExcelProperty(value = "U_M1")
-    private BigDecimal uM1;
+    @ExcelProperty(value = "U_W14")
+    private BigDecimal uW14;
 
     /**
-     * u_m2
+     * u_w15
      */
-    @ExcelProperty(value = "U_M2")
-    private BigDecimal uM2;
+    @ExcelProperty(value = "U_W15")
+    private BigDecimal uW15;
 
     /**
-     * u_m3
+     * u_w16
      */
-    @ExcelProperty(value = "U_M3")
-    private BigDecimal uM3;
+    @ExcelProperty(value = "U_W16")
+    private BigDecimal uW16;
 
     /**
-     * u_m4
+     * u_w17
      */
-    @ExcelProperty(value = "U_M4")
-    private BigDecimal uM4;
+    @ExcelProperty(value = "U_W17")
+    private BigDecimal uW17;
+
+    /**
+     * u_w18
+     */
+    @ExcelProperty(value = "U_W18")
+    private BigDecimal uW18;
+
+    /**
+     * u_w19
+     */
+    @ExcelProperty(value = "U_W19")
+    private BigDecimal uW19;
+
+    /**
+     * u_w20
+     */
+    @ExcelProperty(value = "U_W20")
+    private BigDecimal uW20;
+
+    /**
+     * u_w21
+     */
+    @ExcelProperty(value = "U_W21")
+    private BigDecimal uW21;
+
+    /**
+     * u_w22
+     */
+    @ExcelProperty(value = "U_W22")
+    private BigDecimal uW22;
+
+    /**
+     * u_w23
+     */
+    @ExcelProperty(value = "U_W23")
+    private BigDecimal uW23;
+
+    /**
+     * u_w24
+     */
+    @ExcelProperty(value = "U_W24")
+    private BigDecimal uW24;
+
+    /**
+     * u_w25
+     */
+    @ExcelProperty(value = "U_W25")
+    private BigDecimal uW25;
+
+    /**
+     * u_w26
+     */
+    @ExcelProperty(value = "U_W26")
+    private BigDecimal uW26;
 
     /**
      * u_flag
      */
     @ExcelProperty(value = "U_FLAG")
-    private String uFlag;
+    private Long uFlag;
 
     /**
      * u_comment
@@ -173,14 +224,14 @@ public class EtlHldFcstFgExcelModel implements Serializable {
     /**
      * u_filename
      */
-    @ExcelProperty(value = "U_FILENAME")
+    @ExcelProperty(value = "U_FILE_NAME")
     private String uFilename;
 
     /**
      * u_editdate
      */
     @ExcelProperty(value = "U_EDITDATE")
-    private String uEditdate;
+    private Date uEditdate;
 
 
 }

@@ -1,72 +1,69 @@
 package com.plan.report.domain.excelModel;
 
-import com.alibaba.excel.annotation.ExcelIgnoreUnannotated;
 import com.alibaba.excel.annotation.ExcelProperty;
 import lombok.Data;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * 库存视图对象 etl_hld_inventory
- *
- * @author xu_yijun
- * @date 2024-11-06
+ * @ClassName ScsIfHldInventoryExcelModel
+ * @Description: 类描述
+ * @Author: xu_yijun
+ * @CreateDate: 2024/11/14 11:39
  */
 @Data
-@ExcelIgnoreUnannotated
-public class EtlHldInventoryExcelModel implements Serializable {
+public class ScsIfHldInventoryExcelModel {
 
     private static final long serialVersionUID = 1L;
 
     /**
-     * 物料编码
+     * item
      */
-    @ExcelProperty(value = "ITEM")
+    @ExcelProperty(value = "Item")
     private String item;
 
     /**
      * loc
      */
-    @ExcelProperty(value = "LOC")
+    @ExcelProperty(value = "Loc")
     private String loc;
 
     /**
      * availdate
      */
-    @ExcelProperty(value = "AVAILDATE")
+    @ExcelProperty(value = "AvailDate")
     private Date availdate;
 
     /**
      * qty
      */
-    @ExcelProperty(value = "QTY")
+    @ExcelProperty(value = "Qty")
     private BigDecimal qty;
 
     /**
      * expdate
      */
-    @ExcelProperty(value = "EXPDATE")
+    @ExcelProperty(value = "ExpDate")
     private Date expdate;
 
     /**
      * project
      */
-    @ExcelProperty(value = "PROJECT")
+    @ExcelProperty(value = "Project")
     private String project;
 
     /**
      * store
      */
-    @ExcelProperty(value = "STORE")
+    @ExcelProperty(value = "Store")
     private String store;
 
     /**
      * u_flag
      */
     @ExcelProperty(value = "U_FLAG")
-    private String uFlag;
+    private Long uFlag;
 
     /**
      * u_comment
@@ -84,7 +81,7 @@ public class EtlHldInventoryExcelModel implements Serializable {
      * u_editdate
      */
     @ExcelProperty(value = "U_EDITDATE")
-    private String uEditdate;
+    private Date uEditdate;
 
 
 }

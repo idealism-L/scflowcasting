@@ -1,22 +1,19 @@
 package com.plan.report.domain.excelModel;
 
-import com.alibaba.excel.annotation.ExcelIgnoreUnannotated;
 import com.alibaba.excel.annotation.ExcelProperty;
 import lombok.Data;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * 销售预测视图对象 etl_hld_fcst
- *
- * @author xu_yijun
- * @date 2024-11-06
+ * @ClassName ScsIfHldFcstExcelModel
+ * @Description: 类描述
+ * @Author: xu_yijun
+ * @CreateDate: 2024/11/14 11:37
  */
 @Data
-@ExcelIgnoreUnannotated
-public class EtlHldFcstExcelModel implements Serializable {
+public class ScsIfHldFcstExcelModel {
 
     private static final long serialVersionUID = 1L;
 
@@ -72,37 +69,37 @@ public class EtlHldFcstExcelModel implements Serializable {
      * u_item_pattern
      */
     @ExcelProperty(value = "U_ITEM_PATTERN")
-    private String uitempattern;
+    private String uItemPattern;
 
     /**
      * u_corporation
      */
     @ExcelProperty(value = "U_CORPORATION")
-    private String ucorporation;
+    private String uCorporation;
 
     /**
      * u_flag
      */
     @ExcelProperty(value = "U_FLAG")
-    private String uflag;
+    private Long uFlag;
 
     /**
      * u_comment
      */
     @ExcelProperty(value = "U_COMMENT")
-    private String ucomment;
+    private String uComment;
 
     /**
      * u_filename
      */
     @ExcelProperty(value = "U_FILENAME")
-    private String ufilename;
+    private String uFilename;
 
     /**
      * u_editdate
      */
     @ExcelProperty(value = "U_EDITDATE")
-    private String ueditdate;
+    private Date uEditdate;
 
 
 }

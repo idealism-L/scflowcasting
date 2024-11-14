@@ -1,83 +1,80 @@
 package com.plan.report.domain.excelModel;
 
-import com.alibaba.excel.annotation.ExcelIgnoreUnannotated;
 import com.alibaba.excel.annotation.ExcelProperty;
 import lombok.Data;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * 在途视图对象 etl_hld_vehicleloadline
- *
- * @author xu_yijun
- * @date 2024-11-06
+ * @ClassName ScsIfHldVehicleloadlineExcelModel
+ * @Description: 类描述
+ * @Author: xu_yijun
+ * @CreateDate: 2024/11/14 11:40
  */
 @Data
-@ExcelIgnoreUnannotated
-public class EtlHldVehicleloadlineExcelModel implements Serializable {
+public class ScsIfHldVehicleloadlineExcelModel {
 
     private static final long serialVersionUID = 1L;
 
     /**
      * loadid
      */
-    @ExcelProperty(value = "LOADID")
+    @ExcelProperty(value = "LoadID")
     private String loadid;
 
     /**
      * descr
      */
-    @ExcelProperty(value = "DESCR")
+    @ExcelProperty(value = "Descr")
     private String descr;
 
     /**
      * sourcestatus
      */
-    @ExcelProperty(value = "SOURCESTATUS")
-    private String sourcestatus;
+    @ExcelProperty(value = "SourceStatus")
+    private Long sourcestatus;
 
     /**
      * deststatus
      */
-    @ExcelProperty(value = "DESTSTATUS")
+    @ExcelProperty(value = "DestStatus")
     private String deststatus0;
 
     /**
      * item
      */
-    @ExcelProperty(value = "ITEM")
+    @ExcelProperty(value = "Item")
     private String item;
 
     /**
      * source
      */
-    @ExcelProperty(value = "SOURCE")
+    @ExcelProperty(value = "Source")
     private String source;
 
     /**
      * dest
      */
-    @ExcelProperty(value = "DEST")
+    @ExcelProperty(value = "Dest")
     private String dest;
 
     /**
      * qty
      */
-    @ExcelProperty(value = "QTY")
+    @ExcelProperty(value = "Qty")
     private BigDecimal qty;
 
     /**
      * schedarrivdate
      */
-    @ExcelProperty(value = "SCHEDARRIVDATE")
+    @ExcelProperty(value = "SchedArrivDate")
     private Date availdate;
 
     /**
      * schedshipdate
      */
-    @ExcelProperty(value = "SCHEDSHIPDATE")
+    @ExcelProperty(value = "SchedShipDate")
     private Date availdate0;
 
     /**
@@ -96,7 +93,7 @@ public class EtlHldVehicleloadlineExcelModel implements Serializable {
      * u_flag
      */
     @ExcelProperty(value = "U_FLAG")
-    private String uFlag;
+    private Long uFlag;
 
     /**
      * u_comment
@@ -107,14 +104,14 @@ public class EtlHldVehicleloadlineExcelModel implements Serializable {
     /**
      * u_filename
      */
-    @ExcelProperty(value = "U_FILENAME")
+    @ExcelProperty(value = "U_FILE_NAME")
     private String uFilename;
 
     /**
      * u_editdate
      */
     @ExcelProperty(value = "U_EDITDATE")
-    private String uEditdate;
+    private Date uEditdate;
 
 
 }

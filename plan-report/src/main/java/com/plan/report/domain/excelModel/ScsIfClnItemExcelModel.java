@@ -1,26 +1,24 @@
 package com.plan.report.domain.excelModel;
 
-import com.alibaba.excel.annotation.ExcelIgnoreUnannotated;
 import com.alibaba.excel.annotation.ExcelProperty;
 import lombok.Data;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Date;
 
 /**
- * 物料编码视图对象 etl_cln_item
- *
- * @author xu_yijun
- * @date 2024-11-06
+ * @ClassName ScsIfClnItemExcelModel
+ * @Description: 类描述
+ * @Author: xu_yijun
+ * @CreateDate: 2024/11/14 11:17
  */
 @Data
-@ExcelIgnoreUnannotated
-public class EtlClnItemExcelModel implements Serializable {
+public class ScsIfClnItemExcelModel {
 
     private static final long serialVersionUID = 1L;
 
     /**
-     * 物料编码
+     * 物料
      */
     @ExcelProperty(value = "Item")
     private String item;
@@ -191,25 +189,25 @@ public class EtlClnItemExcelModel implements Serializable {
      * 主单位转次单转换系数
      */
     @ExcelProperty(value = "U_UOM_RATE1")
-    private String uUomRate1;
+    private BigDecimal uUomRate1;
 
     /**
      * 主单位转次单转换系数2
      */
     @ExcelProperty(value = "U_UOM_RATE2")
-    private String uUomRate2;
+    private BigDecimal uUomRate2;
 
     /**
      * UC单位量
      */
     @ExcelProperty(value = "U_UC")
-    private String uUc;
+    private BigDecimal uUc;
 
     /**
      * PC单位量
      */
     @ExcelProperty(value = "U_PC")
-    private String uPc;
+    private BigDecimal uPc;
 
     /**
      * 成品编码对应CPS的BPP编码
@@ -218,7 +216,7 @@ public class EtlClnItemExcelModel implements Serializable {
     private String uBppCode;
 
     /**
-     * 品牌+风味+包装描述2
+     * 品牌+风味+包装描盒2
      */
     @ExcelProperty(value = "U_HIERARCHY2")
     private String uHierarchy2;
@@ -263,13 +261,12 @@ public class EtlClnItemExcelModel implements Serializable {
      * u_editdate
      */
     @ExcelProperty(value = "U_EDITDATE")
-    private String uEditdate;
-
+    private Date uEditdate;
     /**
      * u_createdate
      */
     @ExcelProperty(value = "U_CREATEDATE")
-    private String uCreatedate;
+    private Date uCreatedate;
 
 
 }
