@@ -17,13 +17,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Map;
 
 /**
  * scs_locService业务层处理
  *
  * @author ruoyi
- * @date 2024-11-12
  */
 @RequiredArgsConstructor
 @Service
@@ -59,7 +57,6 @@ public class ScsLocServiceImpl implements IScsLocService {
     }
 
     private LambdaQueryWrapper<ScsLoc> buildQueryWrapper(ScsLocBo bo) {
-        Map<String, Object> params = bo.getParams();
         LambdaQueryWrapper<ScsLoc> lqw = Wrappers.lambdaQuery();
         lqw.eq(StringUtils.isNotBlank(bo.getLoc()), ScsLoc::getLoc, bo.getLoc());
         lqw.eq(StringUtils.isNotBlank(bo.getLocOwnCode()), ScsLoc::getLocOwnCode, bo.getLocOwnCode());
@@ -68,7 +65,8 @@ public class ScsLocServiceImpl implements IScsLocService {
         lqw.eq(StringUtils.isNotBlank(bo.getOuDescr()), ScsLoc::getOuDescr, bo.getOuDescr());
         lqw.eq(StringUtils.isNotBlank(bo.getCorporation()), ScsLoc::getCorporation, bo.getCorporation());
         lqw.eq(StringUtils.isNotBlank(bo.getLocType()), ScsLoc::getLocType, bo.getLocType());
-        lqw.eq(StringUtils.isNotBlank(bo.getCpsCode()), ScsLoc::getCpsCode, bo.getCpsCode());
+        // 将等值查询改为模糊查询
+        lqw.like(StringUtils.isNotBlank(bo.getCpsCode()), ScsLoc::getCpsCode, bo.getCpsCode());
         lqw.eq(StringUtils.isNotBlank(bo.getEmail()), ScsLoc::getEmail, bo.getEmail());
         lqw.eq(bo.getVersionNo() != null, ScsLoc::getVersionNo, bo.getVersionNo());
         return lqw;

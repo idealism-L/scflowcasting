@@ -2,8 +2,6 @@ package com.plan.report.domain.vo;
 
 import com.alibaba.excel.annotation.ExcelIgnoreUnannotated;
 import com.alibaba.excel.annotation.ExcelProperty;
-import com.plan.common.annotation.ExcelDictFormat;
-import com.plan.common.convert.ExcelDictConvert;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -12,7 +10,7 @@ import java.io.Serializable;
  * scs_loc视图对象 scs_loc
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-14
  */
 @Data
 @ExcelIgnoreUnannotated

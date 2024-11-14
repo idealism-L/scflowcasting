@@ -9,10 +9,10 @@ import lombok.EqualsAndHashCode;
 import java.util.Date;
 
 /**
- * scs_calendar对象 scs_calendar
+ * scs_calendar日历对象 scs_calendar
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-14
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -34,10 +34,6 @@ public class ScsCalendar extends BaseEntity {
      * day_desc
      */
     private String dayDesc;
-    /**
-     * 年份
-     */
-    private String yearNum;
     /**
      * 周编码
      */
@@ -127,7 +123,7 @@ public class ScsCalendar extends BaseEntity {
      */
     private String c445SemesterNm;
     /**
-     * c445_year_cd
+     * 年份
      */
     private Long c445YearCd;
     /**
@@ -215,6 +211,10 @@ public class ScsCalendar extends BaseEntity {
      */
     private String c445WeekNmLong;
     /**
+     * greg_quarter_nm_long
+     */
+    private String gregQuarterNmLong;
+    /**
      * greg_month_nm_short
      */
     private String gregMonthNmShort;
@@ -275,9 +275,17 @@ public class ScsCalendar extends BaseEntity {
      */
     private Long dailyConsumptionDaysPy;
     /**
+     * Daily_Consumption_Days_2PY
+     */
+    private Long dailyConsumptionDays2py;
+    /**
      * Daily_Consumption_Days_MTD
      */
     private Long dailyConsumptionDaysMtd;
+    /**
+     * Daily_Consumption_Days_MTD_PY
+     */
+    private Long dailyConsumptionDaysMtdPy;
     /**
      * Daily_Consumption_Days_MTD_2PY
      */
@@ -358,6 +366,10 @@ public class ScsCalendar extends BaseEntity {
      * Weekly_Consumption_Days_12MMT
      */
     private Long weeklyConsumptionDays12mmt;
+    /**
+     * Weekly_Consumption_Days_12MMT_PY
+     */
+    private Long weeklyConsumptionDays12mmtPy;
     /**
      * Weekly_Consumption_Days_12MMT_2PY
      */

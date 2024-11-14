@@ -8,10 +8,10 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * scs_calendar视图对象 scs_calendar
+ * scs_calendar日历视图对象 scs_calendar
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-14
  */
 @Data
 @ExcelIgnoreUnannotated
@@ -36,12 +36,6 @@ public class ScsCalendarVo implements Serializable {
      */
     @ExcelProperty(value = "day_desc")
     private String dayDesc;
-
-    /**
-     * 年份
-     */
-    @ExcelProperty(value = "年份")
-    private String yearNum;
 
     /**
      * 周编码
@@ -176,9 +170,9 @@ public class ScsCalendarVo implements Serializable {
     private String c445SemesterNm;
 
     /**
-     * c445_year_cd
+     * 年份
      */
-    @ExcelProperty(value = "c445_year_cd")
+    @ExcelProperty(value = "年份")
     private Long c445YearCd;
 
     /**
@@ -308,6 +302,12 @@ public class ScsCalendarVo implements Serializable {
     private String c445WeekNmLong;
 
     /**
+     * greg_quarter_nm_long
+     */
+    @ExcelProperty(value = "greg_quarter_nm_long")
+    private String gregQuarterNmLong;
+
+    /**
      * greg_month_nm_short
      */
     @ExcelProperty(value = "greg_month_nm_short")
@@ -398,10 +398,22 @@ public class ScsCalendarVo implements Serializable {
     private Long dailyConsumptionDaysPy;
 
     /**
+     * Daily_Consumption_Days_2PY
+     */
+    @ExcelProperty(value = "Daily_Consumption_Days_2PY")
+    private Long dailyConsumptionDays2py;
+
+    /**
      * Daily_Consumption_Days_MTD
      */
     @ExcelProperty(value = "Daily_Consumption_Days_MTD")
     private Long dailyConsumptionDaysMtd;
+
+    /**
+     * Daily_Consumption_Days_MTD_PY
+     */
+    @ExcelProperty(value = "Daily_Consumption_Days_MTD_PY")
+    private Long dailyConsumptionDaysMtdPy;
 
     /**
      * Daily_Consumption_Days_MTD_2PY
@@ -522,6 +534,12 @@ public class ScsCalendarVo implements Serializable {
      */
     @ExcelProperty(value = "Weekly_Consumption_Days_12MMT")
     private Long weeklyConsumptionDays12mmt;
+
+    /**
+     * Weekly_Consumption_Days_12MMT_PY
+     */
+    @ExcelProperty(value = "Weekly_Consumption_Days_12MMT_PY")
+    private Long weeklyConsumptionDays12mmtPy;
 
     /**
      * Weekly_Consumption_Days_12MMT_2PY

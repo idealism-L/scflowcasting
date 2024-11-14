@@ -11,10 +11,10 @@ import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
- * scs_calendar业务对象 scs_calendar
+ * scs_calendar日历业务对象 scs_calendar
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-14
  */
 
 @Data
@@ -38,12 +38,6 @@ public class ScsCalendarBo extends BaseEntity {
      */
     @NotBlank(message = "day_desc不能为空", groups = { AddGroup.class, EditGroup.class })
     private String dayDesc;
-
-    /**
-     * 年份
-     */
-    @NotBlank(message = "年份不能为空", groups = { AddGroup.class, EditGroup.class })
-    private String yearNum;
 
     /**
      * 周编码
@@ -178,9 +172,9 @@ public class ScsCalendarBo extends BaseEntity {
     private String c445SemesterNm;
 
     /**
-     * c445_year_cd
+     * 年份
      */
-    @NotNull(message = "c445_year_cd不能为空", groups = { AddGroup.class, EditGroup.class })
+    @NotNull(message = "年份不能为空", groups = { AddGroup.class, EditGroup.class })
     private Long c445YearCd;
 
     /**
@@ -310,6 +304,12 @@ public class ScsCalendarBo extends BaseEntity {
     private String c445WeekNmLong;
 
     /**
+     * greg_quarter_nm_long
+     */
+    @NotBlank(message = "greg_quarter_nm_long不能为空", groups = { AddGroup.class, EditGroup.class })
+    private String gregQuarterNmLong;
+
+    /**
      * greg_month_nm_short
      */
     @NotBlank(message = "greg_month_nm_short不能为空", groups = { AddGroup.class, EditGroup.class })
@@ -400,10 +400,22 @@ public class ScsCalendarBo extends BaseEntity {
     private Long dailyConsumptionDaysPy;
 
     /**
+     * Daily_Consumption_Days_2PY
+     */
+    @NotNull(message = "Daily_Consumption_Days_2PY不能为空", groups = { AddGroup.class, EditGroup.class })
+    private Long dailyConsumptionDays2py;
+
+    /**
      * Daily_Consumption_Days_MTD
      */
     @NotNull(message = "Daily_Consumption_Days_MTD不能为空", groups = { AddGroup.class, EditGroup.class })
     private Long dailyConsumptionDaysMtd;
+
+    /**
+     * Daily_Consumption_Days_MTD_PY
+     */
+    @NotNull(message = "Daily_Consumption_Days_MTD_PY不能为空", groups = { AddGroup.class, EditGroup.class })
+    private Long dailyConsumptionDaysMtdPy;
 
     /**
      * Daily_Consumption_Days_MTD_2PY
@@ -524,6 +536,12 @@ public class ScsCalendarBo extends BaseEntity {
      */
     @NotNull(message = "Weekly_Consumption_Days_12MMT不能为空", groups = { AddGroup.class, EditGroup.class })
     private Long weeklyConsumptionDays12mmt;
+
+    /**
+     * Weekly_Consumption_Days_12MMT_PY
+     */
+    @NotNull(message = "Weekly_Consumption_Days_12MMT_PY不能为空", groups = { AddGroup.class, EditGroup.class })
+    private Long weeklyConsumptionDays12mmtPy;
 
     /**
      * Weekly_Consumption_Days_12MMT_2PY

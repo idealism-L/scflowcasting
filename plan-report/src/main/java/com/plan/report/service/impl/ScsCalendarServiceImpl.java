@@ -20,10 +20,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * scs_calendarService业务层处理
+ * scs_calendar日历Service业务层处理
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-14
  */
 @RequiredArgsConstructor
 @Service
@@ -32,7 +32,7 @@ public class ScsCalendarServiceImpl implements IScsCalendarService {
     private final ScsCalendarMapper baseMapper;
 
     /**
-     * 查询scs_calendar
+     * 查询scs_calendar日历
      */
     @Override
     public ScsCalendarVo queryById(Long id){
@@ -40,7 +40,7 @@ public class ScsCalendarServiceImpl implements IScsCalendarService {
     }
 
     /**
-     * 查询scs_calendar列表
+     * 查询scs_calendar日历列表
      */
     @Override
     public TableDataInfo<ScsCalendarVo> queryPageList(ScsCalendarBo bo, PageQuery pageQuery) {
@@ -50,7 +50,7 @@ public class ScsCalendarServiceImpl implements IScsCalendarService {
     }
 
     /**
-     * 查询scs_calendar列表
+     * 查询scs_calendar日历列表
      */
     @Override
     public List<ScsCalendarVo> queryList(ScsCalendarBo bo) {
@@ -63,7 +63,6 @@ public class ScsCalendarServiceImpl implements IScsCalendarService {
         LambdaQueryWrapper<ScsCalendar> lqw = Wrappers.lambdaQuery();
         lqw.eq(bo.getDayDt() != null, ScsCalendar::getDayDt, bo.getDayDt());
         lqw.eq(StringUtils.isNotBlank(bo.getDayDesc()), ScsCalendar::getDayDesc, bo.getDayDesc());
-        lqw.eq(StringUtils.isNotBlank(bo.getYearNum()), ScsCalendar::getYearNum, bo.getYearNum());
         lqw.eq(bo.getC445WeekCd() != null, ScsCalendar::getC445WeekCd, bo.getC445WeekCd());
         lqw.eq(bo.getC445WeekNbr() != null, ScsCalendar::getC445WeekNbr, bo.getC445WeekNbr());
         lqw.eq(StringUtils.isNotBlank(bo.getC445WeekDesc()), ScsCalendar::getC445WeekDesc, bo.getC445WeekDesc());
@@ -108,6 +107,7 @@ public class ScsCalendarServiceImpl implements IScsCalendarService {
         lqw.eq(StringUtils.isNotBlank(bo.getGregYearDesc()), ScsCalendar::getGregYearDesc, bo.getGregYearDesc());
         lqw.eq(StringUtils.isNotBlank(bo.getC445MonthNmShort()), ScsCalendar::getC445MonthNmShort, bo.getC445MonthNmShort());
         lqw.eq(StringUtils.isNotBlank(bo.getC445WeekNmLong()), ScsCalendar::getC445WeekNmLong, bo.getC445WeekNmLong());
+        lqw.eq(StringUtils.isNotBlank(bo.getGregQuarterNmLong()), ScsCalendar::getGregQuarterNmLong, bo.getGregQuarterNmLong());
         lqw.eq(StringUtils.isNotBlank(bo.getGregMonthNmShort()), ScsCalendar::getGregMonthNmShort, bo.getGregMonthNmShort());
         lqw.eq(StringUtils.isNotBlank(bo.getGregMonthCdShort()), ScsCalendar::getGregMonthCdShort, bo.getGregMonthCdShort());
         lqw.eq(StringUtils.isNotBlank(bo.getLong()), ScsCalendar::getLong, bo.getLong());
@@ -123,7 +123,9 @@ public class ScsCalendarServiceImpl implements IScsCalendarService {
         lqw.eq(bo.getDayInQuarter() != null, ScsCalendar::getDayInQuarter, bo.getDayInQuarter());
         lqw.eq(bo.getDailyConsumptionDays() != null, ScsCalendar::getDailyConsumptionDays, bo.getDailyConsumptionDays());
         lqw.eq(bo.getDailyConsumptionDaysPy() != null, ScsCalendar::getDailyConsumptionDaysPy, bo.getDailyConsumptionDaysPy());
+        lqw.eq(bo.getDailyConsumptionDays2py() != null, ScsCalendar::getDailyConsumptionDays2py, bo.getDailyConsumptionDays2py());
         lqw.eq(bo.getDailyConsumptionDaysMtd() != null, ScsCalendar::getDailyConsumptionDaysMtd, bo.getDailyConsumptionDaysMtd());
+        lqw.eq(bo.getDailyConsumptionDaysMtdPy() != null, ScsCalendar::getDailyConsumptionDaysMtdPy, bo.getDailyConsumptionDaysMtdPy());
         lqw.eq(bo.getDailyConsumptionDaysMtd2py() != null, ScsCalendar::getDailyConsumptionDaysMtd2py, bo.getDailyConsumptionDaysMtd2py());
         lqw.eq(bo.getDailyConsumptionDaysQtd() != null, ScsCalendar::getDailyConsumptionDaysQtd, bo.getDailyConsumptionDaysQtd());
         lqw.eq(bo.getDailyConsumptionDaysQtdPy() != null, ScsCalendar::getDailyConsumptionDaysQtdPy, bo.getDailyConsumptionDaysQtdPy());
@@ -144,6 +146,7 @@ public class ScsCalendarServiceImpl implements IScsCalendarService {
         lqw.eq(bo.getWeeklyConsumptionDays06mmtPy() != null, ScsCalendar::getWeeklyConsumptionDays06mmtPy, bo.getWeeklyConsumptionDays06mmtPy());
         lqw.eq(bo.getWeeklyConsumptionDays06mmt2py() != null, ScsCalendar::getWeeklyConsumptionDays06mmt2py, bo.getWeeklyConsumptionDays06mmt2py());
         lqw.eq(bo.getWeeklyConsumptionDays12mmt() != null, ScsCalendar::getWeeklyConsumptionDays12mmt, bo.getWeeklyConsumptionDays12mmt());
+        lqw.eq(bo.getWeeklyConsumptionDays12mmtPy() != null, ScsCalendar::getWeeklyConsumptionDays12mmtPy, bo.getWeeklyConsumptionDays12mmtPy());
         lqw.eq(bo.getWeeklyConsumptionDays12mmt2py() != null, ScsCalendar::getWeeklyConsumptionDays12mmt2py, bo.getWeeklyConsumptionDays12mmt2py());
         lqw.eq(bo.getWeeklyConsumptionDays13wmt() != null, ScsCalendar::getWeeklyConsumptionDays13wmt, bo.getWeeklyConsumptionDays13wmt());
         lqw.eq(bo.getWeeklyConsumptionDays13wmtPy() != null, ScsCalendar::getWeeklyConsumptionDays13wmtPy, bo.getWeeklyConsumptionDays13wmtPy());
@@ -199,7 +202,7 @@ public class ScsCalendarServiceImpl implements IScsCalendarService {
     }
 
     /**
-     * 新增scs_calendar
+     * 新增scs_calendar日历
      */
     @Override
     public Boolean insertByBo(ScsCalendarBo bo) {
@@ -213,7 +216,7 @@ public class ScsCalendarServiceImpl implements IScsCalendarService {
     }
 
     /**
-     * 修改scs_calendar
+     * 修改scs_calendar日历
      */
     @Override
     public Boolean updateByBo(ScsCalendarBo bo) {
@@ -230,7 +233,7 @@ public class ScsCalendarServiceImpl implements IScsCalendarService {
     }
 
     /**
-     * 批量删除scs_calendar
+     * 批量删除scs_calendar日历
      */
     @Override
     public Boolean deleteWithValidByIds(Collection<Long> ids, Boolean isValid) {
