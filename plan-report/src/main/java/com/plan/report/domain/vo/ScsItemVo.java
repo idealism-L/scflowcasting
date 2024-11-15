@@ -11,7 +11,7 @@ import java.math.BigDecimal;
  * scs_item视图对象 scs_item
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-15
  */
 @Data
 @ExcelIgnoreUnannotated
@@ -119,7 +119,7 @@ public class ScsItemVo implements Serializable {
      * 包装代码
      */
     @ExcelProperty(value = "包装代码")
-    private String packAge;
+    private String packageCode;
 
     /**
      * 包装描述

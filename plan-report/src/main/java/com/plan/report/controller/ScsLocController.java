@@ -87,6 +87,9 @@ public class ScsLocController extends BaseController {
     @RepeatSubmit()
     @PostMapping()
     public R<Void> add(@Validated(AddGroup.class) @RequestBody ScsLocBo bo) {
+        if(!iScsLocService.queryList(bo).isEmpty()) {
+            return R.fail("新增地点'" + bo.getLoc() + "'失败，地点已存在");
+        }
         return toAjax(iScsLocService.insertByBo(bo));
     }
 
@@ -98,6 +101,9 @@ public class ScsLocController extends BaseController {
     @RepeatSubmit()
     @PutMapping()
     public R<Void> edit(@Validated(EditGroup.class) @RequestBody ScsLocBo bo) {
+        if(!iScsLocService.queryList(bo).isEmpty()) {
+            return R.fail("修改地点'" + bo.getLoc() + "'失败，地点已存在");
+        }
         return toAjax(iScsLocService.updateByBo(bo));
     }
 

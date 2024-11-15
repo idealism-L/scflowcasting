@@ -14,7 +14,7 @@ import java.math.BigDecimal;
  * scs_item业务对象 scs_item
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-15
  */
 
 @Data
@@ -121,7 +121,7 @@ public class ScsItemBo extends BaseEntity {
      * 包装代码
      */
     @NotBlank(message = "包装代码不能为空", groups = { AddGroup.class, EditGroup.class })
-    private String packAge;
+    private String packageCode;
 
     /**
      * 包装描述

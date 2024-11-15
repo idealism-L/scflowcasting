@@ -12,7 +12,7 @@ import java.math.BigDecimal;
  * scs_item对象 scs_item
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-15
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -89,7 +89,7 @@ public class ScsItem extends BaseEntity {
     /**
      * 包装代码
      */
-    private String packAge;
+    private String packageCode;
     /**
      * 包装描述
      */

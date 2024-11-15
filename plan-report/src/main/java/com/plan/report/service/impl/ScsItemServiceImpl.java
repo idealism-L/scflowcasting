@@ -23,7 +23,7 @@ import java.util.Map;
  * scs_itemService业务层处理
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-15
  */
 @RequiredArgsConstructor
 @Service
@@ -64,8 +64,12 @@ public class ScsItemServiceImpl implements IScsItemService {
         lqw.eq(StringUtils.isNotBlank(bo.getItem()), ScsItem::getItem, bo.getItem());
         lqw.eq(StringUtils.isNotBlank(bo.getCorporation()), ScsItem::getCorporation, bo.getCorporation());
         lqw.eq(StringUtils.isNotBlank(bo.getItemPattern()), ScsItem::getItemPattern, bo.getItemPattern());
-        lqw.eq(StringUtils.isNotBlank(bo.getItemCode()), ScsItem::getItemCode, bo.getItemCode());
-        lqw.eq(StringUtils.isNotBlank(bo.getDescr()), ScsItem::getDescr, bo.getDescr());
+        // lqw.eq(StringUtils.isNotBlank(bo.getItemCode()), ScsItem::getItemCode, bo.getItemCode());
+        // 物料编码模糊查询
+        lqw.like(StringUtils.isNotBlank(bo.getItemCode()), ScsItem::getItemCode, bo.getItemCode());
+        // lqw.eq(StringUtils.isNotBlank(bo.getDescr()), ScsItem::getDescr, bo.getDescr());
+        // 物料描述模糊查询
+        lqw.like(StringUtils.isNotBlank(bo.getDescr()), ScsItem::getDescr, bo.getDescr());
         lqw.eq(StringUtils.isNotBlank(bo.getDescrEn()), ScsItem::getDescrEn, bo.getDescrEn());
         lqw.eq(StringUtils.isNotBlank(bo.getDescrShort()), ScsItem::getDescrShort, bo.getDescrShort());
         lqw.eq(StringUtils.isNotBlank(bo.getCategory()), ScsItem::getCategory, bo.getCategory());
@@ -76,7 +80,7 @@ public class ScsItemServiceImpl implements IScsItemService {
         lqw.eq(StringUtils.isNotBlank(bo.getBrandDescr()), ScsItem::getBrandDescr, bo.getBrandDescr());
         lqw.eq(StringUtils.isNotBlank(bo.getFlavor()), ScsItem::getFlavor, bo.getFlavor());
         lqw.eq(StringUtils.isNotBlank(bo.getFlavorDescr()), ScsItem::getFlavorDescr, bo.getFlavorDescr());
-        lqw.eq(StringUtils.isNotBlank(bo.getPackAge()), ScsItem::getPackAge, bo.getPackAge());
+        lqw.eq(StringUtils.isNotBlank(bo.getPackageCode()), ScsItem::getPackageCode, bo.getPackageCode());
         lqw.eq(StringUtils.isNotBlank(bo.getPackageDescr()), ScsItem::getPackageDescr, bo.getPackageDescr());
         lqw.eq(StringUtils.isNotBlank(bo.getSubflavor()), ScsItem::getSubflavor, bo.getSubflavor());
         lqw.eq(StringUtils.isNotBlank(bo.getSubflavorDescr()), ScsItem::getSubflavorDescr, bo.getSubflavorDescr());
