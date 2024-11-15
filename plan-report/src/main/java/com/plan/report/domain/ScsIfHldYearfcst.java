@@ -2,9 +2,7 @@ package com.plan.report.domain;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.plan.common.core.domain.BaseEntity;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -16,9 +14,8 @@ import java.util.Date;
  * @date 2024-11-12
  */
 @Data
-@EqualsAndHashCode(callSuper = true)
 @TableName("scs_if_hld_yearfcst")
-public class ScsIfHldYearfcst extends BaseEntity {
+public class ScsIfHldYearfcst {
 
     private static final long serialVersionUID=1L;
 
@@ -127,5 +124,9 @@ public class ScsIfHldYearfcst extends BaseEntity {
      * u_editdate
      */
     private Date uEditdate;
+    /**
+     * create_time
+     */
+    private Date createTime;
 
 }
