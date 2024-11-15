@@ -9,7 +9,7 @@ import org.apache.ibatis.annotations.Mapper;
  * scs_vehicleloadlineMapper接口
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-14
  */
 @Mapper
 public interface ScsVehicleloadlineMapper extends BaseMapperPlus<ScsVehicleloadlineMapper, ScsVehicleloadline, ScsVehicleloadlineVo> {
