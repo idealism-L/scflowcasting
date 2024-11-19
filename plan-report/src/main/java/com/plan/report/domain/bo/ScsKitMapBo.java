@@ -93,5 +93,19 @@ public class ScsKitMapBo extends BaseEntity {
     @NotNull(message = "版本号不能为空", groups = { AddGroup.class, EditGroup.class })
     private Long versionNo;
 
+    // 查询条件
+    /**
+     * 装瓶集团
+     */
+    private String corporation;
 
+    /**
+     * 物料编码
+     */
+    private String itemCode;
+
+    /**
+     * Kit代码
+     */
+    private String kitCode;
 }

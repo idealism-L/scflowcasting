@@ -44,8 +44,8 @@ public class ScsKitMapServiceImpl implements IScsKitMapService {
      */
     @Override
     public TableDataInfo<ScsKitMapVo> queryPageList(ScsKitMapBo bo, PageQuery pageQuery) {
-        LambdaQueryWrapper<ScsKitMap> lqw = buildQueryWrapper(bo);
-        Page<ScsKitMapVo> result = baseMapper.selectVoPage(pageQuery.build(), lqw);
+        // LambdaQueryWrapper<ScsKitMap> lqw = buildQueryWrapper(bo);
+        Page<ScsKitMapVo> result = baseMapper.selectListVoPage(pageQuery.build(), bo);
         return TableDataInfo.build(result);
     }
 
@@ -54,8 +54,8 @@ public class ScsKitMapServiceImpl implements IScsKitMapService {
      */
     @Override
     public List<ScsKitMapVo> queryList(ScsKitMapBo bo) {
-        LambdaQueryWrapper<ScsKitMap> lqw = buildQueryWrapper(bo);
-        return baseMapper.selectVoList(lqw);
+        // LambdaQueryWrapper<ScsKitMap> lqw = buildQueryWrapper(bo);
+        return baseMapper.selectListVo(bo);
     }
 
     private LambdaQueryWrapper<ScsKitMap> buildQueryWrapper(ScsKitMapBo bo) {

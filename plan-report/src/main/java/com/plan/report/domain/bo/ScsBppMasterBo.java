@@ -91,7 +91,7 @@ public class ScsBppMasterBo extends BaseEntity {
      * 包装
      */
     @NotBlank(message = "包装不能为空", groups = { AddGroup.class, EditGroup.class })
-    private String packAge;
+    private String packageCode;
 
     /**
      * 包装描述
@@ -128,6 +128,21 @@ public class ScsBppMasterBo extends BaseEntity {
      */
     @NotNull(message = "版本号不能为空", groups = { AddGroup.class, EditGroup.class })
     private Long versionNo;
+
+    /**
+     * 装瓶集团
+     */
+    private String corporation;
+
+    /**
+     * 物料编码
+     */
+    private String itemCode;
+
+    /**
+     * 物料描述
+     */
+    private String itemDescr;
 
 
 }

@@ -23,5 +23,44 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="updateTime" column="update_time"/>
     </resultMap>
 
+    <select id="selectListVoPage" resultType="com.plan.report.domain.vo.ScsKitMapVo">
+        <include refid="list"/>
+    </select>
 
+    <select id="selectListVo" resultType="com.plan.report.domain.vo.ScsKitMapVo">
+        <include refid="list"/>
+    </select>
+
+    <sql id="list">
+        select kit.id as id,
+        a.corporation as corporation,
+        a.item_code as itemCode,
+        a.descr as itemDescr,
+        b.item_code as kitCode,
+        b.descr as kitDescr,
+        loc.loc_own_code as locCode,
+        loc.descr as locDescr,
+        kit.convfactor as convfactor,
+        kit.product_hierarchy as productHierarchy,
+        kit.u_flag as uFlag,
+        kit.u_comment as uComment
+        from scs_kit_map kit
+        inner join scs_item a on a.id = kit.item_id
+        inner join scs_item b on b.id = kit.kit_item_id
+        left join scs_loc loc on loc.id = kit.loc_id
+        <where>
+            <if test="param.corporation != null and param.corporation != ''">
+                and a.corporation = #{param.corporation}
+            </if>
+            <if test="param.loc != null and param.loc != ''">
+                and loc.loc = #{param.loc}
+            </if>
+            <if test="param.itemCode != null and param.itemCode != ''">
+                and a.item_code like concat('%', #{param.itemCode}, '%')
+            </if>
+            <if test="param.kitCode != null and param.kitCode != ''">
+                and b.item_code like concat('%', #{param.kitCode}, '%')
+            </if>
+        </where>
+    </sql>
 </mapper>

@@ -44,8 +44,9 @@ public class ScsBppMasterServiceImpl implements IScsBppMasterService {
      */
     @Override
     public TableDataInfo<ScsBppMasterVo> queryPageList(ScsBppMasterBo bo, PageQuery pageQuery) {
-        LambdaQueryWrapper<ScsBppMaster> lqw = buildQueryWrapper(bo);
-        Page<ScsBppMasterVo> result = baseMapper.selectVoPage(pageQuery.build(), lqw);
+        // LambdaQueryWrapper<ScsBppMaster> lqw = buildQueryWrapper(bo);
+        // Page<ScsBppMasterVo> result = baseMapper.selectVoPage(pageQuery.build(), lqw);
+        Page<ScsBppMasterVo> result = baseMapper.selectListVoPage(pageQuery.build(), bo);
         return TableDataInfo.build(result);
     }
 
@@ -54,8 +55,8 @@ public class ScsBppMasterServiceImpl implements IScsBppMasterService {
      */
     @Override
     public List<ScsBppMasterVo> queryList(ScsBppMasterBo bo) {
-        LambdaQueryWrapper<ScsBppMaster> lqw = buildQueryWrapper(bo);
-        return baseMapper.selectVoList(lqw);
+        //LambdaQueryWrapper<ScsBppMaster> lqw = buildQueryWrapper(bo);
+        return baseMapper.selectListVo(bo);
     }
 
     private LambdaQueryWrapper<ScsBppMaster> buildQueryWrapper(ScsBppMasterBo bo) {
@@ -71,7 +72,7 @@ public class ScsBppMasterServiceImpl implements IScsBppMasterService {
         lqw.eq(StringUtils.isNotBlank(bo.getBrandDescr()), ScsBppMaster::getBrandDescr, bo.getBrandDescr());
         lqw.eq(StringUtils.isNotBlank(bo.getFlavor()), ScsBppMaster::getFlavor, bo.getFlavor());
         lqw.eq(StringUtils.isNotBlank(bo.getFlavorDescr()), ScsBppMaster::getFlavorDescr, bo.getFlavorDescr());
-        lqw.eq(StringUtils.isNotBlank(bo.getPackAge()), ScsBppMaster::getPackAge, bo.getPackAge());
+        lqw.eq(StringUtils.isNotBlank(bo.getPackageCode()), ScsBppMaster::getPackageCode, bo.getPackageCode());
         lqw.eq(StringUtils.isNotBlank(bo.getPackageDescr()), ScsBppMaster::getPackageDescr, bo.getPackageDescr());
         lqw.eq(StringUtils.isNotBlank(bo.getBeverage()), ScsBppMaster::getBeverage, bo.getBeverage());
         lqw.eq(StringUtils.isNotBlank(bo.getStatus()), ScsBppMaster::getStatus, bo.getStatus());

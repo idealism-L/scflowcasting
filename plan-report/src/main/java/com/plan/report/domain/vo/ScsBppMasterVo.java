@@ -22,25 +22,43 @@ public class ScsBppMasterVo implements Serializable {
     /**
      * ID
      */
-    @ExcelProperty(value = "ID")
+    // @ExcelProperty(value = "ID")
     private Long id;
 
     /**
-     * BPP代码
+     * 物料
      */
-    @ExcelProperty(value = "BPP代码")
-    private String bppCode;
+    @ExcelProperty(value = "物料")
+    private String item;
 
     /**
-     * BPP描述
+     * 物料编码
      */
-    @ExcelProperty(value = "BPP描述")
-    private String bppDescr;
+    @ExcelProperty(value = "物料编码")
+    private String itemCode;
 
     /**
-     * 大类
+     * 物料描述
      */
-    @ExcelProperty(value = "大类")
+    @ExcelProperty(value = "物料描述")
+    private String itemDescr;
+
+    /**
+     * 物料英文描述
+     */
+    @ExcelProperty(value = "物料英文描述")
+    private String itemDescrEn;
+
+    /**
+     * 单位转换
+     */
+    @ExcelProperty(value = "单位转换")
+    private String uomRate1;
+
+    /**
+     * 大类代码
+     */
+    @ExcelProperty(value = "大类代码")
     private String category;
 
     /**
@@ -50,58 +68,100 @@ public class ScsBppMasterVo implements Serializable {
     private String categoryDescr;
 
     /**
-     * 中类
+     * 品牌代码
      */
-    @ExcelProperty(value = "中类")
-    private String subcategory;
-
-    /**
-     * 中类描述
-     */
-    @ExcelProperty(value = "中类描述")
-    private String subcategoryDescr;
-
-    /**
-     * 品牌
-     */
-    @ExcelProperty(value = "品牌")
+    @ExcelProperty(value = "品牌代码")
     private String brand;
 
     /**
-     * 品牌描述
+     * 口味代码
      */
-    @ExcelProperty(value = "品牌描述")
-    private String brandDescr;
-
-    /**
-     * 口味
-     */
-    @ExcelProperty(value = "口味")
+    @ExcelProperty(value = "口味代码")
     private String flavor;
 
     /**
-     * 口味描述
+     * 包装代码
      */
-    @ExcelProperty(value = "口味描述")
-    private String flavorDescr;
+    @ExcelProperty(value = "包装代码")
+    private String packageCode;
 
     /**
-     * 包装
+     * 规格代码
      */
-    @ExcelProperty(value = "包装")
-    private String packAge;
+    @ExcelProperty(value = "规格代码")
+    private String spec;
 
     /**
-     * 包装描述
+     * 规格描述
      */
-    @ExcelProperty(value = "包装描述")
-    private String packageDescr;
+    @ExcelProperty(value = "规格描述")
+    private String specDescr;
 
     /**
-     * 产品分类
+     * PC
      */
-    @ExcelProperty(value = "产品分类")
-    private String beverage;
+    @ExcelProperty(value = "PC")
+    private String pc;
+
+    /**
+     * UC
+     */
+    @ExcelProperty(value = "UC")
+    private String uc;
+
+    /**
+     * HIERARCHY2
+     */
+    @ExcelProperty(value = "HIERARCHY2")
+    private String hierarchy2;
+
+    /**
+     * BPP HIERARCHY2
+     */
+    @ExcelProperty(value = "BPP HIERARCHY2")
+    private String bppHierarchy2;
+
+    /**
+     * BPP 代码
+     */
+    @ExcelProperty(value = "BPP 代码")
+    private String bppCode;
+
+    /**
+     * BPP 大类
+     */
+    @ExcelProperty(value = "BPP 大类")
+    private String bbpCategoryDescr;
+
+    /**
+     * BPP 中类
+     */
+    @ExcelProperty(value = "BPP 中类")
+    private String bppSubcategoryDescr;
+
+    /**
+     * BPP 品牌
+     */
+    @ExcelProperty(value = "BPP 品牌")
+    private String bbpBrand;
+
+    /**
+     * BPP 口味
+     */
+    @ExcelProperty(value = "BPP 口味")
+    private String bbpFlavor;
+
+    /**
+     * ABC分类
+     */
+    @ExcelProperty(value = "ABC分类")
+    private String abc;
+
+    /**
+     * 新品标识
+     */
+    @ExcelProperty(value = "新品标识")
+    private String uNew;
 
     /**
      * 状态
@@ -109,22 +169,70 @@ public class ScsBppMasterVo implements Serializable {
     @ExcelProperty(value = "状态")
     private String status;
 
+
+    /**
+     * BPP描述
+     */
+    // @ExcelProperty(value = "BPP描述")
+    private String bppDescr;
+
+
+    /**
+     * 中类
+     */
+    // @ExcelProperty(value = "中类")
+    private String subcategory;
+
+
+    /**
+     * 中类描述
+     */
+    // @ExcelProperty(value = "中类描述")
+    private String subcategoryDescr;
+
+
+    /**
+     * 品牌描述
+     */
+    // @ExcelProperty(value = "品牌描述")
+    private String brandDescr;
+
+
+    /**
+     * 口味描述
+     */
+    // @ExcelProperty(value = "口味描述")
+    private String flavorDescr;
+
+
+    /**
+     * 包装描述
+     */
+    // @ExcelProperty(value = "包装描述")
+    private String packageDescr;
+
+    /**
+     * 产品分类
+     */
+    // @ExcelProperty(value = "产品分类")
+    private String beverage;
+
     /**
      * 成品与KIT转换率
      */
-    @ExcelProperty(value = "成品与KIT转换率")
+    // @ExcelProperty(value = "成品与KIT转换率")
     private BigDecimal fgKitRate;
 
     /**
      * UC转换率
      */
-    @ExcelProperty(value = "UC转换率")
+    // @ExcelProperty(value = "UC转换率")
     private BigDecimal ucRate;
 
     /**
      * 版本号
      */
-    @ExcelProperty(value = "版本号")
+    // @ExcelProperty(value = "版本号")
     private Long versionNo;
 
 

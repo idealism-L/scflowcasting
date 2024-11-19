@@ -69,7 +69,7 @@ public class ScsBppMaster extends BaseEntity {
     /**
      * 包装
      */
-    private String packAge;
+    private String packageCode;
     /**
      * 包装描述
      */
