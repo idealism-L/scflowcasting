@@ -16,6 +16,8 @@ import java.util.Set;
 public interface ISysRoleService {
 
 
+    List<SysRole> getRolesByToken();
+
     TableDataInfo<SysRole> selectPageRoleList(SysRole role, PageQuery pageQuery);
 
     /**

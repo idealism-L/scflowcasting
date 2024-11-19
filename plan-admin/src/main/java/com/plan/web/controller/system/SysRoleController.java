@@ -225,4 +225,13 @@ public class SysRoleController extends BaseController {
         ajax.put("depts", deptService.selectDeptTreeList(new SysDept()));
         return R.ok(ajax);
     }
+
+    /**
+     * 根据 token 获取用户角色列表
+     */
+    @GetMapping("/rolesByToken")
+    public R<List<SysRole>> getRolesByToken() {
+        List<SysRole> sysRoles = roleService.getRolesByToken();
+        return R.ok(sysRoles);
+    }
 }

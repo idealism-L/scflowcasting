@@ -79,6 +79,12 @@ public class SysRole extends BaseEntity {
     private Boolean deptCheckStrictly;
 
     /**
+     * 装瓶集团权限
+     */
+    @ExcelProperty(value = "装瓶集团权限", converter = ExcelDictConvert.class)
+    private String corporationPermissions;
+
+    /**
      * 角色状态（0正常 1停用）
      */
     @ExcelProperty(value = "角色状态", converter = ExcelDictConvert.class)

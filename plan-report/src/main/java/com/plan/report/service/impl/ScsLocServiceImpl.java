@@ -61,6 +61,7 @@ public class ScsLocServiceImpl implements IScsLocService {
      * 根据集团查地点
      */
     public List<String> listByCorporation(ScsLocBo bo) {
+
         LambdaQueryWrapper<ScsLoc> lqw = new LambdaQueryWrapper<>();
         lqw.eq(StringUtils.isNotBlank(bo.getCorporation()), ScsLoc::getCorporation, bo.getCorporation());
         List<ScsLocVo> selectVoList = baseMapper.selectVoList(lqw);
