@@ -2,6 +2,7 @@ package com.plan.report.service;
 
 import com.plan.common.core.domain.PageQuery;
 import com.plan.common.core.page.TableDataInfo;
+import com.plan.report.domain.ScsLoc;
 import com.plan.report.domain.bo.ScsLocBo;
 import com.plan.report.domain.vo.ScsLocVo;
 
@@ -51,4 +52,6 @@ public interface IScsLocService {
      * 校验并批量删除scs_loc信息
      */
     Boolean deleteWithValidByIds(Collection<Long> ids, Boolean isValid);
+
+    List<ScsLoc> checkUnique(ScsLocBo bo);
 }

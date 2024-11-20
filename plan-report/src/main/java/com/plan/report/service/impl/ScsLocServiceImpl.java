@@ -16,6 +16,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
@@ -84,6 +85,10 @@ public class ScsLocServiceImpl implements IScsLocService {
         lqw.like(StringUtils.isNotBlank(bo.getCpsCode()), ScsLoc::getCpsCode, bo.getCpsCode());
         lqw.eq(StringUtils.isNotBlank(bo.getEmail()), ScsLoc::getEmail, bo.getEmail());
         lqw.eq(bo.getVersionNo() != null, ScsLoc::getVersionNo, bo.getVersionNo());
+        // 检查 ids 数组是否不为空
+        if (bo.getIds() != null && bo.getIds().length > 0) {
+            lqw.in(ScsLoc::getId, Arrays.asList(bo.getIds()));
+        }
         return lqw;
     }
 
@@ -127,5 +132,12 @@ public class ScsLocServiceImpl implements IScsLocService {
             //TODO 做一些业务上的校验,判断是否需要校验
         }
         return baseMapper.deleteBatchIds(ids) > 0;
+    }
+
+    @Override
+    public List<ScsLoc> checkUnique(ScsLocBo bo) {
+        LambdaQueryWrapper<ScsLoc> lqw = Wrappers.lambdaQuery();
+        lqw.eq(StringUtils.isNotBlank(bo.getLoc()), ScsLoc::getLoc, bo.getLoc());
+        return baseMapper.selectList(lqw);
     }
 }

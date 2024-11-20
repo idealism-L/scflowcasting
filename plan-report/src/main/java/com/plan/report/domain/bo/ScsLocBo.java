@@ -80,5 +80,9 @@ public class ScsLocBo extends BaseEntity {
      */
     private Long versionNo;
 
+    /**
+     * ids 用于导出选中的table数据
+     */
+    private Long[] ids;
 
 }
