@@ -50,7 +50,7 @@ public class SysRoleServiceImpl implements ISysRoleService {
     public List<SysRole> getRolesByToken() {
         Long userId = StpUtil.getLoginIdAsLong();
         List<SysUserRole> userRoles = userRoleMapper.selectList(new LambdaQueryWrapper<SysUserRole>().eq(SysUserRole::getUserId, userId));
-        return new ArrayList<>();
+        return baseMapper.selectVoList(new LambdaQueryWrapper<SysRole>().in(SysRole::getRoleId, userRoles));
     }
 
     @Override
@@ -471,5 +471,11 @@ public class SysRoleServiceImpl implements ISysRoleService {
                 }
             }
         });
+    }
+
+    @Override
+    public List<String> getCorporationList(List<SysRole> sysRoles) {
+        List<String> corporationList = new ArrayList<>();
+        return null;
     }
 }

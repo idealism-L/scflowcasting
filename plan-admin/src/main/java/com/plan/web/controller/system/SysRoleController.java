@@ -227,11 +227,12 @@ public class SysRoleController extends BaseController {
     }
 
     /**
-     * 根据 token 获取用户角色列表
+     * 根据 token 获取用户装瓶集团列表
      */
     @GetMapping("/rolesByToken")
-    public R<List<SysRole>> getRolesByToken() {
+    public R<List<String>> getRolesByToken() {
         List<SysRole> sysRoles = roleService.getRolesByToken();
-        return R.ok(sysRoles);
+        List<String> corporationList = roleService.getCorporationList(sysRoles);
+        return R.ok(corporationList);
     }
 }
