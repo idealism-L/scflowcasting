@@ -27,7 +27,7 @@ import com.plan.common.core.page.TableDataInfo;
  * scs_flowcasting_output
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-20
  */
 @Validated
 @RequiredArgsConstructor

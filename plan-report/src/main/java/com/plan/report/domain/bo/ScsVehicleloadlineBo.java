@@ -15,7 +15,7 @@ import java.util.Date;
  * scs_vehicleloadline业务对象 scs_vehicleloadline
  *
  * @author ruoyi
- * @date 2024-11-14
+ * @date 2024-11-20
  */
 
 @Data
@@ -77,10 +77,16 @@ public class ScsVehicleloadlineBo extends BaseEntity {
     private Date schedarrivdate;
 
     /**
-     * 实际在途
+     * 实际在途（scs_if_hld_vehicleloadline.sourcestatus=3 并且在scs_if_hld_custorder中订单号+地点+物料相同的量）
      */
-    @NotNull(message = "实际在途不能为空", groups = { AddGroup.class, EditGroup.class })
+    @NotNull(message = "实际在途（scs_if_hld_vehicleloadline.sourcestatus=3 并且在scs_if_hld_custorder中订单号+地点+物料相同的量）不能为空", groups = { AddGroup.class, EditGroup.class })
     private BigDecimal actualQty;
+
+    /**
+     * 计划在途（scs_if_hld_vehicleloadline.sourcestatus=1的数量）
+     */
+    @NotNull(message = "计划在途（scs_if_hld_vehicleloadline.sourcestatus=1的数量）不能为空", groups = { AddGroup.class, EditGroup.class })
+    private BigDecimal planQty;
 
     /**
      * 实际在途(SU)

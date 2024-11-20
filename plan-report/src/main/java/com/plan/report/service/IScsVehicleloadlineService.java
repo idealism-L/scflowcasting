@@ -12,7 +12,7 @@ import java.util.List;
  * scs_vehicleloadlineService接口
  *
  * @author ruoyi
- * @date 2024-11-14
+ * @date 2024-11-20
  */
 public interface IScsVehicleloadlineService {
 

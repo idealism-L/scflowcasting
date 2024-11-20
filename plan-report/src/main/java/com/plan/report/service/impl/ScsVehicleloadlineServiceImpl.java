@@ -23,7 +23,7 @@ import java.util.Map;
  * scs_vehicleloadlineService业务层处理
  *
  * @author ruoyi
- * @date 2024-11-14
+ * @date 2024-11-20
  */
 @RequiredArgsConstructor
 @Service
@@ -70,6 +70,7 @@ public class ScsVehicleloadlineServiceImpl implements IScsVehicleloadlineService
         lqw.eq(StringUtils.isNotBlank(bo.getBppFlavor()), ScsVehicleloadline::getBppFlavor, bo.getBppFlavor());
         lqw.eq(bo.getSchedarrivdate() != null, ScsVehicleloadline::getSchedarrivdate, bo.getSchedarrivdate());
         lqw.eq(bo.getActualQty() != null, ScsVehicleloadline::getActualQty, bo.getActualQty());
+        lqw.eq(bo.getPlanQty() != null, ScsVehicleloadline::getPlanQty, bo.getPlanQty());
         lqw.eq(bo.getSuQty() != null, ScsVehicleloadline::getSuQty, bo.getSuQty());
         lqw.eq(bo.getUcQty() != null, ScsVehicleloadline::getUcQty, bo.getUcQty());
         lqw.like(StringUtils.isNotBlank(bo.getFileName()), ScsVehicleloadline::getFileName, bo.getFileName());
