@@ -41,7 +41,7 @@ public class ScsKitMap extends BaseEntity {
     /**
      * 地点
      */
-    private String loc;
+    private String locCode;
     /**
      * KIT ITEM ID
      */

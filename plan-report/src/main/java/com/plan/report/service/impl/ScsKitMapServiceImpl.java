@@ -64,7 +64,7 @@ public class ScsKitMapServiceImpl implements IScsKitMapService {
         lqw.eq(bo.getItemId() != null, ScsKitMap::getItemId, bo.getItemId());
         lqw.eq(StringUtils.isNotBlank(bo.getItem()), ScsKitMap::getItem, bo.getItem());
         lqw.eq(bo.getLocId() != null, ScsKitMap::getLocId, bo.getLocId());
-        lqw.eq(StringUtils.isNotBlank(bo.getLoc()), ScsKitMap::getLoc, bo.getLoc());
+        lqw.eq(StringUtils.isNotBlank(bo.getLocCode()), ScsKitMap::getLocCode, bo.getLocCode());
         lqw.eq(bo.getKitItemId() != null, ScsKitMap::getKitItemId, bo.getKitItemId());
         lqw.eq(StringUtils.isNotBlank(bo.getKitItem()), ScsKitMap::getKitItem, bo.getKitItem());
         lqw.eq(bo.getConvfactor() != null, ScsKitMap::getConvfactor, bo.getConvfactor());

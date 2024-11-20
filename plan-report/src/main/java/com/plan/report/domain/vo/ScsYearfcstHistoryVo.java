@@ -15,7 +15,7 @@ import java.io.Serializable;
  * scs_yearfcst_history视图对象 scs_yearfcst_history
  *
  * @author ruoyi
- * @date 2024-11-13
+ * @date 2024-11-20
  */
 @Data
 @ExcelIgnoreUnannotated
@@ -178,6 +178,12 @@ public class ScsYearfcstHistoryVo implements Serializable {
      */
     @ExcelProperty(value = "装瓶集团")
     private String corporation;
+
+    /**
+     * 物料集团
+     */
+    @ExcelProperty(value = "物料集团")
+    private String kitCorporation;
 
     /**
      * 有效标识

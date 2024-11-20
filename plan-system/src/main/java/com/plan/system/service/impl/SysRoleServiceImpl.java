@@ -47,10 +47,23 @@ public class SysRoleServiceImpl implements ISysRoleService {
     private final SysRoleDeptMapper roleDeptMapper;
 
     @Override
-    public List<SysRole> getRolesByToken() {
-        Long userId = StpUtil.getLoginIdAsLong();
+    public List<String> getCorporationList() {
+        String loginIdStr = StpUtil.getLoginIdAsString();
+        Long userId = Long.parseLong(loginIdStr.split(":")[1]);
         List<SysUserRole> userRoles = userRoleMapper.selectList(new LambdaQueryWrapper<SysUserRole>().eq(SysUserRole::getUserId, userId));
-        return baseMapper.selectVoList(new LambdaQueryWrapper<SysRole>().in(SysRole::getRoleId, userRoles));
+        List<SysRole> sysRoles = new ArrayList<>();
+        for (SysUserRole userRole : userRoles) {
+            SysRole sysRole = baseMapper.selectById(userRole.getRoleId());
+            sysRoles.add(sysRole);
+        }
+        Set<String> corporationSet = new HashSet<>();
+        for (SysRole sysRole : sysRoles) {
+            String[] corporationPermissions = sysRole.getCorporationPermissions().split(",");
+            for (String corporation : corporationPermissions) {
+                corporationSet.add(corporation.trim());
+            }
+        }
+        return new ArrayList<>(corporationSet);
     }
 
     @Override
@@ -476,6 +489,7 @@ public class SysRoleServiceImpl implements ISysRoleService {
     @Override
     public List<String> getCorporationList(List<SysRole> sysRoles) {
         List<String> corporationList = new ArrayList<>();
+        corporationList = baseMapper.getCorporationList(sysRoles);
         return null;
     }
 }

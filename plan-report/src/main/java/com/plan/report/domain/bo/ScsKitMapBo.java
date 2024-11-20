@@ -49,7 +49,7 @@ public class ScsKitMapBo extends BaseEntity {
      * 地点
      */
     @NotBlank(message = "地点不能为空", groups = { AddGroup.class, EditGroup.class })
-    private String loc;
+    private String locCode;
 
     /**
      * KIT ITEM ID

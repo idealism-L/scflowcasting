@@ -21,9 +21,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * 角色信息
@@ -227,12 +225,10 @@ public class SysRoleController extends BaseController {
     }
 
     /**
-     * 根据 token 获取用户装瓶集团列表
+     * 获取用户装瓶集团列表
      */
-    @GetMapping("/rolesByToken")
-    public R<List<String>> getRolesByToken() {
-        List<SysRole> sysRoles = roleService.getRolesByToken();
-        List<String> corporationList = roleService.getCorporationList(sysRoles);
-        return R.ok(corporationList);
+    @GetMapping("/corporationList")
+    public R<List<String>> getCorporationList() {
+        return R.ok(roleService.getCorporationList());
     }
 }

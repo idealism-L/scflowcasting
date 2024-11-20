@@ -23,7 +23,7 @@ import java.util.Map;
  * scs_yearfcst_historyService业务层处理
  *
  * @author ruoyi
- * @date 2024-11-13
+ * @date 2024-11-20
  */
 @RequiredArgsConstructor
 @Service
@@ -86,6 +86,7 @@ public class ScsYearfcstHistoryServiceImpl implements IScsYearfcstHistoryService
         lqw.eq(bo.getUM16() != null, ScsYearfcstHistory::getUM16, bo.getUM16());
         lqw.eq(StringUtils.isNotBlank(bo.getItemPattern()), ScsYearfcstHistory::getItemPattern, bo.getItemPattern());
         lqw.eq(StringUtils.isNotBlank(bo.getCorporation()), ScsYearfcstHistory::getCorporation, bo.getCorporation());
+        lqw.eq(StringUtils.isNotBlank(bo.getKitCorporation()), ScsYearfcstHistory::getKitCorporation, bo.getKitCorporation());
         lqw.eq(StringUtils.isNotBlank(bo.getUFlag()), ScsYearfcstHistory::getUFlag, bo.getUFlag());
         lqw.eq(StringUtils.isNotBlank(bo.getUComment()), ScsYearfcstHistory::getUComment, bo.getUComment());
         lqw.like(StringUtils.isNotBlank(bo.getFileName()), ScsYearfcstHistory::getFileName, bo.getFileName());

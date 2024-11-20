@@ -15,7 +15,7 @@ import java.util.Date;
  * scs_yearfcst_history业务对象 scs_yearfcst_history
  *
  * @author ruoyi
- * @date 2024-11-13
+ * @date 2024-11-20
  */
 
 @Data
@@ -177,6 +177,12 @@ public class ScsYearfcstHistoryBo extends BaseEntity {
      */
     @NotBlank(message = "装瓶集团不能为空", groups = { AddGroup.class, EditGroup.class })
     private String corporation;
+
+    /**
+     * 物料集团
+     */
+    @NotBlank(message = "物料集团不能为空", groups = { AddGroup.class, EditGroup.class })
+    private String kitCorporation;
 
     /**
      * 有效标识

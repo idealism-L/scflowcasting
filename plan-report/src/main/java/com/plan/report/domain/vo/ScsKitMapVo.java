@@ -44,12 +44,6 @@ public class ScsKitMapVo implements Serializable {
     private Long locId;
 
     /**
-     * 地点
-     */
-    // @ExcelProperty(value = "地点")
-    private String loc;
-
-    /**
      * KIT ITEM ID
      */
     // @ExcelProperty(value = "KIT ITEM ID")

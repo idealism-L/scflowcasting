@@ -9,7 +9,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="itemId" column="item_id"/>
         <result property="item" column="item"/>
         <result property="locId" column="loc_id"/>
-        <result property="loc" column="loc"/>
+        <result property="locCode" column="locCode"/>
         <result property="kitItemId" column="kit_item_id"/>
         <result property="kitItem" column="kit_item"/>
         <result property="convfactor" column="convfactor"/>
@@ -52,8 +52,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="param.corporation != null and param.corporation != ''">
                 and a.corporation = #{param.corporation}
             </if>
-            <if test="param.loc != null and param.loc != ''">
-                and loc.loc = #{param.loc}
+            <if test="param.locCode != null and param.locCode != ''">
+                and loc.locCode = #{param.locCode}
             </if>
             <if test="param.itemCode != null and param.itemCode != ''">
                 and a.item_code like concat('%', #{param.itemCode}, '%')

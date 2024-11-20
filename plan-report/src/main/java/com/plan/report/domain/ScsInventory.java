@@ -13,7 +13,7 @@ import java.util.Date;
  * scs_inventory对象 scs_inventory
  *
  * @author ruoyi
- * @date 2024-11-13
+ * @date 2024-11-20
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -35,6 +35,10 @@ public class ScsInventory extends BaseEntity {
      * 装瓶集团
      */
     private String corporation;
+    /**
+     * 物料集团
+     */
+    private String kitCorporation;
     /**
      * 物料编码
      */

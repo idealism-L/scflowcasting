@@ -23,7 +23,7 @@ import java.util.Map;
  * scs_inventory_historyService业务层处理
  *
  * @author ruoyi
- * @date 2024-11-13
+ * @date 2024-11-20
  */
 @RequiredArgsConstructor
 @Service
@@ -63,6 +63,7 @@ public class ScsInventoryHistoryServiceImpl implements IScsInventoryHistoryServi
         LambdaQueryWrapper<ScsInventoryHistory> lqw = Wrappers.lambdaQuery();
         lqw.eq(bo.getParentId() != null, ScsInventoryHistory::getParentId, bo.getParentId());
         lqw.eq(StringUtils.isNotBlank(bo.getCorporation()), ScsInventoryHistory::getCorporation, bo.getCorporation());
+        lqw.eq(StringUtils.isNotBlank(bo.getKitCorporation()), ScsInventoryHistory::getKitCorporation, bo.getKitCorporation());
         lqw.eq(StringUtils.isNotBlank(bo.getItemCode()), ScsInventoryHistory::getItemCode, bo.getItemCode());
         lqw.eq(StringUtils.isNotBlank(bo.getDescr()), ScsInventoryHistory::getDescr, bo.getDescr());
         lqw.eq(StringUtils.isNotBlank(bo.getDescrEn()), ScsInventoryHistory::getDescrEn, bo.getDescrEn());
