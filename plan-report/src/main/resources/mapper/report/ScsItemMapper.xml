@@ -21,7 +21,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="brandDescr" column="brand_descr"/>
         <result property="flavor" column="flavor"/>
         <result property="flavorDescr" column="flavor_descr"/>
-        <result property="package" column="package"/>
+        <result property="packageCode" column="packageCode"/>
         <result property="packageDescr" column="package_descr"/>
         <result property="subflavor" column="subflavor"/>
         <result property="subflavorDescr" column="subflavor_descr"/>
@@ -53,6 +53,63 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="updateBy" column="update_by"/>
         <result property="updateTime" column="update_time"/>
     </resultMap>
+    <select id="selectListFgVoPage" resultType="com.plan.report.domain.vo.ScsItemFgVo">
+        <include refid="list"/>
+    </select>
+    <select id="selectListFgVo" resultType="com.plan.report.domain.vo.ScsItemFgVo">
+        <include refid="list"/>
+    </select>
+    <sql id="list">
+        select
+        si.id as id,
+        si.item as item,
+        si.item_code as itemCode,
+        si.descr as itemDescr,
+        si.descr_en as itemDescrEn,
+        si.uom_rate1 as uomRate1,
+        sbm.category as category,
+        sbm.category_descr as categoryDescr,
+        sbm.brand as brand,
+        sbm.brand_descr as brandDescr,
+        sbm.flavor as flavor,
+        sbm.flavor_descr as flavorDescr,
+        sbm.package_code as packageCode,
+        sbm.package_descr as packageDescr,
+        si.spec as spec,
+        si.spec_descr as specDescr,
+        si.pc as pc,
+        si.uc as uc,
+        si.hierarchy2 as hierarchy2,
+        sbm.bpp_descr as bppHierarchy2,
+        sbm.bpp_code as bppCode,
+        sbm.category_descr as bbpCategoryDescr,
+        sbm.subcategory_descr as bbpSubcategoryDescr,
+        sbm.brand as bbpBrand,
+        sbm.flavor as bbpFlavor,
+        si.abc as abc,
+        si.u_new as uNew,
+        si.status as status
+        from scs_item si
+        left join scs_bpp_master sbm on sbm.bpp_code = si.bpp_code
+        <where>
+            si.item_pattern = 'FG'
+            <if test="param.corporation != null and param.corporation != ''">
+                and si.corporation = #{param.corporation}
+            </if>
+            <if test="param.itemCode != null and param.itemCode != ''">
+                and si.item_code like concat('%', #{param.itemCode}, '%')
+            </if>
+            <if test="param.itemDescr != null and param.itemDescr != ''">
+                and si.descr like concat('%', #{param.itemDescr}, '%')
+            </if>
+            <if test="param.ids != null and param.ids.length > 0">
+                and si.id in
+                <foreach collection="param.ids" item="id" open="(" separator="," close=")">
+                    #{id}
+                </foreach>
+            </if>
 
+        </where>
+    </sql>
 
 </mapper>

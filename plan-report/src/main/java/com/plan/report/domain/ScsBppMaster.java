@@ -12,7 +12,7 @@ import java.math.BigDecimal;
  * scs_bpp_master对象 scs_bpp_master
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-21
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

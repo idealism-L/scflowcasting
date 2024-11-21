@@ -23,7 +23,7 @@ import java.util.Map;
  * scs_bpp_masterService业务层处理
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-21
  */
 @RequiredArgsConstructor
 @Service
@@ -44,9 +44,8 @@ public class ScsBppMasterServiceImpl implements IScsBppMasterService {
      */
     @Override
     public TableDataInfo<ScsBppMasterVo> queryPageList(ScsBppMasterBo bo, PageQuery pageQuery) {
-        // LambdaQueryWrapper<ScsBppMaster> lqw = buildQueryWrapper(bo);
-        // Page<ScsBppMasterVo> result = baseMapper.selectVoPage(pageQuery.build(), lqw);
-        Page<ScsBppMasterVo> result = baseMapper.selectListVoPage(pageQuery.build(), bo);
+        LambdaQueryWrapper<ScsBppMaster> lqw = buildQueryWrapper(bo);
+        Page<ScsBppMasterVo> result = baseMapper.selectVoPage(pageQuery.build(), lqw);
         return TableDataInfo.build(result);
     }
 
@@ -55,14 +54,14 @@ public class ScsBppMasterServiceImpl implements IScsBppMasterService {
      */
     @Override
     public List<ScsBppMasterVo> queryList(ScsBppMasterBo bo) {
-        //LambdaQueryWrapper<ScsBppMaster> lqw = buildQueryWrapper(bo);
-        return baseMapper.selectListVo(bo);
+        LambdaQueryWrapper<ScsBppMaster> lqw = buildQueryWrapper(bo);
+        return baseMapper.selectVoList(lqw);
     }
 
     private LambdaQueryWrapper<ScsBppMaster> buildQueryWrapper(ScsBppMasterBo bo) {
         Map<String, Object> params = bo.getParams();
         LambdaQueryWrapper<ScsBppMaster> lqw = Wrappers.lambdaQuery();
-        lqw.eq(StringUtils.isNotBlank(bo.getBppCode()), ScsBppMaster::getBppCode, bo.getBppCode());
+        lqw.like(StringUtils.isNotBlank(bo.getBppCode()), ScsBppMaster::getBppCode, bo.getBppCode());
         lqw.eq(StringUtils.isNotBlank(bo.getBppDescr()), ScsBppMaster::getBppDescr, bo.getBppDescr());
         lqw.eq(StringUtils.isNotBlank(bo.getCategory()), ScsBppMaster::getCategory, bo.getCategory());
         lqw.eq(StringUtils.isNotBlank(bo.getCategoryDescr()), ScsBppMaster::getCategoryDescr, bo.getCategoryDescr());

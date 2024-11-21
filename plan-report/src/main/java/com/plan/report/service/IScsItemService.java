@@ -3,6 +3,8 @@ package com.plan.report.service;
 import com.plan.common.core.domain.PageQuery;
 import com.plan.common.core.page.TableDataInfo;
 import com.plan.report.domain.bo.ScsItemBo;
+import com.plan.report.domain.bo.ScsItemFgBo;
+import com.plan.report.domain.vo.ScsItemFgVo;
 import com.plan.report.domain.vo.ScsItemVo;
 
 import java.util.Collection;
@@ -27,9 +29,19 @@ public interface IScsItemService {
     TableDataInfo<ScsItemVo> queryPageList(ScsItemBo bo, PageQuery pageQuery);
 
     /**
+     * 查询成品主文件页面list
+     */
+    TableDataInfo<ScsItemFgVo> queryFgPageList(ScsItemFgBo bo, PageQuery pageQuery);
+
+    /**
      * 查询scs_item列表
      */
     List<ScsItemVo> queryList(ScsItemBo bo);
+
+    /**
+     * 查询成品主文件页面list
+     */
+    List<ScsItemFgVo> queryFgList(ScsItemFgBo bo);
 
     /**
      * 新增scs_item

@@ -9,12 +9,15 @@ import com.plan.common.core.page.TableDataInfo;
 import com.plan.common.utils.StringUtils;
 import com.plan.report.domain.ScsItem;
 import com.plan.report.domain.bo.ScsItemBo;
+import com.plan.report.domain.bo.ScsItemFgBo;
+import com.plan.report.domain.vo.ScsItemFgVo;
 import com.plan.report.domain.vo.ScsItemVo;
 import com.plan.report.mapper.ScsItemMapper;
 import com.plan.report.service.IScsItemService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -49,6 +52,12 @@ public class ScsItemServiceImpl implements IScsItemService {
         return TableDataInfo.build(result);
     }
 
+    @Override
+    public TableDataInfo<ScsItemFgVo> queryFgPageList(ScsItemFgBo bo, PageQuery pageQuery) {
+        Page<ScsItemFgVo> result = baseMapper.selectListFgVoPage(pageQuery.build(), bo);
+        return TableDataInfo.build(result);
+    }
+
     /**
      * 查询scs_item列表
      */
@@ -58,12 +67,17 @@ public class ScsItemServiceImpl implements IScsItemService {
         return baseMapper.selectVoList(lqw);
     }
 
+    @Override
+    public List<ScsItemFgVo> queryFgList(ScsItemFgBo bo) {
+        return baseMapper.selectListFgVo(bo);
+    }
+
     private LambdaQueryWrapper<ScsItem> buildQueryWrapper(ScsItemBo bo) {
         Map<String, Object> params = bo.getParams();
         LambdaQueryWrapper<ScsItem> lqw = Wrappers.lambdaQuery();
         lqw.eq(StringUtils.isNotBlank(bo.getItem()), ScsItem::getItem, bo.getItem());
         lqw.eq(StringUtils.isNotBlank(bo.getCorporation()), ScsItem::getCorporation, bo.getCorporation());
-        lqw.eq(StringUtils.isNotBlank(bo.getItemPattern()), ScsItem::getItemPattern, bo.getItemPattern());
+        lqw.eq(ScsItem::getItemPattern, "KIT");
         // lqw.eq(StringUtils.isNotBlank(bo.getItemCode()), ScsItem::getItemCode, bo.getItemCode());
         // 物料编码模糊查询
         lqw.like(StringUtils.isNotBlank(bo.getItemCode()), ScsItem::getItemCode, bo.getItemCode());
@@ -107,6 +121,10 @@ public class ScsItemServiceImpl implements IScsItemService {
         lqw.eq(StringUtils.isNotBlank(bo.getStatus()), ScsItem::getStatus, bo.getStatus());
         lqw.like(StringUtils.isNotBlank(bo.getFileName()), ScsItem::getFileName, bo.getFileName());
         lqw.eq(bo.getVersionNo() != null, ScsItem::getVersionNo, bo.getVersionNo());
+        // 检查 ids 数组是否不为空
+        if (bo.getIds() != null && bo.getIds().length > 0) {
+            lqw.in(ScsItem::getId, Arrays.asList(bo.getIds()));
+        }
         return lqw;
     }
 

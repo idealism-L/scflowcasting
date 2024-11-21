@@ -12,6 +12,8 @@ import com.plan.common.core.validate.EditGroup;
 import com.plan.common.enums.BusinessType;
 import com.plan.common.utils.poi.ExcelUtil;
 import com.plan.report.domain.bo.ScsItemBo;
+import com.plan.report.domain.bo.ScsItemFgBo;
+import com.plan.report.domain.vo.ScsItemFgVo;
 import com.plan.report.domain.vo.ScsItemVo;
 import com.plan.report.service.IScsItemService;
 import lombok.RequiredArgsConstructor;
@@ -48,6 +50,15 @@ public class ScsItemController extends BaseController {
     }
 
     /**
+     * 查询成品主文件页面list
+     */
+    @SaCheckPermission("report:itemFg:list")
+    @GetMapping("/itemFgList")
+    public TableDataInfo<ScsItemFgVo> listFg(ScsItemFgBo bo, PageQuery pageQuery) {
+        return iScsItemService.queryFgPageList(bo, pageQuery);
+    }
+
+    /**
      * 导出scs_item列表
      */
     @SaCheckPermission("report:item:export")
@@ -56,6 +67,17 @@ public class ScsItemController extends BaseController {
     public void export(ScsItemBo bo, HttpServletResponse response) {
         List<ScsItemVo> list = iScsItemService.queryList(bo);
         ExcelUtil.exportExcel(list, "scs_item", ScsItemVo.class, response);
+    }
+
+    /**
+     * 导出成品主文件页面列表
+     */
+    @SaCheckPermission("report:itemFg:export")
+    @Log(title = "scs_item", businessType = BusinessType.EXPORT)
+    @PostMapping("/exportFg")
+    public void exportFg(ScsItemFgBo bo, HttpServletResponse response) {
+        List<ScsItemFgVo> list = iScsItemService.queryFgList(bo);
+        ExcelUtil.exportExcel(list, "scs_item(Fg)", ScsItemFgVo.class, response);
     }
 
     /**

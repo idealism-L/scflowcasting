@@ -14,7 +14,7 @@ import java.math.BigDecimal;
  * scs_bpp_master业务对象 scs_bpp_master
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-21
  */
 
 @Data
@@ -128,21 +128,6 @@ public class ScsBppMasterBo extends BaseEntity {
      */
     @NotNull(message = "版本号不能为空", groups = { AddGroup.class, EditGroup.class })
     private Long versionNo;
-
-    /**
-     * 装瓶集团
-     */
-    private String corporation;
-
-    /**
-     * 物料编码
-     */
-    private String itemCode;
-
-    /**
-     * 物料描述
-     */
-    private String itemDescr;
 
 
 }

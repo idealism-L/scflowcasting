@@ -1,10 +1,9 @@
 package com.plan.report.service;
 
-import com.plan.report.domain.ScsBppMaster;
-import com.plan.report.domain.vo.ScsBppMasterVo;
-import com.plan.report.domain.bo.ScsBppMasterBo;
-import com.plan.common.core.page.TableDataInfo;
 import com.plan.common.core.domain.PageQuery;
+import com.plan.common.core.page.TableDataInfo;
+import com.plan.report.domain.bo.ScsBppMasterBo;
+import com.plan.report.domain.vo.ScsBppMasterVo;
 
 import java.util.Collection;
 import java.util.List;
@@ -13,7 +12,7 @@ import java.util.List;
  * scs_bpp_masterService接口
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-21
  */
 public interface IScsBppMasterService {
 
