@@ -6,6 +6,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * scs_bpp_master视图对象 scs_bpp_master
@@ -22,7 +23,7 @@ public class ScsBppMasterVo implements Serializable {
     /**
      * ID
      */
-    @ExcelProperty(value = "ID")
+    // @ExcelProperty(value = "ID")
     private Long id;
 
     /**
@@ -46,7 +47,7 @@ public class ScsBppMasterVo implements Serializable {
     /**
      * 大类描述
      */
-    @ExcelProperty(value = "大类描述")
+    // @ExcelProperty(value = "大类描述")
     private String categoryDescr;
 
     /**
@@ -58,7 +59,7 @@ public class ScsBppMasterVo implements Serializable {
     /**
      * 中类描述
      */
-    @ExcelProperty(value = "中类描述")
+    // @ExcelProperty(value = "中类描述")
     private String subcategoryDescr;
 
     /**
@@ -70,7 +71,7 @@ public class ScsBppMasterVo implements Serializable {
     /**
      * 品牌描述
      */
-    @ExcelProperty(value = "品牌描述")
+    // @ExcelProperty(value = "品牌描述")
     private String brandDescr;
 
     /**
@@ -82,19 +83,19 @@ public class ScsBppMasterVo implements Serializable {
     /**
      * 口味描述
      */
-    @ExcelProperty(value = "口味描述")
+    // @ExcelProperty(value = "口味描述")
     private String flavorDescr;
 
     /**
      * 包装
      */
-    @ExcelProperty(value = "包装")
+    // @ExcelProperty(value = "包装")
     private String packageCode;
 
     /**
      * 包装描述
      */
-    @ExcelProperty(value = "包装描述")
+    // @ExcelProperty(value = "包装描述")
     private String packageDescr;
 
     /**
@@ -102,12 +103,6 @@ public class ScsBppMasterVo implements Serializable {
      */
     @ExcelProperty(value = "产品分类")
     private String beverage;
-
-    /**
-     * 状态
-     */
-    @ExcelProperty(value = "状态")
-    private String status;
 
     /**
      * 成品与KIT转换率
@@ -122,9 +117,21 @@ public class ScsBppMasterVo implements Serializable {
     private BigDecimal ucRate;
 
     /**
+     * 状态
+     */
+    @ExcelProperty(value = "状态")
+    private String status;
+
+    /**
+     * 创建时间
+     */
+    @ExcelProperty(value = "修改日期")
+    private Date updateTime;
+
+    /**
      * 版本号
      */
-    @ExcelProperty(value = "版本号")
+    // @ExcelProperty(value = "版本号")
     private Long versionNo;
 
 

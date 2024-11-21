@@ -36,7 +36,7 @@ public class ScsBppMasterBo extends BaseEntity {
     /**
      * BPP描述
      */
-    @NotBlank(message = "BPP描述不能为空", groups = { AddGroup.class, EditGroup.class })
+    // @NotBlank(message = "BPP描述不能为空", groups = { AddGroup.class, EditGroup.class })
     private String bppDescr;
 
     /**
@@ -48,67 +48,67 @@ public class ScsBppMasterBo extends BaseEntity {
     /**
      * 大类描述
      */
-    @NotBlank(message = "大类描述不能为空", groups = { AddGroup.class, EditGroup.class })
+    // @NotBlank(message = "大类描述不能为空", groups = { AddGroup.class, EditGroup.class })
     private String categoryDescr;
 
     /**
      * 中类
      */
-    @NotBlank(message = "中类不能为空", groups = { AddGroup.class, EditGroup.class })
+    // @NotBlank(message = "中类不能为空", groups = { AddGroup.class, EditGroup.class })
     private String subcategory;
 
     /**
      * 中类描述
      */
-    @NotBlank(message = "中类描述不能为空", groups = { AddGroup.class, EditGroup.class })
+    // @NotBlank(message = "中类描述不能为空", groups = { AddGroup.class, EditGroup.class })
     private String subcategoryDescr;
 
     /**
      * 品牌
      */
-    @NotBlank(message = "品牌不能为空", groups = { AddGroup.class, EditGroup.class })
+    // @NotBlank(message = "品牌不能为空", groups = { AddGroup.class, EditGroup.class })
     private String brand;
 
     /**
      * 品牌描述
      */
-    @NotBlank(message = "品牌描述不能为空", groups = { AddGroup.class, EditGroup.class })
+    // @NotBlank(message = "品牌描述不能为空", groups = { AddGroup.class, EditGroup.class })
     private String brandDescr;
 
     /**
      * 口味
      */
-    @NotBlank(message = "口味不能为空", groups = { AddGroup.class, EditGroup.class })
+    // @NotBlank(message = "口味不能为空", groups = { AddGroup.class, EditGroup.class })
     private String flavor;
 
     /**
      * 口味描述
      */
-    @NotBlank(message = "口味描述不能为空", groups = { AddGroup.class, EditGroup.class })
+    // @NotBlank(message = "口味描述不能为空", groups = { AddGroup.class, EditGroup.class })
     private String flavorDescr;
 
     /**
      * 包装
      */
-    @NotBlank(message = "包装不能为空", groups = { AddGroup.class, EditGroup.class })
+    // @NotBlank(message = "包装不能为空", groups = { AddGroup.class, EditGroup.class })
     private String packageCode;
 
     /**
      * 包装描述
      */
-    @NotBlank(message = "包装描述不能为空", groups = { AddGroup.class, EditGroup.class })
+    // @NotBlank(message = "包装描述不能为空", groups = { AddGroup.class, EditGroup.class })
     private String packageDescr;
 
     /**
      * 产品分类
      */
-    @NotBlank(message = "产品分类不能为空", groups = { AddGroup.class, EditGroup.class })
+    // @NotBlank(message = "产品分类不能为空", groups = { AddGroup.class, EditGroup.class })
     private String beverage;
 
     /**
      * 状态
      */
-    @NotBlank(message = "状态不能为空", groups = { AddGroup.class, EditGroup.class })
+    // @NotBlank(message = "状态不能为空", groups = { AddGroup.class, EditGroup.class })
     private String status;
 
     /**
@@ -126,8 +126,12 @@ public class ScsBppMasterBo extends BaseEntity {
     /**
      * 版本号
      */
-    @NotNull(message = "版本号不能为空", groups = { AddGroup.class, EditGroup.class })
+    // @NotNull(message = "版本号不能为空", groups = { AddGroup.class, EditGroup.class })
     private Long versionNo;
 
 
+    /**
+     * ids 用于导出选中的table数据
+     */
+    private Long[] ids;
 }

@@ -15,6 +15,7 @@ import com.plan.report.service.IScsBppMasterService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -78,6 +79,10 @@ public class ScsBppMasterServiceImpl implements IScsBppMasterService {
         lqw.eq(bo.getFgKitRate() != null, ScsBppMaster::getFgKitRate, bo.getFgKitRate());
         lqw.eq(bo.getUcRate() != null, ScsBppMaster::getUcRate, bo.getUcRate());
         lqw.eq(bo.getVersionNo() != null, ScsBppMaster::getVersionNo, bo.getVersionNo());
+        // 检查 ids 数组是否不为空
+        if (bo.getIds() != null && bo.getIds().length > 0) {
+            lqw.in(ScsBppMaster::getId, Arrays.asList(bo.getIds()));
+        }
         return lqw;
     }
 
