@@ -13,7 +13,7 @@ import java.util.Date;
  * scs_yearfcst对象 scs_yearfcst
  *
  * @author ruoyi
- * @date 2024-11-20
+ * @date 2024-11-25
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -55,6 +55,10 @@ public class ScsYearfcst extends BaseEntity {
      * 起始日期
      */
     private Date startdate;
+    /**
+     * 开始日期+文件名(固定部分)
+     */
+    private String fileBatch;
     /**
      * 1月
      */
@@ -130,7 +134,7 @@ public class ScsYearfcst extends BaseEntity {
     /**
      * 物料集团
      */
-    private String kitCorporation;
+    private String itemCorporation;
     /**
      * 有效标识
      */

@@ -27,7 +27,7 @@ import com.plan.common.core.page.TableDataInfo;
  * scs_yearfcst
  *
  * @author ruoyi
- * @date 2024-11-20
+ * @date 2024-11-25
  */
 @Validated
 @RequiredArgsConstructor

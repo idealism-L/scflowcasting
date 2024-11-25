@@ -15,7 +15,7 @@ import java.io.Serializable;
  * scs_kit_fcst_history视图对象 scs_kit_fcst_history
  *
  * @author ruoyi
- * @date 2024-11-13
+ * @date 2024-11-25
  */
 @Data
 @ExcelIgnoreUnannotated
@@ -42,6 +42,12 @@ public class ScsKitFcstHistoryVo implements Serializable {
     private String corporation;
 
     /**
+     * 物料集团
+     */
+    @ExcelProperty(value = "物料集团")
+    private String itemCorporation;
+
+    /**
      * 物料编码
      */
     @ExcelProperty(value = "物料编码")
@@ -66,6 +72,12 @@ public class ScsKitFcstHistoryVo implements Serializable {
     private String loc;
 
     /**
+     * SKU地点
+     */
+    @ExcelProperty(value = "SKU地点")
+    private String skuLoc;
+
+    /**
      * 数量
      */
     @ExcelProperty(value = "数量")
@@ -82,6 +94,12 @@ public class ScsKitFcstHistoryVo implements Serializable {
      */
     @ExcelProperty(value = "备注说明")
     private String uComment;
+
+    /**
+     * 开始日期+文件名(固定部分)
+     */
+    @ExcelProperty(value = "开始日期+文件名(固定部分)")
+    private String fileBatch;
 
     /**
      * 来源文件名

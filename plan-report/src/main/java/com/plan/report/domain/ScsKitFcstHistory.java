@@ -13,7 +13,7 @@ import java.util.Date;
  * scs_kit_fcst_history对象 scs_kit_fcst_history
  *
  * @author ruoyi
- * @date 2024-11-13
+ * @date 2024-11-25
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -36,6 +36,10 @@ public class ScsKitFcstHistory extends BaseEntity {
      */
     private String corporation;
     /**
+     * 物料集团
+     */
+    private String itemCorporation;
+    /**
      * 物料编码
      */
     private String itemCode;
@@ -52,6 +56,10 @@ public class ScsKitFcstHistory extends BaseEntity {
      */
     private String loc;
     /**
+     * SKU地点
+     */
+    private String skuLoc;
+    /**
      * 数量
      */
     private BigDecimal qty;
@@ -63,6 +71,10 @@ public class ScsKitFcstHistory extends BaseEntity {
      * 备注说明
      */
     private String uComment;
+    /**
+     * 开始日期+文件名(固定部分)
+     */
+    private String fileBatch;
     /**
      * 来源文件名
      */

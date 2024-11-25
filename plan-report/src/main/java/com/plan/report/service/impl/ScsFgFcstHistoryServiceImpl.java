@@ -23,7 +23,7 @@ import java.util.Map;
  * scs_fg_fcst_historyService业务层处理
  *
  * @author ruoyi
- * @date 2024-11-13
+ * @date 2024-11-25
  */
 @RequiredArgsConstructor
 @Service
@@ -63,6 +63,7 @@ public class ScsFgFcstHistoryServiceImpl implements IScsFgFcstHistoryService {
         LambdaQueryWrapper<ScsFgFcstHistory> lqw = Wrappers.lambdaQuery();
         lqw.eq(bo.getParentId() != null, ScsFgFcstHistory::getParentId, bo.getParentId());
         lqw.eq(StringUtils.isNotBlank(bo.getCorporation()), ScsFgFcstHistory::getCorporation, bo.getCorporation());
+        lqw.eq(StringUtils.isNotBlank(bo.getItemCorporation()), ScsFgFcstHistory::getItemCorporation, bo.getItemCorporation());
         lqw.eq(StringUtils.isNotBlank(bo.getItemCode()), ScsFgFcstHistory::getItemCode, bo.getItemCode());
         lqw.eq(StringUtils.isNotBlank(bo.getDmdgroup()), ScsFgFcstHistory::getDmdgroup, bo.getDmdgroup());
         lqw.eq(bo.getStartdate() != null, ScsFgFcstHistory::getStartdate, bo.getStartdate());
@@ -70,6 +71,7 @@ public class ScsFgFcstHistoryServiceImpl implements IScsFgFcstHistoryService {
         lqw.eq(bo.getQty() != null, ScsFgFcstHistory::getQty, bo.getQty());
         lqw.eq(StringUtils.isNotBlank(bo.getUFlag()), ScsFgFcstHistory::getUFlag, bo.getUFlag());
         lqw.eq(StringUtils.isNotBlank(bo.getUComment()), ScsFgFcstHistory::getUComment, bo.getUComment());
+        lqw.eq(StringUtils.isNotBlank(bo.getFileBatch()), ScsFgFcstHistory::getFileBatch, bo.getFileBatch());
         lqw.like(StringUtils.isNotBlank(bo.getFileName()), ScsFgFcstHistory::getFileName, bo.getFileName());
         lqw.eq(bo.getEditdate() != null, ScsFgFcstHistory::getEditdate, bo.getEditdate());
         lqw.eq(bo.getVersionNo() != null, ScsFgFcstHistory::getVersionNo, bo.getVersionNo());

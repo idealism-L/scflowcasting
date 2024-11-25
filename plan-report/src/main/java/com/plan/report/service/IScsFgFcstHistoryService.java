@@ -12,7 +12,7 @@ import java.util.List;
  * scs_fg_fcst_historyService接口
  *
  * @author ruoyi
- * @date 2024-11-13
+ * @date 2024-11-25
  */
 public interface IScsFgFcstHistoryService {
 

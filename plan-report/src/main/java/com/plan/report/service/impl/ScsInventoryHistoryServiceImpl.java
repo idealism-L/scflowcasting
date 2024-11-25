@@ -23,7 +23,7 @@ import java.util.Map;
  * scs_inventory_historyService业务层处理
  *
  * @author ruoyi
- * @date 2024-11-20
+ * @date 2024-11-25
  */
 @RequiredArgsConstructor
 @Service
@@ -63,12 +63,13 @@ public class ScsInventoryHistoryServiceImpl implements IScsInventoryHistoryServi
         LambdaQueryWrapper<ScsInventoryHistory> lqw = Wrappers.lambdaQuery();
         lqw.eq(bo.getParentId() != null, ScsInventoryHistory::getParentId, bo.getParentId());
         lqw.eq(StringUtils.isNotBlank(bo.getCorporation()), ScsInventoryHistory::getCorporation, bo.getCorporation());
-        lqw.eq(StringUtils.isNotBlank(bo.getKitCorporation()), ScsInventoryHistory::getKitCorporation, bo.getKitCorporation());
+        lqw.eq(StringUtils.isNotBlank(bo.getItemCorporation()), ScsInventoryHistory::getItemCorporation, bo.getItemCorporation());
         lqw.eq(StringUtils.isNotBlank(bo.getItemCode()), ScsInventoryHistory::getItemCode, bo.getItemCode());
         lqw.eq(StringUtils.isNotBlank(bo.getDescr()), ScsInventoryHistory::getDescr, bo.getDescr());
         lqw.eq(StringUtils.isNotBlank(bo.getDescrEn()), ScsInventoryHistory::getDescrEn, bo.getDescrEn());
         lqw.eq(StringUtils.isNotBlank(bo.getBppBrand()), ScsInventoryHistory::getBppBrand, bo.getBppBrand());
         lqw.eq(StringUtils.isNotBlank(bo.getBppFlavor()), ScsInventoryHistory::getBppFlavor, bo.getBppFlavor());
+        lqw.eq(StringUtils.isNotBlank(bo.getFileBatch()), ScsInventoryHistory::getFileBatch, bo.getFileBatch());
         lqw.eq(StringUtils.isNotBlank(bo.getLoc()), ScsInventoryHistory::getLoc, bo.getLoc());
         lqw.eq(StringUtils.isNotBlank(bo.getLocOwnCode()), ScsInventoryHistory::getLocOwnCode, bo.getLocOwnCode());
         lqw.eq(bo.getAvaildate() != null, ScsInventoryHistory::getAvaildate, bo.getAvaildate());

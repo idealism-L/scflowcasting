@@ -23,7 +23,7 @@ import java.util.Map;
  * scs_yearfcstService业务层处理
  *
  * @author ruoyi
- * @date 2024-11-20
+ * @date 2024-11-25
  */
 @RequiredArgsConstructor
 @Service
@@ -68,6 +68,7 @@ public class ScsYearfcstServiceImpl implements IScsYearfcstService {
         lqw.eq(StringUtils.isNotBlank(bo.getLoc()), ScsYearfcst::getLoc, bo.getLoc());
         lqw.eq(StringUtils.isNotBlank(bo.getUom()), ScsYearfcst::getUom, bo.getUom());
         lqw.eq(bo.getStartdate() != null, ScsYearfcst::getStartdate, bo.getStartdate());
+        lqw.eq(StringUtils.isNotBlank(bo.getFileBatch()), ScsYearfcst::getFileBatch, bo.getFileBatch());
         lqw.eq(bo.getUM1() != null, ScsYearfcst::getUM1, bo.getUM1());
         lqw.eq(bo.getUM2() != null, ScsYearfcst::getUM2, bo.getUM2());
         lqw.eq(bo.getUM3() != null, ScsYearfcst::getUM3, bo.getUM3());
@@ -86,7 +87,7 @@ public class ScsYearfcstServiceImpl implements IScsYearfcstService {
         lqw.eq(bo.getUM16() != null, ScsYearfcst::getUM16, bo.getUM16());
         lqw.eq(StringUtils.isNotBlank(bo.getItemPattern()), ScsYearfcst::getItemPattern, bo.getItemPattern());
         lqw.eq(StringUtils.isNotBlank(bo.getCorporation()), ScsYearfcst::getCorporation, bo.getCorporation());
-        lqw.eq(StringUtils.isNotBlank(bo.getKitCorporation()), ScsYearfcst::getKitCorporation, bo.getKitCorporation());
+        lqw.eq(StringUtils.isNotBlank(bo.getItemCorporation()), ScsYearfcst::getItemCorporation, bo.getItemCorporation());
         lqw.eq(StringUtils.isNotBlank(bo.getUFlag()), ScsYearfcst::getUFlag, bo.getUFlag());
         lqw.eq(StringUtils.isNotBlank(bo.getUComment()), ScsYearfcst::getUComment, bo.getUComment());
         lqw.like(StringUtils.isNotBlank(bo.getFileName()), ScsYearfcst::getFileName, bo.getFileName());
