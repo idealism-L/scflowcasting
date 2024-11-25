@@ -58,6 +58,11 @@ public class ScsKitMapServiceImpl implements IScsKitMapService {
         return baseMapper.selectListVo(bo);
     }
 
+    @Override
+    public List<ScsKitMapVo> queryErrorList(ScsKitMapBo bo) {
+        return baseMapper.selectErrorListVo(bo);
+    }
+
     private LambdaQueryWrapper<ScsKitMap> buildQueryWrapper(ScsKitMapBo bo) {
         Map<String, Object> params = bo.getParams();
         LambdaQueryWrapper<ScsKitMap> lqw = Wrappers.lambdaQuery();

@@ -44,8 +44,8 @@ public class ScsFgMapServiceImpl implements IScsFgMapService {
      */
     @Override
     public TableDataInfo<ScsFgMapVo> queryPageList(ScsFgMapBo bo, PageQuery pageQuery) {
-        LambdaQueryWrapper<ScsFgMap> lqw = buildQueryWrapper(bo);
-        Page<ScsFgMapVo> result = baseMapper.selectVoPage(pageQuery.build(), lqw);
+        // LambdaQueryWrapper<ScsFgMap> lqw = buildQueryWrapper(bo);
+        Page<ScsFgMapVo> result = baseMapper.selectListVoPage(pageQuery.build(), bo);
         return TableDataInfo.build(result);
     }
 
@@ -54,8 +54,8 @@ public class ScsFgMapServiceImpl implements IScsFgMapService {
      */
     @Override
     public List<ScsFgMapVo> queryList(ScsFgMapBo bo) {
-        LambdaQueryWrapper<ScsFgMap> lqw = buildQueryWrapper(bo);
-        return baseMapper.selectVoList(lqw);
+        // LambdaQueryWrapper<ScsFgMap> lqw = buildQueryWrapper(bo);
+        return baseMapper.selectListVo(bo);
     }
 
     private LambdaQueryWrapper<ScsFgMap> buildQueryWrapper(ScsFgMapBo bo) {

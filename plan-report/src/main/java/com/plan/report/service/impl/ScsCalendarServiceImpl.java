@@ -44,8 +44,8 @@ public class ScsCalendarServiceImpl implements IScsCalendarService {
      */
     @Override
     public TableDataInfo<ScsCalendarVo> queryPageList(ScsCalendarBo bo, PageQuery pageQuery) {
-        LambdaQueryWrapper<ScsCalendar> lqw = buildQueryWrapper(bo);
-        Page<ScsCalendarVo> result = baseMapper.selectVoPage(pageQuery.build(), lqw);
+        // LambdaQueryWrapper<ScsCalendar> lqw = buildQueryWrapper(bo);
+        Page<ScsCalendarVo> result = baseMapper.selectListVoPage(pageQuery.build(), bo);
         return TableDataInfo.build(result);
     }
 
@@ -54,8 +54,8 @@ public class ScsCalendarServiceImpl implements IScsCalendarService {
      */
     @Override
     public List<ScsCalendarVo> queryList(ScsCalendarBo bo) {
-        LambdaQueryWrapper<ScsCalendar> lqw = buildQueryWrapper(bo);
-        return baseMapper.selectVoList(lqw);
+        // LambdaQueryWrapper<ScsCalendar> lqw = buildQueryWrapper(bo);
+        return baseMapper.selectListVo(bo);
     }
 
     private LambdaQueryWrapper<ScsCalendar> buildQueryWrapper(ScsCalendarBo bo) {

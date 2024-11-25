@@ -1,27 +1,28 @@
 package com.plan.report.controller;
 
-import java.util.List;
-import java.util.Arrays;
-
-import lombok.RequiredArgsConstructor;
-import javax.servlet.http.HttpServletResponse;
-import javax.validation.constraints.*;
 import cn.dev33.satoken.annotation.SaCheckPermission;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.validation.annotation.Validated;
-import com.plan.common.annotation.RepeatSubmit;
 import com.plan.common.annotation.Log;
+import com.plan.common.annotation.RepeatSubmit;
 import com.plan.common.core.controller.BaseController;
 import com.plan.common.core.domain.PageQuery;
 import com.plan.common.core.domain.R;
+import com.plan.common.core.page.TableDataInfo;
 import com.plan.common.core.validate.AddGroup;
 import com.plan.common.core.validate.EditGroup;
 import com.plan.common.enums.BusinessType;
 import com.plan.common.utils.poi.ExcelUtil;
-import com.plan.report.domain.vo.ScsKitMapVo;
 import com.plan.report.domain.bo.ScsKitMapBo;
+import com.plan.report.domain.vo.ScsKitMapVo;
 import com.plan.report.service.IScsKitMapService;
-import com.plan.common.core.page.TableDataInfo;
+import lombok.RequiredArgsConstructor;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletResponse;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * scs_kit_map
@@ -55,6 +56,17 @@ public class ScsKitMapController extends BaseController {
     public void export(ScsKitMapBo bo, HttpServletResponse response) {
         List<ScsKitMapVo> list = iScsKitMapService.queryList(bo);
         ExcelUtil.exportExcel(list, "scs_kit_map", ScsKitMapVo.class, response);
+    }
+
+    /**
+     * 导出scs_kit_map异常系数
+     */
+    @SaCheckPermission("report:kitMap:export")
+    @Log(title = "scs_kit_map", businessType = BusinessType.EXPORT)
+    @PostMapping("/exportError")
+    public void exportError(ScsKitMapBo bo, HttpServletResponse response) {
+        List<ScsKitMapVo> list = iScsKitMapService.queryErrorList(bo);
+        ExcelUtil.exportExcel(list, "scs_kit_map_error", ScsKitMapVo.class, response);
     }
 
     /**

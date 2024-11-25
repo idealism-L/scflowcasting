@@ -20,6 +20,38 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="updateBy" column="update_by"/>
         <result property="updateTime" column="update_time"/>
     </resultMap>
+    <select id="selectListVoPage" resultType="com.plan.report.domain.vo.ScsFgMapVo">
+        <include refid="list"/>
+    </select>
 
+    <select id="selectListVo" resultType="com.plan.report.domain.vo.ScsFgMapVo">
+        <include refid="list"/>
+    </select>
+
+
+    <sql id="list">
+        select a.corporation as corporation,
+        a.item_code as itemCode,
+        a.descr as itemDescr,
+        b.item_code as fgItemCode,
+        sfm.convfactor as convfactor,
+        sfm.u_flag as uFlag,
+        sfm.key_production_flag as keyProductionFlag,
+        sfm.u_comment as uComment
+        from scs_fg_map sfm
+        inner join scs_item a on a.id = sfm.item_id
+        inner join scs_item b on b.id = sfm.fg_item_id
+        <where>
+            <if test="param.corporation != null and param.corporation != ''">
+                and a.corporation = #{param.corporation}
+            </if>
+            <if test="param.itemCode != null and param.itemCode != ''">
+                and a.item_code like concat('%', #{param.itemCode}, '%')
+            </if>
+            <if test="param.fgItemCode != null and param.fgItemCode != ''">
+                and b.item_code like concat('%', #{param.fgItemCode}, '%')
+            </if>
+        </where>
+    </sql>
 
 </mapper>

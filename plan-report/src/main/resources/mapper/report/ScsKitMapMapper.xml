@@ -31,6 +31,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <include refid="list"/>
     </select>
 
+    <select id="selectErrorListVo" resultType="com.plan.report.domain.vo.ScsKitMapVo">
+        <include refid="errorList"/>
+    </select>
+
     <sql id="list">
         select kit.id as id,
         a.corporation as corporation,
@@ -63,4 +67,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             </if>
         </where>
     </sql>
+    <sql id="errorList">
+        <include refid="list"/>
+        <![CDATA[
+            group by b.item_code, loc.loc_own_code, a.corporation
+            having sum(kit.convfactor) <> 1
+         ]]>
+    </sql>
+
 </mapper>
