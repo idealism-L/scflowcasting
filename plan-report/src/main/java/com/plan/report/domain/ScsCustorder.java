@@ -13,7 +13,7 @@ import java.util.Date;
  * scs_custorder对象 scs_custorder
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-26
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -31,6 +31,18 @@ public class ScsCustorder extends BaseEntity {
      * 物料编码
      */
     private String itemCode;
+    /**
+     * 物料
+     */
+    private String item;
+    /**
+     * 物料描述
+     */
+    private String descr;
+    /**
+     * 英文描述
+     */
+    private String descrEn;
     /**
      * 地点
      */
@@ -55,6 +67,10 @@ public class ScsCustorder extends BaseEntity {
      * 装瓶集团
      */
     private String corporation;
+    /**
+     * 物料集团
+     */
+    private String itemCorporation;
     /**
      * 备注
      */

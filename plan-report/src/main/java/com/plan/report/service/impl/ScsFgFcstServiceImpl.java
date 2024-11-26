@@ -23,7 +23,7 @@ import java.util.Map;
  * scs_fg_fcstService业务层处理
  *
  * @author ruoyi
- * @date 2024-11-25
+ * @date 2024-11-26
  */
 @RequiredArgsConstructor
 @Service
@@ -65,6 +65,9 @@ public class ScsFgFcstServiceImpl implements IScsFgFcstService {
         lqw.eq(StringUtils.isNotBlank(bo.getCorporation()), ScsFgFcst::getCorporation, bo.getCorporation());
         lqw.eq(StringUtils.isNotBlank(bo.getItemCorporation()), ScsFgFcst::getItemCorporation, bo.getItemCorporation());
         lqw.eq(StringUtils.isNotBlank(bo.getItemCode()), ScsFgFcst::getItemCode, bo.getItemCode());
+        lqw.eq(StringUtils.isNotBlank(bo.getItem()), ScsFgFcst::getItem, bo.getItem());
+        lqw.eq(StringUtils.isNotBlank(bo.getDescr()), ScsFgFcst::getDescr, bo.getDescr());
+        lqw.eq(StringUtils.isNotBlank(bo.getDescrEn()), ScsFgFcst::getDescrEn, bo.getDescrEn());
         lqw.eq(StringUtils.isNotBlank(bo.getDmdgroup()), ScsFgFcst::getDmdgroup, bo.getDmdgroup());
         lqw.eq(bo.getStartdate() != null, ScsFgFcst::getStartdate, bo.getStartdate());
         lqw.eq(StringUtils.isNotBlank(bo.getLoc()), ScsFgFcst::getLoc, bo.getLoc());

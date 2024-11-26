@@ -15,7 +15,7 @@ import java.io.Serializable;
  * scs_inventory_history视图对象 scs_inventory_history
  *
  * @author ruoyi
- * @date 2024-11-25
+ * @date 2024-11-26
  */
 @Data
 @ExcelIgnoreUnannotated
@@ -52,6 +52,12 @@ public class ScsInventoryHistoryVo implements Serializable {
      */
     @ExcelProperty(value = "物料编码")
     private String itemCode;
+
+    /**
+     * 物料
+     */
+    @ExcelProperty(value = "物料")
+    private String item;
 
     /**
      * 物料描述

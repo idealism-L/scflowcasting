@@ -23,7 +23,7 @@ import java.util.Map;
  * scs_custorderService业务层处理
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-26
  */
 @RequiredArgsConstructor
 @Service
@@ -62,12 +62,16 @@ public class ScsCustorderServiceImpl implements IScsCustorderService {
         Map<String, Object> params = bo.getParams();
         LambdaQueryWrapper<ScsCustorder> lqw = Wrappers.lambdaQuery();
         lqw.eq(StringUtils.isNotBlank(bo.getItemCode()), ScsCustorder::getItemCode, bo.getItemCode());
+        lqw.eq(StringUtils.isNotBlank(bo.getItem()), ScsCustorder::getItem, bo.getItem());
+        lqw.eq(StringUtils.isNotBlank(bo.getDescr()), ScsCustorder::getDescr, bo.getDescr());
+        lqw.eq(StringUtils.isNotBlank(bo.getDescrEn()), ScsCustorder::getDescrEn, bo.getDescrEn());
         lqw.eq(StringUtils.isNotBlank(bo.getLoc()), ScsCustorder::getLoc, bo.getLoc());
         lqw.eq(bo.getShipdate() != null, ScsCustorder::getShipdate, bo.getShipdate());
         lqw.eq(StringUtils.isNotBlank(bo.getOrderid()), ScsCustorder::getOrderid, bo.getOrderid());
         lqw.eq(bo.getQty() != null, ScsCustorder::getQty, bo.getQty());
         lqw.eq(StringUtils.isNotBlank(bo.getItemPattern()), ScsCustorder::getItemPattern, bo.getItemPattern());
         lqw.eq(StringUtils.isNotBlank(bo.getCorporation()), ScsCustorder::getCorporation, bo.getCorporation());
+        lqw.eq(StringUtils.isNotBlank(bo.getItemCorporation()), ScsCustorder::getItemCorporation, bo.getItemCorporation());
         lqw.eq(StringUtils.isNotBlank(bo.getUComment()), ScsCustorder::getUComment, bo.getUComment());
         lqw.like(StringUtils.isNotBlank(bo.getFileName()), ScsCustorder::getFileName, bo.getFileName());
         lqw.eq(bo.getEditdate() != null, ScsCustorder::getEditdate, bo.getEditdate());

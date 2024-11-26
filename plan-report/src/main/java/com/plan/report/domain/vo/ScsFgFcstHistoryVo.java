@@ -15,7 +15,7 @@ import java.io.Serializable;
  * scs_fg_fcst_history视图对象 scs_fg_fcst_history
  *
  * @author ruoyi
- * @date 2024-11-25
+ * @date 2024-11-26
  */
 @Data
 @ExcelIgnoreUnannotated
@@ -52,6 +52,24 @@ public class ScsFgFcstHistoryVo implements Serializable {
      */
     @ExcelProperty(value = "物料编码")
     private String itemCode;
+
+    /**
+     * 物料
+     */
+    @ExcelProperty(value = "物料")
+    private String item;
+
+    /**
+     * 物料描述
+     */
+    @ExcelProperty(value = "物料描述")
+    private String descr;
+
+    /**
+     * 英文描述
+     */
+    @ExcelProperty(value = "英文描述")
+    private String descrEn;
 
     /**
      * dmdgroup

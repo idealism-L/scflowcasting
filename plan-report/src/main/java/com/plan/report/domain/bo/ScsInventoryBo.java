@@ -15,7 +15,7 @@ import java.util.Date;
  * scs_inventory业务对象 scs_inventory
  *
  * @author ruoyi
- * @date 2024-11-25
+ * @date 2024-11-26
  */
 
 @Data
@@ -51,6 +51,12 @@ public class ScsInventoryBo extends BaseEntity {
      */
     @NotBlank(message = "物料编码不能为空", groups = { AddGroup.class, EditGroup.class })
     private String itemCode;
+
+    /**
+     * 物料
+     */
+    @NotBlank(message = "物料不能为空", groups = { AddGroup.class, EditGroup.class })
+    private String item;
 
     /**
      * 物料描述

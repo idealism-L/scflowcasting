@@ -23,7 +23,7 @@ import java.util.Map;
  * scs_vehicleloadlineService业务层处理
  *
  * @author ruoyi
- * @date 2024-11-20
+ * @date 2024-11-26
  */
 @RequiredArgsConstructor
 @Service
@@ -62,9 +62,11 @@ public class ScsVehicleloadlineServiceImpl implements IScsVehicleloadlineService
         Map<String, Object> params = bo.getParams();
         LambdaQueryWrapper<ScsVehicleloadline> lqw = Wrappers.lambdaQuery();
         lqw.eq(StringUtils.isNotBlank(bo.getItemCode()), ScsVehicleloadline::getItemCode, bo.getItemCode());
+        lqw.eq(StringUtils.isNotBlank(bo.getItem()), ScsVehicleloadline::getItem, bo.getItem());
         lqw.eq(StringUtils.isNotBlank(bo.getDescr()), ScsVehicleloadline::getDescr, bo.getDescr());
         lqw.eq(StringUtils.isNotBlank(bo.getDescrEn()), ScsVehicleloadline::getDescrEn, bo.getDescrEn());
         lqw.eq(StringUtils.isNotBlank(bo.getCorporation()), ScsVehicleloadline::getCorporation, bo.getCorporation());
+        lqw.eq(StringUtils.isNotBlank(bo.getItemCorporation()), ScsVehicleloadline::getItemCorporation, bo.getItemCorporation());
         lqw.eq(StringUtils.isNotBlank(bo.getLoc()), ScsVehicleloadline::getLoc, bo.getLoc());
         lqw.eq(StringUtils.isNotBlank(bo.getBppBrand()), ScsVehicleloadline::getBppBrand, bo.getBppBrand());
         lqw.eq(StringUtils.isNotBlank(bo.getBppFlavor()), ScsVehicleloadline::getBppFlavor, bo.getBppFlavor());

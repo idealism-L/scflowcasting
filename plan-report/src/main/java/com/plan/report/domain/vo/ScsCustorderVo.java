@@ -15,7 +15,7 @@ import java.io.Serializable;
  * scs_custorder视图对象 scs_custorder
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-26
  */
 @Data
 @ExcelIgnoreUnannotated
@@ -34,6 +34,24 @@ public class ScsCustorderVo implements Serializable {
      */
     @ExcelProperty(value = "物料编码")
     private String itemCode;
+
+    /**
+     * 物料
+     */
+    @ExcelProperty(value = "物料")
+    private String item;
+
+    /**
+     * 物料描述
+     */
+    @ExcelProperty(value = "物料描述")
+    private String descr;
+
+    /**
+     * 英文描述
+     */
+    @ExcelProperty(value = "英文描述")
+    private String descrEn;
 
     /**
      * 地点
@@ -70,6 +88,12 @@ public class ScsCustorderVo implements Serializable {
      */
     @ExcelProperty(value = "装瓶集团")
     private String corporation;
+
+    /**
+     * 物料集团
+     */
+    @ExcelProperty(value = "物料集团")
+    private String itemCorporation;
 
     /**
      * 备注

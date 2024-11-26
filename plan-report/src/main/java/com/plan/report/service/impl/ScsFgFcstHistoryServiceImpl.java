@@ -23,7 +23,7 @@ import java.util.Map;
  * scs_fg_fcst_historyService业务层处理
  *
  * @author ruoyi
- * @date 2024-11-25
+ * @date 2024-11-26
  */
 @RequiredArgsConstructor
 @Service
@@ -65,6 +65,9 @@ public class ScsFgFcstHistoryServiceImpl implements IScsFgFcstHistoryService {
         lqw.eq(StringUtils.isNotBlank(bo.getCorporation()), ScsFgFcstHistory::getCorporation, bo.getCorporation());
         lqw.eq(StringUtils.isNotBlank(bo.getItemCorporation()), ScsFgFcstHistory::getItemCorporation, bo.getItemCorporation());
         lqw.eq(StringUtils.isNotBlank(bo.getItemCode()), ScsFgFcstHistory::getItemCode, bo.getItemCode());
+        lqw.eq(StringUtils.isNotBlank(bo.getItem()), ScsFgFcstHistory::getItem, bo.getItem());
+        lqw.eq(StringUtils.isNotBlank(bo.getDescr()), ScsFgFcstHistory::getDescr, bo.getDescr());
+        lqw.eq(StringUtils.isNotBlank(bo.getDescrEn()), ScsFgFcstHistory::getDescrEn, bo.getDescrEn());
         lqw.eq(StringUtils.isNotBlank(bo.getDmdgroup()), ScsFgFcstHistory::getDmdgroup, bo.getDmdgroup());
         lqw.eq(bo.getStartdate() != null, ScsFgFcstHistory::getStartdate, bo.getStartdate());
         lqw.eq(StringUtils.isNotBlank(bo.getLoc()), ScsFgFcstHistory::getLoc, bo.getLoc());

@@ -8,7 +8,7 @@ import com.plan.common.core.mapper.BaseMapperPlus;
  * scs_vehicleloadlineMapper接口
  *
  * @author ruoyi
- * @date 2024-11-20
+ * @date 2024-11-26
  */
 public interface ScsVehicleloadlineMapper extends BaseMapperPlus<ScsVehicleloadlineMapper, ScsVehicleloadline, ScsVehicleloadlineVo> {
 

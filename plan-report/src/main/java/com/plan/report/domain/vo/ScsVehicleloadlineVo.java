@@ -15,7 +15,7 @@ import java.io.Serializable;
  * scs_vehicleloadline视图对象 scs_vehicleloadline
  *
  * @author ruoyi
- * @date 2024-11-20
+ * @date 2024-11-26
  */
 @Data
 @ExcelIgnoreUnannotated
@@ -36,6 +36,12 @@ public class ScsVehicleloadlineVo implements Serializable {
     private String itemCode;
 
     /**
+     * 物料
+     */
+    @ExcelProperty(value = "物料")
+    private String item;
+
+    /**
      * 描述
      */
     @ExcelProperty(value = "描述")
@@ -52,6 +58,12 @@ public class ScsVehicleloadlineVo implements Serializable {
      */
     @ExcelProperty(value = "收货集团")
     private String corporation;
+
+    /**
+     * 物料集团
+     */
+    @ExcelProperty(value = "物料集团")
+    private String itemCorporation;
 
     /**
      * 地点

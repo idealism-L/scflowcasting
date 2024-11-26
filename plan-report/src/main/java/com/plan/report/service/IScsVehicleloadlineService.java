@@ -1,9 +1,10 @@
 package com.plan.report.service;
 
-import com.plan.common.core.domain.PageQuery;
-import com.plan.common.core.page.TableDataInfo;
-import com.plan.report.domain.bo.ScsVehicleloadlineBo;
+import com.plan.report.domain.ScsVehicleloadline;
 import com.plan.report.domain.vo.ScsVehicleloadlineVo;
+import com.plan.report.domain.bo.ScsVehicleloadlineBo;
+import com.plan.common.core.page.TableDataInfo;
+import com.plan.common.core.domain.PageQuery;
 
 import java.util.Collection;
 import java.util.List;
@@ -12,7 +13,7 @@ import java.util.List;
  * scs_vehicleloadlineService接口
  *
  * @author ruoyi
- * @date 2024-11-20
+ * @date 2024-11-26
  */
 public interface IScsVehicleloadlineService {
 

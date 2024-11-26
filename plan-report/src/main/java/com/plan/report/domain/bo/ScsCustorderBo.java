@@ -15,7 +15,7 @@ import java.util.Date;
  * scs_custorder业务对象 scs_custorder
  *
  * @author ruoyi
- * @date 2024-11-12
+ * @date 2024-11-26
  */
 
 @Data
@@ -33,6 +33,24 @@ public class ScsCustorderBo extends BaseEntity {
      */
     @NotBlank(message = "物料编码不能为空", groups = { AddGroup.class, EditGroup.class })
     private String itemCode;
+
+    /**
+     * 物料
+     */
+    @NotBlank(message = "物料不能为空", groups = { AddGroup.class, EditGroup.class })
+    private String item;
+
+    /**
+     * 物料描述
+     */
+    @NotBlank(message = "物料描述不能为空", groups = { AddGroup.class, EditGroup.class })
+    private String descr;
+
+    /**
+     * 英文描述
+     */
+    @NotBlank(message = "英文描述不能为空", groups = { AddGroup.class, EditGroup.class })
+    private String descrEn;
 
     /**
      * 地点
@@ -69,6 +87,12 @@ public class ScsCustorderBo extends BaseEntity {
      */
     @NotBlank(message = "装瓶集团不能为空", groups = { AddGroup.class, EditGroup.class })
     private String corporation;
+
+    /**
+     * 物料集团
+     */
+    @NotBlank(message = "物料集团不能为空", groups = { AddGroup.class, EditGroup.class })
+    private String itemCorporation;
 
     /**
      * 备注

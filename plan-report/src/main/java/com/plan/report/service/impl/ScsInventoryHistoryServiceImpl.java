@@ -23,7 +23,7 @@ import java.util.Map;
  * scs_inventory_historyService业务层处理
  *
  * @author ruoyi
- * @date 2024-11-25
+ * @date 2024-11-26
  */
 @RequiredArgsConstructor
 @Service
@@ -65,6 +65,7 @@ public class ScsInventoryHistoryServiceImpl implements IScsInventoryHistoryServi
         lqw.eq(StringUtils.isNotBlank(bo.getCorporation()), ScsInventoryHistory::getCorporation, bo.getCorporation());
         lqw.eq(StringUtils.isNotBlank(bo.getItemCorporation()), ScsInventoryHistory::getItemCorporation, bo.getItemCorporation());
         lqw.eq(StringUtils.isNotBlank(bo.getItemCode()), ScsInventoryHistory::getItemCode, bo.getItemCode());
+        lqw.eq(StringUtils.isNotBlank(bo.getItem()), ScsInventoryHistory::getItem, bo.getItem());
         lqw.eq(StringUtils.isNotBlank(bo.getDescr()), ScsInventoryHistory::getDescr, bo.getDescr());
         lqw.eq(StringUtils.isNotBlank(bo.getDescrEn()), ScsInventoryHistory::getDescrEn, bo.getDescrEn());
         lqw.eq(StringUtils.isNotBlank(bo.getBppBrand()), ScsInventoryHistory::getBppBrand, bo.getBppBrand());
