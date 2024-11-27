@@ -23,7 +23,7 @@ import java.util.Map;
  * scs_kit_fcstService业务层处理
  *
  * @author ruoyi
- * @date 2024-11-13
+ * @date 2024-11-26
  */
 @RequiredArgsConstructor
 @Service
@@ -63,13 +63,19 @@ public class ScsKitFcstServiceImpl implements IScsKitFcstService {
         LambdaQueryWrapper<ScsKitFcst> lqw = Wrappers.lambdaQuery();
         lqw.eq(bo.getParentId() != null, ScsKitFcst::getParentId, bo.getParentId());
         lqw.eq(StringUtils.isNotBlank(bo.getCorporation()), ScsKitFcst::getCorporation, bo.getCorporation());
+        lqw.eq(StringUtils.isNotBlank(bo.getItemCorporation()), ScsKitFcst::getItemCorporation, bo.getItemCorporation());
         lqw.eq(StringUtils.isNotBlank(bo.getItemCode()), ScsKitFcst::getItemCode, bo.getItemCode());
+        lqw.eq(StringUtils.isNotBlank(bo.getItem()), ScsKitFcst::getItem, bo.getItem());
+        lqw.eq(StringUtils.isNotBlank(bo.getDescr()), ScsKitFcst::getDescr, bo.getDescr());
+        lqw.eq(StringUtils.isNotBlank(bo.getDescrEn()), ScsKitFcst::getDescrEn, bo.getDescrEn());
         lqw.eq(StringUtils.isNotBlank(bo.getDmdgroup()), ScsKitFcst::getDmdgroup, bo.getDmdgroup());
         lqw.eq(bo.getStartdate() != null, ScsKitFcst::getStartdate, bo.getStartdate());
         lqw.eq(StringUtils.isNotBlank(bo.getLoc()), ScsKitFcst::getLoc, bo.getLoc());
+        lqw.eq(StringUtils.isNotBlank(bo.getSkuLoc()), ScsKitFcst::getSkuLoc, bo.getSkuLoc());
         lqw.eq(bo.getQty() != null, ScsKitFcst::getQty, bo.getQty());
         lqw.eq(StringUtils.isNotBlank(bo.getUFlag()), ScsKitFcst::getUFlag, bo.getUFlag());
         lqw.eq(StringUtils.isNotBlank(bo.getUComment()), ScsKitFcst::getUComment, bo.getUComment());
+        lqw.eq(StringUtils.isNotBlank(bo.getFileBatch()), ScsKitFcst::getFileBatch, bo.getFileBatch());
         lqw.like(StringUtils.isNotBlank(bo.getFileName()), ScsKitFcst::getFileName, bo.getFileName());
         lqw.eq(bo.getEditdate() != null, ScsKitFcst::getEditdate, bo.getEditdate());
         lqw.eq(bo.getVersionNo() != null, ScsKitFcst::getVersionNo, bo.getVersionNo());

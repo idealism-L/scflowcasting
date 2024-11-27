@@ -13,7 +13,7 @@ import java.util.Date;
  * scs_inventory_history对象 scs_inventory_history
  *
  * @author ruoyi
- * @date 2024-11-20
+ * @date 2024-11-26
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -38,11 +38,15 @@ public class ScsInventoryHistory extends BaseEntity {
     /**
      * 物料集团
      */
-    private String kitCorporation;
+    private String itemCorporation;
     /**
      * 物料编码
      */
     private String itemCode;
+    /**
+     * 物料
+     */
+    private String item;
     /**
      * 物料描述
      */
@@ -59,6 +63,10 @@ public class ScsInventoryHistory extends BaseEntity {
      * BPP口味
      */
     private String bppFlavor;
+    /**
+     * 开始日期+文件名(固定部分)
+     */
+    private String fileBatch;
     /**
      * 地点
      */

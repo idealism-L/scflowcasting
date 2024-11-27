@@ -19,7 +19,9 @@ import java.util.List;
 @Mapper
 public interface ScsKitMapMapper extends BaseMapperPlus<ScsKitMapMapper, ScsKitMap, ScsKitMapVo> {
 
-  Page<ScsKitMapVo> selectListVoPage(Page<Object> build, @Param("param") ScsKitMapBo bo);
+    Page<ScsKitMapVo> selectListVoPage(Page<Object> build, @Param("param") ScsKitMapBo bo);
 
     List<ScsKitMapVo> selectListVo(@Param("param") ScsKitMapBo bo);
+
+    List<ScsKitMapVo> selectErrorListVo(@Param("param") ScsKitMapBo bo);
 }

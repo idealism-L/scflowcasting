@@ -849,5 +849,10 @@ public class ScsCalendarBo extends BaseEntity {
     @NotNull(message = "loaded_time不能为空", groups = { AddGroup.class, EditGroup.class })
     private Date loadedTime;
 
+    /**
+     * ids 用于导出选中的table数据
+     */
+    private Long[] ids;
+
 
 }

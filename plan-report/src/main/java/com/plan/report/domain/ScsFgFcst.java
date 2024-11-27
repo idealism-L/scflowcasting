@@ -13,7 +13,7 @@ import java.util.Date;
  * scs_fg_fcst对象 scs_fg_fcst
  *
  * @author ruoyi
- * @date 2024-11-13
+ * @date 2024-11-26
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -36,9 +36,25 @@ public class ScsFgFcst extends BaseEntity {
      */
     private String corporation;
     /**
+     * 物料集团
+     */
+    private String itemCorporation;
+    /**
      * 物料编码
      */
     private String itemCode;
+    /**
+     * 物料
+     */
+    private String item;
+    /**
+     * 物料描述
+     */
+    private String descr;
+    /**
+     * 英文描述
+     */
+    private String descrEn;
     /**
      * dmdgroup
      */
@@ -63,6 +79,10 @@ public class ScsFgFcst extends BaseEntity {
      * 说明
      */
     private String uComment;
+    /**
+     * 开始日期+文件名(固定部分)
+     */
+    private String fileBatch;
     /**
      * 来源文件名
      */

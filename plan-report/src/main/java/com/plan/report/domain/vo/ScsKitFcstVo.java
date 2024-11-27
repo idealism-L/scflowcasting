@@ -15,7 +15,7 @@ import java.io.Serializable;
  * scs_kit_fcst视图对象 scs_kit_fcst
  *
  * @author ruoyi
- * @date 2024-11-13
+ * @date 2024-11-26
  */
 @Data
 @ExcelIgnoreUnannotated
@@ -42,10 +42,34 @@ public class ScsKitFcstVo implements Serializable {
     private String corporation;
 
     /**
+     * 物料集团
+     */
+    @ExcelProperty(value = "物料集团")
+    private String itemCorporation;
+
+    /**
      * 物料编码
      */
     @ExcelProperty(value = "物料编码")
     private String itemCode;
+
+    /**
+     * 物料
+     */
+    @ExcelProperty(value = "物料")
+    private String item;
+
+    /**
+     * 物料描述
+     */
+    @ExcelProperty(value = "物料描述")
+    private String descr;
+
+    /**
+     * 英文描述
+     */
+    @ExcelProperty(value = "英文描述")
+    private String descrEn;
 
     /**
      * dmdgroup
@@ -66,6 +90,12 @@ public class ScsKitFcstVo implements Serializable {
     private String loc;
 
     /**
+     * sku地点
+     */
+    @ExcelProperty(value = "sku地点")
+    private String skuLoc;
+
+    /**
      * 数量
      */
     @ExcelProperty(value = "数量")
@@ -82,6 +112,12 @@ public class ScsKitFcstVo implements Serializable {
      */
     @ExcelProperty(value = "备注说明")
     private String uComment;
+
+    /**
+     * 开始日期+文件名(固定部分)
+     */
+    @ExcelProperty(value = "开始日期+文件名(固定部分)")
+    private String fileBatch;
 
     /**
      * 来源文件名

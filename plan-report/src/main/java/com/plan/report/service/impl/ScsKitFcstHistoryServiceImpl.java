@@ -23,7 +23,7 @@ import java.util.Map;
  * scs_kit_fcst_historyService业务层处理
  *
  * @author ruoyi
- * @date 2024-11-13
+ * @date 2024-11-26
  */
 @RequiredArgsConstructor
 @Service
@@ -63,13 +63,19 @@ public class ScsKitFcstHistoryServiceImpl implements IScsKitFcstHistoryService {
         LambdaQueryWrapper<ScsKitFcstHistory> lqw = Wrappers.lambdaQuery();
         lqw.eq(bo.getParentId() != null, ScsKitFcstHistory::getParentId, bo.getParentId());
         lqw.eq(StringUtils.isNotBlank(bo.getCorporation()), ScsKitFcstHistory::getCorporation, bo.getCorporation());
+        lqw.eq(StringUtils.isNotBlank(bo.getItemCorporation()), ScsKitFcstHistory::getItemCorporation, bo.getItemCorporation());
         lqw.eq(StringUtils.isNotBlank(bo.getItemCode()), ScsKitFcstHistory::getItemCode, bo.getItemCode());
+        lqw.eq(StringUtils.isNotBlank(bo.getItem()), ScsKitFcstHistory::getItem, bo.getItem());
+        lqw.eq(StringUtils.isNotBlank(bo.getDescr()), ScsKitFcstHistory::getDescr, bo.getDescr());
+        lqw.eq(StringUtils.isNotBlank(bo.getDescrEn()), ScsKitFcstHistory::getDescrEn, bo.getDescrEn());
         lqw.eq(StringUtils.isNotBlank(bo.getDmdgroup()), ScsKitFcstHistory::getDmdgroup, bo.getDmdgroup());
         lqw.eq(bo.getStartdate() != null, ScsKitFcstHistory::getStartdate, bo.getStartdate());
         lqw.eq(StringUtils.isNotBlank(bo.getLoc()), ScsKitFcstHistory::getLoc, bo.getLoc());
+        lqw.eq(StringUtils.isNotBlank(bo.getSkuLoc()), ScsKitFcstHistory::getSkuLoc, bo.getSkuLoc());
         lqw.eq(bo.getQty() != null, ScsKitFcstHistory::getQty, bo.getQty());
         lqw.eq(StringUtils.isNotBlank(bo.getUFlag()), ScsKitFcstHistory::getUFlag, bo.getUFlag());
         lqw.eq(StringUtils.isNotBlank(bo.getUComment()), ScsKitFcstHistory::getUComment, bo.getUComment());
+        lqw.eq(StringUtils.isNotBlank(bo.getFileBatch()), ScsKitFcstHistory::getFileBatch, bo.getFileBatch());
         lqw.like(StringUtils.isNotBlank(bo.getFileName()), ScsKitFcstHistory::getFileName, bo.getFileName());
         lqw.eq(bo.getEditdate() != null, ScsKitFcstHistory::getEditdate, bo.getEditdate());
         lqw.eq(bo.getVersionNo() != null, ScsKitFcstHistory::getVersionNo, bo.getVersionNo());

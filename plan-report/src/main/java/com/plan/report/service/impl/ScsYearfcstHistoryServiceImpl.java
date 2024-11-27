@@ -23,7 +23,7 @@ import java.util.Map;
  * scs_yearfcst_historyService业务层处理
  *
  * @author ruoyi
- * @date 2024-11-20
+ * @date 2024-11-26
  */
 @RequiredArgsConstructor
 @Service
@@ -63,11 +63,13 @@ public class ScsYearfcstHistoryServiceImpl implements IScsYearfcstHistoryService
         LambdaQueryWrapper<ScsYearfcstHistory> lqw = Wrappers.lambdaQuery();
         lqw.eq(bo.getParentId() != null, ScsYearfcstHistory::getParentId, bo.getParentId());
         lqw.eq(StringUtils.isNotBlank(bo.getItemCode()), ScsYearfcstHistory::getItemCode, bo.getItemCode());
+        lqw.eq(StringUtils.isNotBlank(bo.getItem()), ScsYearfcstHistory::getItem, bo.getItem());
         lqw.eq(StringUtils.isNotBlank(bo.getDescr()), ScsYearfcstHistory::getDescr, bo.getDescr());
         lqw.eq(StringUtils.isNotBlank(bo.getDescrEn()), ScsYearfcstHistory::getDescrEn, bo.getDescrEn());
         lqw.eq(StringUtils.isNotBlank(bo.getLoc()), ScsYearfcstHistory::getLoc, bo.getLoc());
         lqw.eq(StringUtils.isNotBlank(bo.getUom()), ScsYearfcstHistory::getUom, bo.getUom());
         lqw.eq(bo.getStartdate() != null, ScsYearfcstHistory::getStartdate, bo.getStartdate());
+        lqw.eq(StringUtils.isNotBlank(bo.getFileBatch()), ScsYearfcstHistory::getFileBatch, bo.getFileBatch());
         lqw.eq(bo.getUM1() != null, ScsYearfcstHistory::getUM1, bo.getUM1());
         lqw.eq(bo.getUM2() != null, ScsYearfcstHistory::getUM2, bo.getUM2());
         lqw.eq(bo.getUM3() != null, ScsYearfcstHistory::getUM3, bo.getUM3());
@@ -86,7 +88,7 @@ public class ScsYearfcstHistoryServiceImpl implements IScsYearfcstHistoryService
         lqw.eq(bo.getUM16() != null, ScsYearfcstHistory::getUM16, bo.getUM16());
         lqw.eq(StringUtils.isNotBlank(bo.getItemPattern()), ScsYearfcstHistory::getItemPattern, bo.getItemPattern());
         lqw.eq(StringUtils.isNotBlank(bo.getCorporation()), ScsYearfcstHistory::getCorporation, bo.getCorporation());
-        lqw.eq(StringUtils.isNotBlank(bo.getKitCorporation()), ScsYearfcstHistory::getKitCorporation, bo.getKitCorporation());
+        lqw.eq(StringUtils.isNotBlank(bo.getItemCorporation()), ScsYearfcstHistory::getItemCorporation, bo.getItemCorporation());
         lqw.eq(StringUtils.isNotBlank(bo.getUFlag()), ScsYearfcstHistory::getUFlag, bo.getUFlag());
         lqw.eq(StringUtils.isNotBlank(bo.getUComment()), ScsYearfcstHistory::getUComment, bo.getUComment());
         lqw.like(StringUtils.isNotBlank(bo.getFileName()), ScsYearfcstHistory::getFileName, bo.getFileName());

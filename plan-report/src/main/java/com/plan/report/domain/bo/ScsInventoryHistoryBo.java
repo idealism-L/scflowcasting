@@ -15,7 +15,7 @@ import java.util.Date;
  * scs_inventory_history业务对象 scs_inventory_history
  *
  * @author ruoyi
- * @date 2024-11-20
+ * @date 2024-11-26
  */
 
 @Data
@@ -44,13 +44,19 @@ public class ScsInventoryHistoryBo extends BaseEntity {
      * 物料集团
      */
     @NotBlank(message = "物料集团不能为空", groups = { AddGroup.class, EditGroup.class })
-    private String kitCorporation;
+    private String itemCorporation;
 
     /**
      * 物料编码
      */
     @NotBlank(message = "物料编码不能为空", groups = { AddGroup.class, EditGroup.class })
     private String itemCode;
+
+    /**
+     * 物料
+     */
+    @NotBlank(message = "物料不能为空", groups = { AddGroup.class, EditGroup.class })
+    private String item;
 
     /**
      * 物料描述
@@ -75,6 +81,12 @@ public class ScsInventoryHistoryBo extends BaseEntity {
      */
     @NotBlank(message = "BPP口味不能为空", groups = { AddGroup.class, EditGroup.class })
     private String bppFlavor;
+
+    /**
+     * 开始日期+文件名(固定部分)
+     */
+    @NotBlank(message = "开始日期+文件名(固定部分)不能为空", groups = { AddGroup.class, EditGroup.class })
+    private String fileBatch;
 
     /**
      * 地点

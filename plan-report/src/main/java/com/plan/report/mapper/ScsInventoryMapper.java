@@ -8,7 +8,7 @@ import com.plan.common.core.mapper.BaseMapperPlus;
  * scs_inventoryMapper接口
  *
  * @author ruoyi
- * @date 2024-11-20
+ * @date 2024-11-26
  */
 public interface ScsInventoryMapper extends BaseMapperPlus<ScsInventoryMapper, ScsInventory, ScsInventoryVo> {
 

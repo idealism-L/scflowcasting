@@ -15,7 +15,7 @@ import java.io.Serializable;
  * scs_inventory视图对象 scs_inventory
  *
  * @author ruoyi
- * @date 2024-11-20
+ * @date 2024-11-26
  */
 @Data
 @ExcelIgnoreUnannotated
@@ -45,13 +45,19 @@ public class ScsInventoryVo implements Serializable {
      * 物料集团
      */
     @ExcelProperty(value = "物料集团")
-    private String kitCorporation;
+    private String itemCorporation;
 
     /**
      * 物料编码
      */
     @ExcelProperty(value = "物料编码")
     private String itemCode;
+
+    /**
+     * 物料
+     */
+    @ExcelProperty(value = "物料")
+    private String item;
 
     /**
      * 物料描述
@@ -76,6 +82,12 @@ public class ScsInventoryVo implements Serializable {
      */
     @ExcelProperty(value = "BPP口味")
     private String bppFlavor;
+
+    /**
+     * 开始日期+文件名(固定部分)
+     */
+    @ExcelProperty(value = "开始日期+文件名(固定部分)")
+    private String fileBatch;
 
     /**
      * 地点

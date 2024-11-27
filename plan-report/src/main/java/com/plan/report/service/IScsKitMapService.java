@@ -1,10 +1,9 @@
 package com.plan.report.service;
 
-import com.plan.report.domain.ScsKitMap;
-import com.plan.report.domain.vo.ScsKitMapVo;
-import com.plan.report.domain.bo.ScsKitMapBo;
-import com.plan.common.core.page.TableDataInfo;
 import com.plan.common.core.domain.PageQuery;
+import com.plan.common.core.page.TableDataInfo;
+import com.plan.report.domain.bo.ScsKitMapBo;
+import com.plan.report.domain.vo.ScsKitMapVo;
 
 import java.util.Collection;
 import java.util.List;
@@ -31,6 +30,11 @@ public interface IScsKitMapService {
      * 查询scs_kit_map列表
      */
     List<ScsKitMapVo> queryList(ScsKitMapBo bo);
+
+    /**
+     * 查询scs_kit_map异常列表
+     */
+    List<ScsKitMapVo> queryErrorList(ScsKitMapBo bo);
 
     /**
      * 新增scs_kit_map

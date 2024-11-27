@@ -15,7 +15,7 @@ import java.util.Date;
  * scs_fg_fcst_history业务对象 scs_fg_fcst_history
  *
  * @author ruoyi
- * @date 2024-11-13
+ * @date 2024-11-26
  */
 
 @Data
@@ -41,10 +41,34 @@ public class ScsFgFcstHistoryBo extends BaseEntity {
     private String corporation;
 
     /**
+     * 物料集团
+     */
+    @NotBlank(message = "物料集团不能为空", groups = { AddGroup.class, EditGroup.class })
+    private String itemCorporation;
+
+    /**
      * 物料编码
      */
     @NotBlank(message = "物料编码不能为空", groups = { AddGroup.class, EditGroup.class })
     private String itemCode;
+
+    /**
+     * 物料
+     */
+    @NotBlank(message = "物料不能为空", groups = { AddGroup.class, EditGroup.class })
+    private String item;
+
+    /**
+     * 物料描述
+     */
+    @NotBlank(message = "物料描述不能为空", groups = { AddGroup.class, EditGroup.class })
+    private String descr;
+
+    /**
+     * 英文描述
+     */
+    @NotBlank(message = "英文描述不能为空", groups = { AddGroup.class, EditGroup.class })
+    private String descrEn;
 
     /**
      * dmdgroup
@@ -81,6 +105,12 @@ public class ScsFgFcstHistoryBo extends BaseEntity {
      */
     @NotBlank(message = "说明不能为空", groups = { AddGroup.class, EditGroup.class })
     private String uComment;
+
+    /**
+     * 开始日期+文件名(固定部分)
+     */
+    @NotBlank(message = "开始日期+文件名(固定部分)不能为空", groups = { AddGroup.class, EditGroup.class })
+    private String fileBatch;
 
     /**
      * 来源文件名

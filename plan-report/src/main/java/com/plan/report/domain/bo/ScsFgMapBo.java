@@ -81,5 +81,11 @@ public class ScsFgMapBo extends BaseEntity {
     @NotNull(message = "版本号不能为空", groups = { AddGroup.class, EditGroup.class })
     private Long versionNo;
 
+    private String corporation;
+
+    private String itemCode;
+
+    private String fgItemCode;
+
 
 }

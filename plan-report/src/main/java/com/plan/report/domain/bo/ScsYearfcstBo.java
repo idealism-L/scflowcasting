@@ -15,7 +15,7 @@ import java.util.Date;
  * scs_yearfcst业务对象 scs_yearfcst
  *
  * @author ruoyi
- * @date 2024-11-20
+ * @date 2024-11-26
  */
 
 @Data
@@ -39,6 +39,12 @@ public class ScsYearfcstBo extends BaseEntity {
      */
     @NotBlank(message = "物料编码不能为空", groups = { AddGroup.class, EditGroup.class })
     private String itemCode;
+
+    /**
+     * 物料
+     */
+    @NotBlank(message = "物料不能为空", groups = { AddGroup.class, EditGroup.class })
+    private String item;
 
     /**
      * 物料描述
@@ -69,6 +75,12 @@ public class ScsYearfcstBo extends BaseEntity {
      */
     @NotNull(message = "起始日期不能为空", groups = { AddGroup.class, EditGroup.class })
     private Date startdate;
+
+    /**
+     * 开始日期+文件名(固定部分)
+     */
+    @NotBlank(message = "开始日期+文件名(固定部分)不能为空", groups = { AddGroup.class, EditGroup.class })
+    private String fileBatch;
 
     /**
      * 1月
@@ -182,7 +194,7 @@ public class ScsYearfcstBo extends BaseEntity {
      * 物料集团
      */
     @NotBlank(message = "物料集团不能为空", groups = { AddGroup.class, EditGroup.class })
-    private String kitCorporation;
+    private String itemCorporation;
 
     /**
      * 有效标识
