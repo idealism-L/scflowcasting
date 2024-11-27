@@ -2,10 +2,10 @@ package com.plan.report.domain;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.plan.common.core.domain.BaseEntity;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
+import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -15,9 +15,8 @@ import java.util.Date;
  * @date 2024-11-14
  */
 @Data
-@EqualsAndHashCode(callSuper = true)
 @TableName("scs_calendar")
-public class ScsCalendar extends BaseEntity {
+public class ScsCalendar implements Serializable {
 
     private static final long serialVersionUID=1L;
 
@@ -53,11 +52,11 @@ public class ScsCalendar extends BaseEntity {
     /**
      * 周开始日期
      */
-    private Date c445WeekStartDt;
+    private LocalDate c445WeekStartDt;
     /**
      * 周截止日期
      */
-    private Date c445WeekEndDt;
+    private LocalDate c445WeekEndDt;
     /**
      * 月编码
      */
@@ -133,23 +132,23 @@ public class ScsCalendar extends BaseEntity {
     /**
      * c445_1py_day_dt
      */
-    private Date c4451pyDayDt;
+    private Date c445_1pyDayDt;
     /**
      * c445_2py_day_dt
      */
-    private Date c4452pyDayDt;
+    private Date c445_2pyDayDt;
     /**
      * c445_3py_day_dt
      */
-    private Date c4453pyDayDt;
+    private Date c445_3pyDayDt;
     /**
      * c445_4py_day_dt
      */
-    private Date c4454pyDayDt;
+    private Date c445_4pyDayDt;
     /**
      * c445_5py_day_dt
      */
-    private Date c4455pyDayDt;
+    private Date c445_5pyDayDt;
     /**
      * greg_month_cd
      */
@@ -225,7 +224,7 @@ public class ScsCalendar extends BaseEntity {
     /**
      * Long
      */
-    private String Long;
+    // private String Long;
     /**
      * PER_TAG
      */
@@ -277,7 +276,7 @@ public class ScsCalendar extends BaseEntity {
     /**
      * Daily_Consumption_Days_2PY
      */
-    private Long dailyConsumptionDays2py;
+    private Long dailyConsumptionDays_2py;
     /**
      * Daily_Consumption_Days_MTD
      */
@@ -289,7 +288,7 @@ public class ScsCalendar extends BaseEntity {
     /**
      * Daily_Consumption_Days_MTD_2PY
      */
-    private Long dailyConsumptionDaysMtd2py;
+    private Long dailyConsumptionDaysMtd_2py;
     /**
      * Daily_Consumption_Days_QTD
      */
@@ -301,7 +300,7 @@ public class ScsCalendar extends BaseEntity {
     /**
      * Daily_Consumption_Days_QTD_2PY
      */
-    private Long dailyConsumptionDaysQtd2py;
+    private Long dailyConsumptionDaysQtd_2py;
     /**
      * Daily_Consumption_Days_WTD
      */
@@ -313,7 +312,7 @@ public class ScsCalendar extends BaseEntity {
     /**
      * Daily_Consumption_Days_WTD_2PY
      */
-    private Long dailyConsumptionDaysWtd2py;
+    private Long dailyConsumptionDaysWtd_2py;
     /**
      * Daily_Consumption_Days_YTD
      */
@@ -325,7 +324,7 @@ public class ScsCalendar extends BaseEntity {
     /**
      * Daily_Consumption_Days_YTD_2PY
      */
-    private Long dailyConsumptionDaysYtd2py;
+    private Long dailyConsumptionDaysYtd_2py;
     /**
      * Weekly_Consumption_Days
      */
@@ -337,79 +336,79 @@ public class ScsCalendar extends BaseEntity {
     /**
      * Weekly_Consumption_Days_2PY
      */
-    private Long weeklyConsumptionDays2py;
+    private Long weeklyConsumptionDays_2py;
     /**
      * Weekly_Consumption_Days_03MMT
      */
-    private Long weeklyConsumptionDays03mmt;
+    private Long weeklyConsumptionDays_03mmt;
     /**
      * Weekly_Consumption_Days_03MMT_PY
      */
-    private Long weeklyConsumptionDays03mmtPy;
+    private Long weeklyConsumptionDays_03mmtPy;
     /**
      * Weekly_Consumption_Days_03MMT_2PY
      */
-    private Long weeklyConsumptionDays03mmt2py;
+    private Long weeklyConsumptionDays_03mmt_2py;
     /**
      * Weekly_Consumption_Days_06MMT
      */
-    private Long weeklyConsumptionDays06mmt;
+    private Long weeklyConsumptionDays_06mmt;
     /**
      * Weekly_Consumption_Days_06MMT_PY
      */
-    private Long weeklyConsumptionDays06mmtPy;
+    private Long weeklyConsumptionDays_06mmtPy;
     /**
      * Weekly_Consumption_Days_06MMT_2PY
      */
-    private Long weeklyConsumptionDays06mmt2py;
+    private Long weeklyConsumptionDays_06mmt_2py;
     /**
      * Weekly_Consumption_Days_12MMT
      */
-    private Long weeklyConsumptionDays12mmt;
+    private Long weeklyConsumptionDays_12mmt;
     /**
      * Weekly_Consumption_Days_12MMT_PY
      */
-    private Long weeklyConsumptionDays12mmtPy;
+    private Long weeklyConsumptionDays_12mmtPy;
     /**
      * Weekly_Consumption_Days_12MMT_2PY
      */
-    private Long weeklyConsumptionDays12mmt2py;
+    private Long weeklyConsumptionDays_12mmt_2py;
     /**
      * Weekly_Consumption_Days_13WMT
      */
-    private Long weeklyConsumptionDays13wmt;
+    private Long weeklyConsumptionDays_13wmt;
     /**
      * Weekly_Consumption_Days_13WMT_PY
      */
-    private Long weeklyConsumptionDays13wmtPy;
+    private Long weeklyConsumptionDays_13wmtPy;
     /**
      * Weekly_Consumption_Days_13WMT_2PY
      */
-    private Long weeklyConsumptionDays13wmt2py;
+    private Long weeklyConsumptionDays_13wmt_2py;
     /**
      * Weekly_Consumption_Days_26WMT
      */
-    private Long weeklyConsumptionDays26wmt;
+    private Long weeklyConsumptionDays_26wmt;
     /**
      * Weekly_Consumption_Days_26WMT_PY
      */
-    private Long weeklyConsumptionDays26wmtPy;
+    private Long weeklyConsumptionDays_26wmtPy;
     /**
      * Weekly_Consumption_Days_26WMT_2PY
      */
-    private Long weeklyConsumptionDays26wmt2py;
+    private Long weeklyConsumptionDays_26wmt_2py;
     /**
      * Weekly_Consumption_Days_52WMT
      */
-    private Long weeklyConsumptionDays52wmt;
+    private Long weeklyConsumptionDays_52wmt;
     /**
      * Weekly_Consumption_Days_52WMT_PY
      */
-    private Long weeklyConsumptionDays52wmtPy;
+    private Long weeklyConsumptionDays_52wmtPy;
     /**
      * Weekly_Consumption_Days_52WMT_2PY
      */
-    private Long weeklyConsumptionDays52wmt2py;
+    private Long weeklyConsumptionDays_52wmt_2py;
     /**
      * Weekly_Consumption_Days_MTD
      */
@@ -421,7 +420,7 @@ public class ScsCalendar extends BaseEntity {
     /**
      * Weekly_Consumption_Days_MTD_2PY
      */
-    private Long weeklyConsumptionDaysMtd2py;
+    private Long weeklyConsumptionDaysMtd_2py;
     /**
      * Weekly_Consumption_Days_QTD
      */
@@ -433,7 +432,7 @@ public class ScsCalendar extends BaseEntity {
     /**
      * Weekly_Consumption_Days_QTD_2PY
      */
-    private Long weeklyConsumptionDaysQtd2py;
+    private Long weeklyConsumptionDaysQtd_2py;
     /**
      * Weekly_Consumption_Days_WTD_PY
      */
@@ -441,7 +440,7 @@ public class ScsCalendar extends BaseEntity {
     /**
      * Weekly_Consumption_Days_WTD_2PY
      */
-    private Long weeklyConsumptionDaysWtd2py;
+    private Long weeklyConsumptionDaysWtd_2py;
     /**
      * Weekly_Consumption_Days_YTD
      */
@@ -453,7 +452,7 @@ public class ScsCalendar extends BaseEntity {
     /**
      * Weekly_Consumption_Days_YTD_2PY
      */
-    private Long weeklyConsumptionDaysYtd2py;
+    private Long weeklyConsumptionDaysYtd_2py;
     /**
      * Monthly_Consumption_Days
      */
@@ -465,43 +464,43 @@ public class ScsCalendar extends BaseEntity {
     /**
      * Monthly_Consumption_Days_2PY
      */
-    private Long monthlyConsumptionDays2py;
+    private Long monthlyConsumptionDays_2py;
     /**
      * Monthly_Consumption_Days_03MMT
      */
-    private Long monthlyConsumptionDays03mmt;
+    private Long monthlyConsumptionDays_03mmt;
     /**
      * Monthly_Consumption_Days_03MMT_PY
      */
-    private Long monthlyConsumptionDays03mmtPy;
+    private Long monthlyConsumptionDays_03mmtPy;
     /**
      * Monthly_Consumption_Days_03MMT_2PY
      */
-    private Long monthlyConsumptionDays03mmt2py;
+    private Long monthlyConsumptionDays_03mmt_2py;
     /**
      * Monthly_Consumption_Days_06MMT
      */
-    private Long monthlyConsumptionDays06mmt;
+    private Long monthlyConsumptionDays_06mmt;
     /**
      * Monthly_Consumption_Days_06MMT_PY
      */
-    private Long monthlyConsumptionDays06mmtPy;
+    private Long monthlyConsumptionDays_06mmtPy;
     /**
      * Monthly_Consumption_Days_06MMT_2PY
      */
-    private Long monthlyConsumptionDays06mmt2py;
+    private Long monthlyConsumptionDays_06mmt_2py;
     /**
      * Monthly_Consumption_Days_12MMT
      */
-    private Long monthlyConsumptionDays12mmt;
+    private Long monthlyConsumptionDays_12mmt;
     /**
      * Monthly_Consumption_Days_12MMT_PY
      */
-    private Long monthlyConsumptionDays12mmtPy;
+    private Long monthlyConsumptionDays_12mmtPy;
     /**
      * Monthly_Consumption_Days_12MMT_2PY
      */
-    private Long monthlyConsumptionDays12mmt2py;
+    private Long monthlyConsumptionDays_12mmt_2py;
     /**
      * Monthly_Consumption_Days_QTD
      */
@@ -513,7 +512,7 @@ public class ScsCalendar extends BaseEntity {
     /**
      * Monthly_Consumption_Days_QTD_2PY
      */
-    private Long monthlyConsumptionDaysQtd2py;
+    private Long monthlyConsumptionDaysQtd_2py;
     /**
      * Monthly_Consumption_Days_YTD
      */
@@ -525,7 +524,7 @@ public class ScsCalendar extends BaseEntity {
     /**
      * Monthly_Consumption_Days_YTD_2PY
      */
-    private Long monthlyConsumptionDaysYtd2py;
+    private Long monthlyConsumptionDaysYtd_2py;
     /**
      * Quarterly_Consumption_Days
      */
@@ -537,7 +536,7 @@ public class ScsCalendar extends BaseEntity {
     /**
      * Quarterly_Consumption_Days_2PY
      */
-    private Long quarterlyConsumptionDays2py;
+    private Long quarterlyConsumptionDays_2py;
     /**
      * Quarterly_Consumption_Days_YTD
      */
@@ -549,7 +548,7 @@ public class ScsCalendar extends BaseEntity {
     /**
      * Quarterly_Consumption_Days_YTD_2PY
      */
-    private Long quarterlyConsumptionDaysYtd2py;
+    private Long quarterlyConsumptionDaysYtd_2py;
     /**
      * Yearly_Consumption_Days
      */
@@ -561,7 +560,7 @@ public class ScsCalendar extends BaseEntity {
     /**
      * Yearly_Consumption_Days_2PY
      */
-    private Long yearlyConsumptionDays2py;
+    private Long yearlyConsumptionDays_2py;
     /**
      * file_name
      */

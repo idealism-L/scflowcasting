@@ -22,6 +22,60 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="updateTime" column="update_time"/>
         <result property="versionNo" column="version_no"/>
     </resultMap>
-
-
+    <select id="getStartDate" resultType="java.lang.String">
+        select distinct sff.startdate
+        from scs_fg_fcst sff
+        where sff.parent_id != 0
+        and sff.item_corporation = 'SCCSCM'
+        <if test="bo.corporation != null and bo.corporation != ''">
+            AND sff.corporation = #{bo.corporation}
+        </if>
+        <if test="bo.itemCode != null and bo.itemCode != ''">
+            AND sff.item_code = #{bo.itemCode}
+        </if>
+        order by sff.startdate
+    </select>
+    <select id="listCorporation" resultType="map">
+        SELECT
+        sff.id,
+        sff.item_code,
+        sff.descr,
+        sff.corporation,
+        'TotFcst(PC)' as totFcst,
+        <foreach collection="startDates" item="startDate" index="index" separator=",">
+            SUM(IF(sff.startdate = #{startDate}, sff.qty, 0)) AS '${startDate}'
+        </foreach>
+        FROM scs_fg_fcst sff
+        <where>
+            sff.parent_id != 0
+            and sff.item_corporation = 'SCCSCM'
+            <if test="bo.corporation != null and bo.corporation != ''">
+                AND sff.corporation = #{bo.corporation}
+            </if>
+            <if test="bo.itemCode != null and bo.itemCode != ''">
+                AND sff.item_code = #{bo.itemCode}
+            </if>
+        </where>
+        GROUP BY sff.corporation, sff.item_code
+        ORDER BY item_code
+    </select>
+    <select id="getTotal" resultType="java.util.Map">
+        SELECT sff.startdate, SUM(sff.qty) AS total_qty
+        FROM scs_fg_fcst sff
+        <where>
+            sff.parent_id != 0
+            AND sff.item_corporation = 'SCCSCM'
+            <if test="bo.corporation != null and bo.corporation != ''">
+                AND sff.corporation = #{bo.corporation}
+            </if>
+            <if test="bo.itemCode != null and bo.itemCode != ''">
+                AND sff.item_code = #{bo.itemCode}
+            </if>
+            AND sff.startdate IN
+            <foreach collection="startDates" item="item" open="(" close=")" separator=",">
+                #{item}
+            </foreach>
+        </where>
+        GROUP BY sff.startdate
+    </select>
 </mapper>

@@ -2,17 +2,16 @@ package com.plan.common.utils;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import org.apache.commons.compress.utils.Lists;
 import org.apache.commons.lang3.time.DateFormatUtils;
 
 import java.lang.management.ManagementFactory;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
+import java.time.*;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 时间工具类
@@ -164,5 +163,56 @@ public class DateUtils extends org.apache.commons.lang3.time.DateUtils {
         LocalDateTime localDateTime = LocalDateTime.of(temporalAccessor, LocalTime.of(0, 0, 0));
         ZonedDateTime zdt = localDateTime.atZone(ZoneId.systemDefault());
         return Date.from(zdt.toInstant());
+    }
+
+    /**
+     * 判断是否是周六或者周日
+     */
+    public static boolean isWeekend(String currentDate) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        Date date = null;
+        try {
+            date = sdf.parse(currentDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        Calendar cal = Calendar.getInstance();
+        if (date != null) {
+            cal.setTime(date);
+        }
+        int week = cal.get(Calendar.DAY_OF_WEEK) - 1;
+        return week == 6 || week == 0;
+    }
+
+    /**
+     * 取上周日的日期
+     */
+    public static String getPreviousFriday() {
+        Calendar cal = Calendar.getInstance();
+        cal.add(Calendar.DATE, -1);
+        cal.set(Calendar.DAY_OF_WEEK, Calendar.SUNDAY);
+        return new SimpleDateFormat("yyyy-MM-dd").format(cal.getTime());
+    }
+
+    /**
+     * 从startDate开始依次加7天，直到endDate
+     */
+    public static List<String> getDateList(String startDate, String endDate) {
+        List<String> dates = Lists.newArrayList();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            Date start = sdf.parse(startDate);
+            Date end = sdf.parse(endDate);
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(start);
+            while (cal.getTime().before(end)) {
+                dates.add(sdf.format(cal.getTime()));
+                cal.add(Calendar.DATE, 7);
+            }
+            dates.add(endDate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return dates;
     }
 }

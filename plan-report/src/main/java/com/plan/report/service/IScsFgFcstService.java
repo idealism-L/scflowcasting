@@ -31,6 +31,8 @@ public interface IScsFgFcstService {
      */
     List<ScsFgFcstVo> queryList(ScsFgFcstBo bo);
 
+    TableDataInfo<ScsFgFcstVo> queryPageListCorporation(ScsFgFcstBo bo, PageQuery pageQuery);
+
     /**
      * 新增scs_fg_fcst
      */

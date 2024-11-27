@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 表格分页数据对象
@@ -38,6 +39,16 @@ public class TableDataInfo<T> implements Serializable {
      * 消息内容
      */
     private String msg;
+
+    /**
+     * 总计数据
+     */
+    private List<Map<String, Object>> totals;
+
+    /**
+     * 表格数据对象 用于行转列
+     */
+    private List<Map<String, Object>> columns;
 
     /**
      * 分页
