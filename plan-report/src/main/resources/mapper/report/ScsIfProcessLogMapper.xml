@@ -7,6 +7,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <resultMap type="com.plan.report.domain.ScsIfProcessLog" id="ScsIfProcessLogResult">
         <result property="id" column="id"/>
         <result property="fileTime" column="file_time"/>
+        <result property="corporation" column="corporation"/>
         <result property="fileName" column="file_name"/>
         <result property="etlTableName" column="etl_table_name"/>
         <result property="createBy" column="create_by"/>

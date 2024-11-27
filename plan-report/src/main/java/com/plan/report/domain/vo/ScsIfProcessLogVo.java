@@ -27,7 +27,11 @@ public class ScsIfProcessLogVo implements Serializable {
      */
     @ExcelProperty(value = "ID")
     private Long id;
-
+    /**
+     * 装瓶集团
+     */
+    @ExcelProperty(value = "装瓶集团")
+    private String corporation;
     /**
      * 上传文件时间
      */
@@ -51,6 +55,13 @@ public class ScsIfProcessLogVo implements Serializable {
      */
     @ExcelProperty(value = "区分(KG/KIT)")
     private String itemPattern;
+
+    /**
+     * 创建时间
+     */
+    @ExcelProperty(value = "创建时间")
+    private Date createTime;
+
 
 
 }

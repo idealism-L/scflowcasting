@@ -42,5 +42,13 @@ public class ScsIfProcessLog extends BaseEntity {
      * 区分(KG/KIT)
      */
     private String itemPattern;
+    /**
+     * 装瓶集团
+     */
+    private String corporation;
+    /**
+     * 创建时间
+     */
+    private Date createTime;
 
 }

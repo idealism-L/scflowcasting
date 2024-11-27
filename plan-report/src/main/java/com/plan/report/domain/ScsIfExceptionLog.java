@@ -33,6 +33,7 @@ public class ScsIfExceptionLog extends BaseEntity {
      * 上传文件名称
      */
     private String fileName;
+
     /**
      * ETL表名
      */
@@ -40,7 +41,7 @@ public class ScsIfExceptionLog extends BaseEntity {
     /**
      * KIT/FG
      */
-    private String uItemPattern;
+    private String itemPattern;
     /**
      * 物料编码
      */

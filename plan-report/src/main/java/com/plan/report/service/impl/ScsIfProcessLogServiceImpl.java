@@ -65,6 +65,7 @@ public class ScsIfProcessLogServiceImpl implements IScsIfProcessLogService {
         lqw.like(StringUtils.isNotBlank(bo.getFileName()), ScsIfProcessLog::getFileName, bo.getFileName());
         lqw.like(StringUtils.isNotBlank(bo.getEtlTableName()), ScsIfProcessLog::getEtlTableName, bo.getEtlTableName());
         lqw.eq(StringUtils.isNotBlank(bo.getItemPattern()), ScsIfProcessLog::getItemPattern, bo.getItemPattern());
+        lqw.eq(StringUtils.isNotBlank(bo.getCorporation()), ScsIfProcessLog::getCorporation, bo.getCorporation());
         return lqw;
     }
 

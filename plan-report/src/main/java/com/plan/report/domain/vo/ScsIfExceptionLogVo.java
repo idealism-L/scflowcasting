@@ -48,7 +48,7 @@ public class ScsIfExceptionLogVo implements Serializable {
      * KIT/FG
      */
     @ExcelProperty(value = "KIT/FG")
-    private String uItemPattern;
+    private String itemPattern;
 
     /**
      * 物料编码

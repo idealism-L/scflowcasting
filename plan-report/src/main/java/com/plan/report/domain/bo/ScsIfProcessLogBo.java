@@ -51,5 +51,8 @@ public class ScsIfProcessLogBo extends BaseEntity {
     @NotBlank(message = "区分(KG/KIT)不能为空", groups = { AddGroup.class, EditGroup.class })
     private String itemPattern;
 
-
+    /**
+     * 装瓶集团
+     */
+    private String corporation;
 }

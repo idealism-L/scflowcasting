@@ -49,7 +49,7 @@ public class ScsIfExceptionLogBo extends BaseEntity {
      * KIT/FG
      */
     @NotBlank(message = "KIT/FG不能为空", groups = { AddGroup.class, EditGroup.class })
-    private String uItemPattern;
+    private String itemPattern;
 
     /**
      * 物料编码

@@ -64,7 +64,7 @@ public class ScsIfExceptionLogServiceImpl implements IScsIfExceptionLogService {
         lqw.eq(StringUtils.isNotBlank(bo.getCorporation()), ScsIfExceptionLog::getCorporation, bo.getCorporation());
         lqw.like(StringUtils.isNotBlank(bo.getFileName()), ScsIfExceptionLog::getFileName, bo.getFileName());
         lqw.like(StringUtils.isNotBlank(bo.getEtlTableName()), ScsIfExceptionLog::getEtlTableName, bo.getEtlTableName());
-        lqw.eq(StringUtils.isNotBlank(bo.getUItemPattern()), ScsIfExceptionLog::getUItemPattern, bo.getUItemPattern());
+        lqw.eq(StringUtils.isNotBlank(bo.getItemPattern()), ScsIfExceptionLog::getItemPattern, bo.getItemPattern());
         lqw.eq(StringUtils.isNotBlank(bo.getItemCode()), ScsIfExceptionLog::getItemCode, bo.getItemCode());
         lqw.eq(StringUtils.isNotBlank(bo.getLoc()), ScsIfExceptionLog::getLoc, bo.getLoc());
         lqw.eq(StringUtils.isNotBlank(bo.getLocOwnCode()), ScsIfExceptionLog::getLocOwnCode, bo.getLocOwnCode());
