@@ -135,6 +135,26 @@ public class ScsFgFcstServiceImpl implements IScsFgFcstService {
         return tableDataInfo;
     }
 
+    @Override
+    public List<Map<String, Object>> getCorporationExportData(ScsFgFcstBo bo) {
+        // 当前日期
+        String currentDate = DateUtils.getDate();
+        // 判断当前日期是否是周六或周日
+        if (DateUtils.isWeekend(currentDate)) {
+            // 如果是周六或周日，取上周六的日期
+            currentDate = DateUtils.getPreviousFriday();
+        }
+
+        // 转换成一个日期 ID yyyy-mm-dd 转换成 yyyymmdd的long类型
+        Long dateId = Long.parseLong(currentDate.replace("-", ""));
+        ScsCalendarVo scsCalendarVo = scsCalendarService.queryById(dateId);
+
+        String start = String.valueOf(scsCalendarVo.getC445WeekStartDt());
+        // 取出截至日期
+        String end = baseMapper.getStartDate(bo);
+        return null;
+    }
+
     private LambdaQueryWrapper<ScsFgFcst> buildQueryWrapper(ScsFgFcstBo bo) {
         Map<String, Object> params = bo.getParams();
         LambdaQueryWrapper<ScsFgFcst> lqw = Wrappers.lambdaQuery();

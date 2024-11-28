@@ -7,6 +7,7 @@ import com.plan.report.domain.vo.ScsFgFcstVo;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
 
 /**
  * scs_fg_fcstService接口
@@ -47,4 +48,6 @@ public interface IScsFgFcstService {
      * 校验并批量删除scs_fg_fcst信息
      */
     Boolean deleteWithValidByIds(Collection<Long> ids, Boolean isValid);
+
+    List<Map<String, Object>> getCorporationExportData(ScsFgFcstBo bo);
 }

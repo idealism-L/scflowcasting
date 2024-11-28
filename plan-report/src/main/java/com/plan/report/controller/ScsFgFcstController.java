@@ -73,6 +73,9 @@ public class ScsFgFcstController extends BaseController {
     @Log(title = "scs_fg_fcst", businessType = BusinessType.EXPORT)
     @PostMapping("/exportCorporation")
     public void exportCorporation(ScsFgFcstBo bo, HttpServletResponse response) {
+        // 取导出数据
+//        List<Map<String,Object>> dataList = iScsFgFcstService.getCorporationExportData(bo);
+
         List<Map<String, Object>> list = new ArrayList<>();
 
         // 添加第一个人员信息

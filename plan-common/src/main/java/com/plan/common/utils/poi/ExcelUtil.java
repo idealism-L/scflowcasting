@@ -5,11 +5,15 @@ import cn.hutool.core.io.resource.ClassPathResource;
 import cn.hutool.core.util.IdUtil;
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.ExcelWriter;
+import com.alibaba.excel.metadata.Head;
+import com.alibaba.excel.metadata.data.WriteCellData;
 import com.alibaba.excel.write.builder.ExcelWriterBuilder;
 import com.alibaba.excel.write.builder.ExcelWriterSheetBuilder;
 import com.alibaba.excel.write.metadata.WriteSheet;
 import com.alibaba.excel.write.metadata.fill.FillConfig;
 import com.alibaba.excel.write.metadata.fill.FillWrapper;
+import com.alibaba.excel.write.metadata.holder.WriteSheetHolder;
+import com.alibaba.excel.write.style.column.AbstractColumnWidthStyleStrategy;
 import com.alibaba.excel.write.style.column.LongestMatchColumnWidthStyleStrategy;
 import com.plan.common.convert.ExcelBigNumberConvert;
 import com.plan.common.excel.*;
@@ -17,6 +21,7 @@ import com.plan.common.utils.StringUtils;
 import com.plan.common.utils.file.FileUtils;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import org.apache.poi.ss.usermodel.Cell;
 
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
@@ -24,10 +29,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Excel相关处理
@@ -409,18 +411,20 @@ public class ExcelUtil {
         // 创建ExcelWriterBuilder对象
         ExcelWriterBuilder builder = EasyExcel.write(os)
                                          .autoCloseStream(false)
-                                         // 自动适配列宽
-                                         .registerWriteHandler(new LongestMatchColumnWidthStyleStrategy())
+                                         // 根据题头设置列宽
+                                         .registerWriteHandler(new AbstractColumnWidthStyleStrategy() {
+                                             @Override
+                                             protected void setColumnWidth(WriteSheetHolder writeSheetHolder, List<WriteCellData<?>> cellDataList, Cell cell, Head head, Integer relativeRowIndex, Boolean isHead) {
+                                                 if (isHead) {
+                                                     writeSheetHolder.getSheet().setColumnWidth(cell.getColumnIndex(), headers.get(cell.getColumnIndex()).length() * 512);
+                                                 }
+                                             }
+                                         })
                                          // 大数值自动转换 防止失真
                                          .registerConverter(new ExcelBigNumberConvert());
 
-        // 创建WriteSheet对象
-        WriteSheet writeSheet = EasyExcel.writerSheet(sheetName)
-                                    .head(createHeader(headers))
-                                    .build();
-
         // 写入数据
-        builder.sheet(sheetName).doWrite(data);
+        builder.sheet(sheetName).head(createHeader(headers)).doWrite(data);
     }
 
 
@@ -433,11 +437,9 @@ public class ExcelUtil {
     private static List<List<String>> createHeader(List<String> headers) {
         List<List<String>> headList = new ArrayList<>();
         for (String header : headers) {
-            List<String> head = new ArrayList<>();
-            head.add(header);
-            headList.add(head);
+            headList.add(Collections.singletonList(header));
         }
-        return headList;
+        return headList; // 修改这里
     }
 
     /**
