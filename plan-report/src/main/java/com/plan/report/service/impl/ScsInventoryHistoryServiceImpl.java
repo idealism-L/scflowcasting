@@ -23,7 +23,7 @@ import java.util.Map;
  * scs_inventory_historyService业务层处理
  *
  * @author ruoyi
- * @date 2024-11-26
+ * @date 2024-11-28
  */
 @RequiredArgsConstructor
 @Service
@@ -68,6 +68,9 @@ public class ScsInventoryHistoryServiceImpl implements IScsInventoryHistoryServi
         lqw.eq(StringUtils.isNotBlank(bo.getItem()), ScsInventoryHistory::getItem, bo.getItem());
         lqw.eq(StringUtils.isNotBlank(bo.getDescr()), ScsInventoryHistory::getDescr, bo.getDescr());
         lqw.eq(StringUtils.isNotBlank(bo.getDescrEn()), ScsInventoryHistory::getDescrEn, bo.getDescrEn());
+        lqw.eq(StringUtils.isNotBlank(bo.getBppCode()), ScsInventoryHistory::getBppCode, bo.getBppCode());
+        lqw.eq(StringUtils.isNotBlank(bo.getBppDescr()), ScsInventoryHistory::getBppDescr, bo.getBppDescr());
+        lqw.eq(StringUtils.isNotBlank(bo.getBppCategory()), ScsInventoryHistory::getBppCategory, bo.getBppCategory());
         lqw.eq(StringUtils.isNotBlank(bo.getBppBrand()), ScsInventoryHistory::getBppBrand, bo.getBppBrand());
         lqw.eq(StringUtils.isNotBlank(bo.getBppFlavor()), ScsInventoryHistory::getBppFlavor, bo.getBppFlavor());
         lqw.eq(StringUtils.isNotBlank(bo.getFileBatch()), ScsInventoryHistory::getFileBatch, bo.getFileBatch());

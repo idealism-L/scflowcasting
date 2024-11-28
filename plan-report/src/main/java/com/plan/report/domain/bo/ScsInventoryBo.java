@@ -15,7 +15,7 @@ import java.util.Date;
  * scs_inventory业务对象 scs_inventory
  *
  * @author ruoyi
- * @date 2024-11-26
+ * @date 2024-11-28
  */
 
 @Data
@@ -69,6 +69,24 @@ public class ScsInventoryBo extends BaseEntity {
      */
     @NotBlank(message = "英文描述不能为空", groups = { AddGroup.class, EditGroup.class })
     private String descrEn;
+
+    /**
+     * BPP代码
+     */
+    @NotBlank(message = "BPP代码不能为空", groups = { AddGroup.class, EditGroup.class })
+    private String bppCode;
+
+    /**
+     * BPP描述
+     */
+    @NotBlank(message = "BPP描述不能为空", groups = { AddGroup.class, EditGroup.class })
+    private String bppDescr;
+
+    /**
+     * BPP大类
+     */
+    @NotBlank(message = "BPP大类不能为空", groups = { AddGroup.class, EditGroup.class })
+    private String bppCategory;
 
     /**
      * BPP品牌

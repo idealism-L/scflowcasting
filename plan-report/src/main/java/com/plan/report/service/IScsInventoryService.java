@@ -13,7 +13,7 @@ import java.util.List;
  * scs_inventoryService接口
  *
  * @author ruoyi
- * @date 2024-11-26
+ * @date 2024-11-28
  */
 public interface IScsInventoryService {
 

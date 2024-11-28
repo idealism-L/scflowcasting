@@ -27,7 +27,7 @@ import com.plan.common.core.page.TableDataInfo;
  * scs_inventory_history
  *
  * @author ruoyi
- * @date 2024-11-26
+ * @date 2024-11-28
  */
 @Validated
 @RequiredArgsConstructor

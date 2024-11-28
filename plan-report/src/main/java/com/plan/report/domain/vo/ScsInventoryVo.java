@@ -15,7 +15,7 @@ import java.io.Serializable;
  * scs_inventory视图对象 scs_inventory
  *
  * @author ruoyi
- * @date 2024-11-26
+ * @date 2024-11-28
  */
 @Data
 @ExcelIgnoreUnannotated
@@ -70,6 +70,24 @@ public class ScsInventoryVo implements Serializable {
      */
     @ExcelProperty(value = "英文描述")
     private String descrEn;
+
+    /**
+     * BPP代码
+     */
+    @ExcelProperty(value = "BPP代码")
+    private String bppCode;
+
+    /**
+     * BPP描述
+     */
+    @ExcelProperty(value = "BPP描述")
+    private String bppDescr;
+
+    /**
+     * BPP大类
+     */
+    @ExcelProperty(value = "BPP大类")
+    private String bppCategory;
 
     /**
      * BPP品牌

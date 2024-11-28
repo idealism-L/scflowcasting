@@ -23,7 +23,7 @@ import java.util.Map;
  * scs_inventoryService业务层处理
  *
  * @author ruoyi
- * @date 2024-11-26
+ * @date 2024-11-28
  */
 @RequiredArgsConstructor
 @Service
@@ -68,6 +68,9 @@ public class ScsInventoryServiceImpl implements IScsInventoryService {
         lqw.eq(StringUtils.isNotBlank(bo.getItem()), ScsInventory::getItem, bo.getItem());
         lqw.eq(StringUtils.isNotBlank(bo.getDescr()), ScsInventory::getDescr, bo.getDescr());
         lqw.eq(StringUtils.isNotBlank(bo.getDescrEn()), ScsInventory::getDescrEn, bo.getDescrEn());
+        lqw.eq(StringUtils.isNotBlank(bo.getBppCode()), ScsInventory::getBppCode, bo.getBppCode());
+        lqw.eq(StringUtils.isNotBlank(bo.getBppDescr()), ScsInventory::getBppDescr, bo.getBppDescr());
+        lqw.eq(StringUtils.isNotBlank(bo.getBppCategory()), ScsInventory::getBppCategory, bo.getBppCategory());
         lqw.eq(StringUtils.isNotBlank(bo.getBppBrand()), ScsInventory::getBppBrand, bo.getBppBrand());
         lqw.eq(StringUtils.isNotBlank(bo.getBppFlavor()), ScsInventory::getBppFlavor, bo.getBppFlavor());
         lqw.eq(StringUtils.isNotBlank(bo.getFileBatch()), ScsInventory::getFileBatch, bo.getFileBatch());

@@ -1,21 +1,18 @@
 package com.plan.report.domain.vo;
 
-import java.math.BigDecimal;
-import java.util.Date;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.alibaba.excel.annotation.ExcelIgnoreUnannotated;
 import com.alibaba.excel.annotation.ExcelProperty;
-import com.plan.common.annotation.ExcelDictFormat;
-import com.plan.common.convert.ExcelDictConvert;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * scs_inventory_history视图对象 scs_inventory_history
  *
  * @author ruoyi
- * @date 2024-11-26
+ * @date 2024-11-28
  */
 @Data
 @ExcelIgnoreUnannotated
@@ -70,6 +67,24 @@ public class ScsInventoryHistoryVo implements Serializable {
      */
     @ExcelProperty(value = "英文描述")
     private String descrEn;
+
+    /**
+     * BPP代码
+     */
+    @ExcelProperty(value = "BPP代码")
+    private String bppCode;
+
+    /**
+     * BPP描述
+     */
+    @ExcelProperty(value = "BPP描述")
+    private String bppDescr;
+
+    /**
+     * BPP大类
+     */
+    @ExcelProperty(value = "BPP大类")
+    private String bppCategory;
 
     /**
      * BPP品牌

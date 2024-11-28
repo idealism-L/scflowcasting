@@ -23,7 +23,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="versionNo" column="version_no"/>
     </resultMap>
     <select id="getStartDate" resultType="java.lang.String">
-        select distinct sff.startdate
+        select max(sff.startdate)
         from scs_fg_fcst sff
         where sff.parent_id != 0
         and sff.item_corporation = 'SCCSCM'
@@ -33,8 +33,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <if test="bo.itemCode != null and bo.itemCode != ''">
             AND sff.item_code = #{bo.itemCode}
         </if>
-        order by sff.startdate
     </select>
+
     <select id="listCorporation" resultType="map">
         SELECT
         sff.id,
@@ -60,7 +60,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         ORDER BY item_code
     </select>
     <select id="getTotal" resultType="java.util.Map">
-        SELECT sff.startdate, SUM(sff.qty) AS total_qty
+        SELECT sff.startdate AS startDate, SUM(sff.qty) AS totalQty
         FROM scs_fg_fcst sff
         <where>
             sff.parent_id != 0
@@ -78,4 +78,5 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         </where>
         GROUP BY sff.startdate
     </select>
+
 </mapper>

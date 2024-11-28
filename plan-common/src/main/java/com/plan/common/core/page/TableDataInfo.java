@@ -43,7 +43,7 @@ public class TableDataInfo<T> implements Serializable {
     /**
      * 总计数据
      */
-    private List<Map<String, Object>> totals;
+    private Map<String, Object> totals;
 
     /**
      * 表格数据对象 用于行转列

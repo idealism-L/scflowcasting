@@ -5,6 +5,7 @@ import cn.hutool.core.io.resource.ClassPathResource;
 import cn.hutool.core.util.IdUtil;
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.ExcelWriter;
+import com.alibaba.excel.write.builder.ExcelWriterBuilder;
 import com.alibaba.excel.write.builder.ExcelWriterSheetBuilder;
 import com.alibaba.excel.write.metadata.WriteSheet;
 import com.alibaba.excel.write.metadata.fill.FillConfig;
@@ -23,6 +24,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -376,5 +378,87 @@ public class ExcelUtil {
     public static String encodingFilename(String filename) {
         return IdUtil.fastSimpleUUID() + "_" + filename + ".xlsx";
     }
+
+    /**
+     * 导出带有自定义题头的Excel表格，使用HttpServletResponse
+     *
+     * @param headers   题头列表
+     * @param data      数据列表
+     * @param sheetName 工作表名称
+     * @param response  响应体
+     */
+    public static void exportCustomHeaderExcelWithResponse(List<String> headers, List<List<Object>> data, String sheetName, HttpServletResponse response) {
+        try {
+            resetResponse(sheetName, response);
+            ServletOutputStream os = response.getOutputStream();
+            exportCustomHeaderExcelWithOutputStream(headers, data, sheetName, os);
+        } catch (IOException e) {
+            throw new RuntimeException("导出Excel异常");
+        }
+    }
+
+    /**
+     * 导出带有自定义题头的Excel表格，使用OutputStream
+     *
+     * @param headers   题头列表
+     * @param data      数据列表
+     * @param sheetName 工作表名称
+     * @param os        输出流
+     */
+    public static void exportCustomHeaderExcelWithOutputStream(List<String> headers, List<List<Object>> data, String sheetName, OutputStream os) {
+        // 创建ExcelWriterBuilder对象
+        ExcelWriterBuilder builder = EasyExcel.write(os)
+                                         .autoCloseStream(false)
+                                         // 自动适配列宽
+                                         .registerWriteHandler(new LongestMatchColumnWidthStyleStrategy())
+                                         // 大数值自动转换 防止失真
+                                         .registerConverter(new ExcelBigNumberConvert());
+
+        // 创建WriteSheet对象
+        WriteSheet writeSheet = EasyExcel.writerSheet(sheetName)
+                                    .head(createHeader(headers))
+                                    .build();
+
+        // 写入数据
+        builder.sheet(sheetName).doWrite(data);
+    }
+
+
+    /**
+     * 创建题头
+     *
+     * @param headers 题头列表
+     * @return 题头列表
+     */
+    private static List<List<String>> createHeader(List<String> headers) {
+        List<List<String>> headList = new ArrayList<>();
+        for (String header : headers) {
+            List<String> head = new ArrayList<>();
+            head.add(header);
+            headList.add(head);
+        }
+        return headList;
+    }
+
+    /**
+     * 转换数据
+     *
+     * @param list 数据列表
+     * @param headers 题头列表
+     * @return 转换后的数据列表
+     */
+    public static List<List<Object>> convertData(List<Map<String, Object>> list, List<String> headers) {
+        List<List<Object>> data = new ArrayList<>();
+        for (Map<String, Object> map : list) {
+            List<Object> row = new ArrayList<>();
+            for (String header : headers) {
+                row.add(map.get(header));
+            }
+            data.add(row);
+        }
+        return data;
+    }
+
+
 
 }

@@ -18,7 +18,7 @@ import java.util.Map;
  */
 public interface ScsFgFcstMapper extends BaseMapperPlus<ScsFgFcstMapper, ScsFgFcst, ScsFgFcstVo> {
 
-    List<String> getStartDate(@Param("bo") ScsFgFcstBo bo);
+    String getStartDate(@Param("bo") ScsFgFcstBo bo);
 
     Page<Map<String, Object>> listCorporation(Page<Object> build, @Param("bo") ScsFgFcstBo bo, @Param("startDates") List<String> startDates);
 

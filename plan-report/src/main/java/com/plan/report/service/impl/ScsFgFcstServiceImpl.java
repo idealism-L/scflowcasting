@@ -63,11 +63,6 @@ public class ScsFgFcstServiceImpl implements IScsFgFcstService {
 
     @Override
     public TableDataInfo<ScsFgFcstVo> queryPageListCorporation(ScsFgFcstBo bo, PageQuery pageQuery) {
-        // 取出所有日期列
-        List<String> startDates = baseMapper.getStartDate(bo);
-        // 截至日期
-        String end = startDates.get(startDates.size() - 1);
-
         // 当前日期
         String currentDate = DateUtils.getDate();
         // 判断当前日期是否是周六或周日
@@ -78,10 +73,12 @@ public class ScsFgFcstServiceImpl implements IScsFgFcstService {
 
         // 转换成一个日期 ID yyyy-mm-dd 转换成 yyyymmdd的long类型
         Long dateId = Long.parseLong(currentDate.replace("-", ""));
-
         ScsCalendarVo scsCalendarVo = scsCalendarService.queryById(dateId);
 
         String start = String.valueOf(scsCalendarVo.getC445WeekStartDt());
+
+        // 取出截至日期
+        String end = baseMapper.getStartDate(bo);
 
         // 根据start和end创建一个日期列表 依次加7
         List<String> dates = DateUtils.getDateList(start, end);
@@ -92,8 +89,16 @@ public class ScsFgFcstServiceImpl implements IScsFgFcstService {
 
         // 计算总计数据
         List<Map<String,Object>> totals = baseMapper.getTotal(bo, dates);
+        //转换成map 并且累计总和计算为total加入totalQty
+        Map<String, Object> totalMap = new HashMap<>();
+        BigDecimal totalQty = new BigDecimal(0);
+        for (Map<String, Object> total : totals) {
+            totalMap.put(total.get("startDate").toString(), total.get("totalQty"));
+            totalQty = totalQty.add((BigDecimal) total.get("totalQty"));
+        }
+        totalMap.put("totalQty", totalQty);
 
-        // 执行 SQL 查询
+        // 执行 行转列SQL查询
         Page<Map<String, Object>> resultList = baseMapper.listCorporation(pageQuery.build(), bo, dates);
 
         tableDataInfo.setTotal(resultList.getTotal());
@@ -124,7 +129,7 @@ public class ScsFgFcstServiceImpl implements IScsFgFcstService {
         }
 
         tableDataInfo.setRows(data);
-        tableDataInfo.setTotals(totals);
+        tableDataInfo.setTotals(totalMap);
         tableDataInfo.setColumns(columns);
 
         return tableDataInfo;
