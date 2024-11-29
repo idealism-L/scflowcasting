@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://crpi-neusdnicxn2uvfgv.ap-southeast-1.personal.cr.aliyuncs.com/
-        username: ${{ secrets.AzureAppService_ContainerUsername_6b14e52d40dd4c6e818eb5e456024f71 }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_1098c72dd1444ef880a2a8e1463eb42d }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_ba9272dc0a8345db928daaf202d88c8a }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_63c33c9f4bcb432cb466c24f31bad233 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: crpi-neusdnicxn2uvfgv.ap-southeast-1.personal.cr.aliyuncs.com/${{ secrets.AzureAppService_ContainerUsername_6b14e52d40dd4c6e818eb5e456024f71 }}/kokl-plan/plan:${{ github.sha }}
+        tags: crpi-neusdnicxn2uvfgv.ap-southeast-1.personal.cr.aliyuncs.com/${{ secrets.AzureAppService_ContainerUsername_ba9272dc0a8345db928daaf202d88c8a }}//kokl-plan/plan:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'scflowcasting'
         slot-name: 'api'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_0834817fe35f492287d8e0e55cc4d2c3 }}
-        images: 'crpi-neusdnicxn2uvfgv.ap-southeast-1.personal.cr.aliyuncs.com/${{ secrets.AzureAppService_ContainerUsername_6b14e52d40dd4c6e818eb5e456024f71 }}/kokl-plan/plan:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_5e61c5bd6d7f46099c09315803cf1451 }}
+        images: 'crpi-neusdnicxn2uvfgv.ap-southeast-1.personal.cr.aliyuncs.com/${{ secrets.AzureAppService_ContainerUsername_ba9272dc0a8345db928daaf202d88c8a }}//kokl-plan/plan:${{ github.sha }}'
