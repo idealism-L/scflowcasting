@@ -1,0 +1,51 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
+name: Build and deploy container app to Azure Web App - scflowcasting(api)
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: 'ubuntu-latest'
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+
+    - name: Log in to registry
+      uses: docker/login-action@v2
+      with:
+        registry: https://crpi-neusdnicxn2uvfgv.ap-southeast-1.personal.cr.aliyuncs.com/
+        username: ${{ secrets.AzureAppService_ContainerUsername_6b14e52d40dd4c6e818eb5e456024f71 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_1098c72dd1444ef880a2a8e1463eb42d }}
+
+    - name: Build and push container image to registry
+      uses: docker/build-push-action@v3
+      with:
+        push: true
+        tags: crpi-neusdnicxn2uvfgv.ap-southeast-1.personal.cr.aliyuncs.com/${{ secrets.AzureAppService_ContainerUsername_6b14e52d40dd4c6e818eb5e456024f71 }}/kokl-plan/plan:${{ github.sha }}
+        file: ./Dockerfile
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: 'api'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    steps:
+    - name: Deploy to Azure Web App
+      id: deploy-to-webapp
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: 'scflowcasting'
+        slot-name: 'api'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_0834817fe35f492287d8e0e55cc4d2c3 }}
+        images: 'crpi-neusdnicxn2uvfgv.ap-southeast-1.personal.cr.aliyuncs.com/${{ secrets.AzureAppService_ContainerUsername_6b14e52d40dd4c6e818eb5e456024f71 }}/kokl-plan/plan:${{ github.sha }}'
