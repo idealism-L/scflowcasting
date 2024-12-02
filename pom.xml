@@ -360,6 +360,7 @@
                             <version>${spring-boot.version}</version>
                         </path>
                     </annotationProcessorPaths>
+                    <skip>true</skip>
                 </configuration>
             </plugin>
             <!-- 单元测试使用 -->
