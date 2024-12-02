@@ -46,18 +46,18 @@ spring:
         # 主库数据源
         master:
           type: ${spring.datasource.type}
-          url: jdbc:mysql://192.168.188.14:3306/plan?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=true&serverTimezone=Hongkong
+          url: jdbc:mysql://plan-mysql.mysql.database.azure.com/:3306/plan?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=true&serverTimezone=Hongkong
           driverClassName: com.mysql.cj.jdbc.Driver
-          username: root
-          password: polarwind
+          username: pw_admin
+          password: polarwind@2024
         # 从库数据源
         slave:
           lazy: true
           type: ${spring.datasource.type}
-          url: jdbc:mysql://192.168.188.14:3306/plan?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=true&serverTimezone=Hongkong
+          url: jdbc:mysql://plan-mysql.mysql.database.azure.com/:3306/plan?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=true&serverTimezone=Hongkong
           driverClassName: com.mysql.cj.jdbc.Driver
-          username: root
-          password: polarwind
+          username: pw_admin
+          password: polarwind@2024
       hikari:
         # 最大连接池数量
         maxPoolSize: 20
