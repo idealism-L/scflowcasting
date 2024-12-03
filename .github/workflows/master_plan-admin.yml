@@ -49,5 +49,4 @@ jobs:
         with:
           app-name: 'plan-admin'
           slot-name: 'plan-admin'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2F0803764EB9424AA322025D7D5C7560 }}
           package: '*.jar'
