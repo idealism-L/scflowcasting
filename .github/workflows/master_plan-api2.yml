@@ -27,8 +27,8 @@ jobs:
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
-          name: java-app
-          path: '${{ github.workspace }}/target/*.jar'
+          name: plan-admin
+          path: '${{ github.workspace }}/plan-admin/target/*.jar'
 
   deploy:
     runs-on: ubuntu-latest
@@ -41,13 +41,13 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v3
         with:
-          name: java-app
+          name: plan-admin
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'plan-api2'
+          app-name: 'plan-admin'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0F8A7D505A0E482495C99256F9E6F92E }}
           package: '*.jar'
