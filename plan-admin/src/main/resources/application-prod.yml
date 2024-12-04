@@ -99,17 +99,17 @@ spring:
 spring:
   redis:
     # 地址
-    host: localhost
+    host: plan-admin-api-cache.redis.cache.windows.net
     # 端口，默认为6379
-    port: 6379
+    port: 6380
     # 数据库索引
     database: 0
     # 密码(如没有密码请注释掉)
-    # password:
+    password: zHupyuJSs2psjUe9gr9Z5zsySFhuCeZ8gAzCaP4sIX0=
     # 连接超时时间
     timeout: 10s
     # 是否开启ssl
-    ssl: false
+    ssl: true
 
 redisson:
   # redis key前缀
