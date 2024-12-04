@@ -28,8 +28,8 @@ jobs:
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
-          name: java-app
-          path: '${{ github.workspace }}/target/*.jar'
+          name: plan-admin
+          path: '${{ github.workspace }}/plan-admin/target/*.jar'
 
   deploy:
     runs-on: ubuntu-latest
@@ -44,7 +44,7 @@ jobs:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
-          name: java-app
+          name: plan-admin
       
       - name: Login to Azure
         uses: azure/login@v2
